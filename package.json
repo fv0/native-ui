@@ -1,9 +1,13 @@
 {
   "name": "native-ui",
   "theme": "ui",
-  "description": "A sleeker experience with El Capitan",
+  "version": "0.1",
+  "description": "Your theme for a better code experience in OSX El Capitan.",
   "repository": "https://github.com/fv0/native-ui.git",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fv0/native-ui/issues"
+  },
   "engines": {
     "atom": ">0.50.0"
   }
