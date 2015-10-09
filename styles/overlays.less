@@ -1,0 +1,80 @@
+@import "ui-variables";
+
+atom-panel.modal,
+.overlay {
+  color: @text-color;
+  background-color: #E4E4E4;
+  padding: @component-padding;
+  // border: 1px solid red;
+  // box-shadow: 0 0 10px @base-border-color;
+  border-radius: @border-radius--base;
+
+  atom-text-editor[mini] {
+    margin-bottom: @component-padding;
+  }
+
+  .select-list ol.list-group,
+  &.select-list ol.list-group {
+    border: 1px solid #C6C6C6;
+    background-color: #fff;
+
+    li {
+      padding: @component-padding;
+
+      &.two-lines {
+        padding: @component-padding/2 @component-padding;
+        line-height: 1.6;
+
+        .primary-line {
+          font-size: 13px;
+        }
+
+        .secondary-line {
+          font-size: 11px;
+        }
+
+        &.selected {
+          .secondary-line {
+            color: lighten(@background-color-selected, 25%);
+          }
+        }
+      }
+      &.selected {
+        color: #fff;
+        background-color: @background-color-selected;
+      }
+
+      .status.icon {
+        float: right;
+        margin-left: @component-icon-padding;
+        &:before {
+          margin-right: 0;
+        }
+      }
+    }
+
+  }
+}
+
+atom-panel.modal {
+  z-index: 5;
+
+  // Container
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    border-radius: 0 0 @border-radius--base @border-radius--base;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+  }
+
+  .select-list .error-message {
+    font-size: 1.1rem;
+    text-align: center;
+    color: gray;
+  }
+}

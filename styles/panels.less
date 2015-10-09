@@ -1,0 +1,90 @@
+@import "ui-mixins";
+@import "ui-variables";
+@import "buttons";
+
+.panel {
+  &.bordered {
+    border: 1px solid @base-border-color;
+    border-radius: @component-border-radius;
+  }
+}
+
+atom-panel, .tool-panel {
+  .text(normal);
+  position: relative;
+  background-color: @tool-panel-background-color;
+  text-shadow: none;
+
+  // &.left, &.panel-left {
+  //   border-right: 1px solid @tool-panel-border-color;
+  // }
+
+  &.right, &.panel-right {
+    border-left: 1px solid @tool-panel-border-color;
+  }
+
+  .inset-panel {
+    border-radius: @component-border-radius;
+
+    border: 1px solid @tool-panel-border-color;
+  }
+}
+
+// .inset-panel {
+//   position: relative;
+//   background-color: @inset-panel-background-color;
+// }
+
+.panel-heading {
+  border-bottom: none;
+  padding: @component-padding - 2px @component-padding;
+
+  background-color: transparent;
+  background-image: -webkit-linear-gradient(@panel-heading-background-color, darken(@panel-heading-background-color, 10%));
+
+}
+
+.find-and-replace,
+.project-find {
+  box-shadow: 0 -1px @tab-bar-border-color;
+}
+
+status-bar {
+  box-shadow: 0 -1px rgba(0, 0, 0, 0.3);
+  background: @status-bar-background-color;
+  height: @tab-height;
+  line-height: @tab-height;
+}
+
+status-bar .status-bar-right .inline-block {
+  margin-left: 15px;
+}
+
+status-bar .flexbox-repaint-hack {
+  padding-right: 0;
+}
+
+status-bar .git-branch,
+status-bar .git-status {
+  background-color: darken(@status-bar-background-color, 50%);
+  padding: 0 15px;
+  position: relative;
+  top: -1px;
+  color: @text-color-selected;
+}
+
+status-bar .git-status.inline-block {
+  margin-left: 0;
+  padding-left: 0;
+  padding-right: 10px;
+}
+
+status-bar .text-warning {
+  color: @text-color;
+
+  &:hover {
+    text-decoration: underline;
+    color: inherit;
+    cursor: pointer;
+  }
+}

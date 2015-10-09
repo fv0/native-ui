@@ -1,0 +1,98 @@
+// Colors
+
+@text-color: #444;
+@text-color-subtle: #999;
+@text-color-highlight: #000;
+@text-color-selected: #fff;
+
+@text-color-info: #5AC8FA;
+@text-color-success: #70CA57;
+@text-color-warning: #F7A550;
+@text-color-error: #FC6360;
+
+@text-color-ignored: @text-color-subtle;
+@text-color-added: @text-color-success;
+@text-color-renamed: @text-color-info;
+@text-color-modified: @text-color-warning;
+@text-color-removed: @text-color-error;
+
+@background-color-info: #0098ff;
+@background-color-success: #17ca65;
+@background-color-warning: #ff4800;
+@background-color-error: #c00;
+@background-color-highlight: rgba(0, 0, 0, .1);
+@background-color-selected: #157AFB;
+
+@app-background-color: #ccc;
+
+@base-background-color: #ECECEC;
+@base-border-color: #C7C7C7;
+
+@pane-item-background-color: @base-background-color;
+@pane-item-border-color: @base-border-color;
+
+@input-background-color: white;
+@input-border-color: fadeout(@base-border-color, 10%);
+
+@tool-panel-background-color: @base-background-color;
+@tool-panel-border-color: @base-border-color;
+
+@inset-panel-background-color: #fff;
+@inset-panel-border-color: fadeout(@base-border-color, 10%);
+
+@panel-heading-background-color: #c3c3c3;
+@panel-heading-border-color: transparent;
+
+@overlay-background-color: #ececec;
+@overlay-border-color: @base-border-color;
+
+@button-background-color: @base-background-color;
+@button-background-color-hover: lighten(@button-background-color, 5%);
+@button-background-color-selected: #888;
+@button-border-color: #D3D3D3;
+@button-border-color--bottom: #B4B4B4;
+
+@btn-base-color: #f4f4f4;
+
+@tab-bar-background-color: #BFBDBF;
+@tab-bar-border-color: rgba(0, 0, 0, 0.2);
+@tab-background-color: #e8e8e8;
+@tab-background-color-active: #D9D7D9;
+@tab-border-color: lighten(@base-border-color, 10%);
+@tab-text-color: #676767;
+
+@status-bar-background-color: @tab-bar-background-color;
+
+@tree-view-background-color: #eee;
+@tree-view-border-color: @base-border-color;
+
+@ui-site-color-1: @background-color-success; // green
+@ui-site-color-2: @background-color-info; // blue
+@ui-site-color-3: @background-color-warning; // orange
+@ui-site-color-4: #db2ff4; // purple
+@ui-site-color-5: #f5e11d; // yellow
+
+
+// Sizes
+
+@font-size: 11px;
+@input-font-size: 14px;
+@disclosure-arrow-size: 12px;
+
+@component-padding: 10px;
+@component-icon-padding: 5px;
+@component-icon-size: 16px;
+@component-line-height: 25px;
+@component-border-radius: 2px;
+
+@tab-height: 26px;
+
+
+// Other
+
+@font-family: '.SFNSText-Regular', 'SF UI Text', 'Lucida Grande', 'Segoe UI', Ubuntu, Cantarell, sans-serif;
+
+///////////////////////////////////////////////
+
+@border-radius--base: 4px;
+@transition--default: 0.16s cubic-bezier(0.5, 0.15, 0.2, 1);

@@ -1,0 +1,10 @@
+{
+  "name": "native-ui",
+  "theme": "ui",
+  "description": "A sleeker experience with El Capitan",
+  "repository": "https://github.com/fv0/native-ui.git",
+  "license": "MIT",
+  "engines": {
+    "atom": ">0.50.0"
+  }
+}

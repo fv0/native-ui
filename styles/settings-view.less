@@ -1,0 +1,75 @@
+.settings-view .config-menu .button-area {
+  margin: 8px;
+}
+
+.settings-view input[type="checkbox"] {
+  margin: 0 0.75em 0 -2.25em;
+  vertical-align: top;
+  width: 1.45em;
+  height: 1.45em;
+  cursor: pointer;
+  outline: 0;
+  border-radius: 3px;
+  border: 1px solid #B7B7B7;
+  background-color: #fff;
+  transition: background-color @transition--default;
+
+  &:checked {
+    border-color: #919197;
+    background-color: #99999E;
+  }
+
+  &:after,
+  &:before {
+    top: 11px;
+    left: 5px;
+    height: 0;
+  }
+
+  &:focus {
+    box-shadow: none;
+  }
+}
+
+.settings-view .section atom-text-editor[mini],
+.settings-view .section atom-text-editor[mini]::shadow {
+  opacity: 1;
+}
+
+atom-text-editor[mini] .placeholder-text,
+atom-text-editor[mini]::shadow .placeholder-text {
+  color: #ccc;
+}
+
+.settings-view .package-card .meta-user .avatar {
+  border-radius: 100%;
+}
+
+.settings-view .package-card .btn:hover {
+  cursor: pointer;
+}
+
+.settings-view .package-card {
+  cursor: pointer;
+  overflow: visible
+}
+
+.badge {
+
+  font-weight: bold;
+  font-size: 12px;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.5);
+
+  &.badge-flexible {
+    padding: 3px 10px;
+    min-width: 2.4em;
+    border-radius: 12px; 
+  }
+}
+
+.settings-view .package-card .meta-controls .status-indicator {
+  width: 3px;
+  border-color: transparent;
+  min-width: 3px;
+}

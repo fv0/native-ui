@@ -1,0 +1,160 @@
+@import "ui-variables";
+
+@tab-top-padding: 5px;
+@tab-bottom-border-height: 5px;
+@tab-border: 1px solid @tab-border-color;
+
+.tab-bar {
+  height: @tab-height;
+  background: @tab-bar-background-color;
+  padding: 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.3);
+  z-index: 1;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  .tab {
+    position: relative;
+    text-align: center;
+    top: 0;
+    height: @tab-height;
+    border: 1px solid @tab-bar-border-color;
+    border-left: none;
+    border-bottom: none;
+    border-top: none;
+    line-height: @tab-height;
+    color: @tab-text-color;
+    padding: 0 6px;
+    margin: 0;
+    min-width: 12.5%; // 1/8
+    max-width: 100%;
+
+    &.active {
+      flex: 1; // don't change tab size when selected
+    }
+
+    &:first-child {
+      border-left: none;
+    }
+
+    &:last-child {
+      border-right: none;
+    }
+
+    // Tab title
+
+    .title {
+      -webkit-mask: linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1) 1em) no-repeat;
+      backface-visibility: hidden;
+      text-overflow: hidden;
+    }
+
+    &:hover .title {
+      color: @text-color-highlight;
+    }
+
+    &:hover .title,
+    &.modified .title {
+      -webkit-mask: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8) 1em) no-repeat;
+      -webkit-mask-position: 1.3em 0;
+    }
+
+    // Close icon
+
+    .close-icon {
+      display: none;
+      left: 10px;
+      height: 16px;
+      width: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      border-radius: 3px;
+      z-index: 3;
+      text-align: left;
+      color: @text-color;
+
+      &:hover {
+        background: rgba(0, 0, 0, 0.09);
+      }
+
+      &:active {
+        background-color: rgba(0, 0, 0, 0.15);
+      }
+
+      &:before {
+        content: "✕";
+        position: absolute;
+        font-size: 11px;
+        line-height: 17px;
+        left: 4px;
+      }
+    } // close-icon
+
+    &.modified,
+    &.modified:hover,
+    &.modified:not(:hover) {
+      .close-icon {
+        display: inline-block; // display modified indicator when close button is not there
+        top: 50%;
+
+        &:before {
+          color: @text-color-highlight;
+        }
+      }
+    }
+
+    &:hover .close-icon {
+      display: inline-block;
+      left: 6px;
+    }
+  } // tab
+
+  // Active tab
+
+  .tab.active {
+    z-index: 1;
+    color: @text-color-highlight;
+    background-color: @tab-background-color-active;
+
+    &.modified,
+    &.modified:hover,
+    &.modified:not(:hover) {
+      .close-icon {
+        display: inline-block;
+
+        &:before {
+          color: @text-color-highlight;
+        }
+      }
+    }
+
+    &.modified {
+      .close-icon {
+        left: 10px;
+      }
+
+      &:hover .close-icon {
+        left: 6px ;
+      }
+    }
+
+    // Center the title
+    .title {
+      padding-right: 0;
+    }
+
+  } // tab.active
+
+  .tab.active:hover .close-icon {
+    color: @text-color;
+
+    &:hover {
+      color: inherit;
+    }
+  }
+
+} // tab-bar

@@ -1,0 +1,182 @@
+@import "ui-variables";
+@import "ui-mixins";
+
+.btn-background (@color, @hover-color, @selected-color, @border-color, @text-color, @text-color-hover) {
+  @border-shadow: inset 0 0 0 1px @border-color;
+  @active-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+  color: @text-color;
+  background-color: transparent;
+  background-image: -webkit-linear-gradient(@color, darken(@color, 8%));
+  box-shadow: @border-shadow;
+
+  &:hover {
+    color: @text-color-hover;
+    background-image: -webkit-linear-gradient(@hover-color, darken(@hover-color, 8%));
+  }
+  &:active,
+  &.selected:hover:active {
+    box-shadow: @active-shadow, @border-shadow;
+  }
+  &.selected,
+  &.selected:hover {
+    color: @text-color-selected;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0,.3), @border-shadow;
+    text-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+    background-image: -webkit-linear-gradient(darken(@selected-color, 8%), @selected-color);
+  }
+  &.selected:hover {
+    box-shadow: @border-shadow;
+    background-image: -webkit-linear-gradient(@selected-color, darken(@selected-color, 8%));
+  }
+}
+
+.btn-variant (@color) {
+  @bg: darken(@color, 10%);
+  @hover: @color;
+  @selected: @color;
+  @border: fadeout(darken(@color, 20%), 50%);
+  .btn-background(@bg, @hover, @selected, @border, @text-color-selected, @text-color-selected);
+}
+
+// .btn {
+//   .btn-background(@button-background-color, @button-background-color-hover, @button-background-color-selected, @button-border-color, @text-color, @text-color-highlight);
+// }
+
+//===============================================
+
+.btn-builder(@color) {
+  border-radius: @border-radius--base;
+  background-image: linear-gradient(to top, @color, lighten(@color, 5%));
+  font-weight: 500;
+  font-size: 13px;
+  border: 1px solid darken(@color, 5%);
+  border-left: 1px solid darken(@color, 10%);
+  border-right: 1px solid darken(@color, 10%);
+  border-bottom: 1px solid darken(@color, 15%);
+
+  &:hover {
+    cursor: default;
+  }
+
+  &:active {
+    background-image: linear-gradient(to top, darken(@color, 8%), @color);
+    border: 1px solid darken(@color, 10%);
+    border-left: 1px solid darken(@color, 15%);
+    border-right: 1px solid darken(@color, 15%);
+    border-bottom: 1px solid darken(@color, 20%);
+    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.3);
+    // outline-style: none;
+  }
+
+  &:focus {
+    outline: none !important;
+  }
+}
+
+.btn-selected-light(@color) {
+  &.selected {
+    background-image: linear-gradient(to top, darken(@color, 16%), darken(@color, 8%));
+    color: @text-color-selected;
+    border-top-color: darken(@color, 8%);
+    border-right-color: darken(@color, 10%);
+    border-bottom-color: darken(@color, 16%);
+    border-left-color: darken(@color, 10%);
+  }
+}
+
+.btn-selected-default(@color) {
+  &.selected {
+    background-image: linear-gradient(to top, darken(@color, 50%), darken(@color, 25%));
+    color: @text-color-selected;
+    border-top-color: darken(@color, 25%);
+    border-right-color: darken(@color, 35%);
+    border-bottom-color: darken(@color, 50%);
+    border-left-color: darken(@color, 35%);
+  }
+}
+
+//===============================================
+
+.btn {
+  .btn-builder(@btn-base-color);
+  .btn-selected-default(@btn-base-color);
+}
+
+.btn.btn-default {
+  &:hover {
+    border: 1px solid @button-border-color;
+    border-bottom: 1px solid @button-border-color--bottom;
+  }
+}
+
+.btn.btn-info,
+.btn.btn-primary {
+  .btn-builder(@background-color-info);
+  color: @text-color-selected;
+
+  &.icon:hover {
+    color: @text-color-selected;
+  }
+
+  .btn-selected-light(@background-color-info);
+}
+
+// .btn.btn-primary {
+//   .btn-variant(@background-color-info);
+// }
+
+.btn.btn-success {
+  .btn-builder(@background-color-success);
+  color: @text-color-selected;
+
+  &.icon:hover {
+    color: @text-color-selected;
+  }
+
+  .btn-selected-light(@background-color-success);
+}
+
+.btn.btn-warning {
+  .btn-builder(@background-color-warning);
+  color: @text-color-selected;
+
+  &.icon:hover {
+    color: @text-color-selected;
+  }
+
+  .btn-selected-light(@background-color-warning);
+}
+
+.btn.btn-error {
+  .btn-builder(@background-color-error);
+  color: @text-color-selected;
+
+  &.icon:hover {
+    color: @text-color-selected;
+  }
+
+  .btn-selected-light(@background-color-error);
+}
+
+.btn-group-borders(@color) {
+  &:first-child,
+  &:last-child {
+    border-left: 1px solid darken(@color, 10%);
+    border-right: 1px solid darken(@color, 10%);
+    border-radius: @border-radius--base;
+  }
+}
+
+.btn-group > .btn {
+  .btn-group-borders(@btn-base-color);
+}
+
+.btn-group > .btn-info {
+  .btn-group-borders(@background-color-info);
+}
+
+.btn.disabled,
+.btn[disabled],
+fieldset[disabled] .btn {
+  opacity: 0.5;
+}
