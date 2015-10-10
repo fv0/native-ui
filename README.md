@@ -1,4 +1,4 @@
-![Banner Native UI](https://github.com/fv0/native-ui/raw/master/assets/banner__atom-native-ui.jpg)
+![Banner Native UI](https://cloud.githubusercontent.com/assets/8401092/10410603/c97caaf4-6f46-11e5-842d-43d67dc9c570.jpg)
 
 # Native UI
 
@@ -14,6 +14,6 @@ Made by [@ferdinandvogler](http://www.twitter.com/ferdinandvogler)
 - Packages: [file-icons](https://atom.io/packages/file-icons)
 - High-resolution display
 
-![Screenshot 1](https://github.com/fv0/native-ui/raw/master/assets/screenshot__atom-native-ui--1.jpg)
+![Screenshot 1](https://cloud.githubusercontent.com/assets/8401092/10410604/d2e930f8-6f46-11e5-9138-8e36ba226a05.png)
 
-![Screenshot 2](https://github.com/fv0/native-ui/raw/master/assets/screenshot__atom-native-ui--2.jpg)
+![Screenshot 2](https://cloud.githubusercontent.com/assets/8401092/10410602/c97be5ce-6f46-11e5-9dbf-a065c796cb32.jpg)
