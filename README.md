@@ -17,3 +17,7 @@ Made by [@ferdinandvogler](http://www.twitter.com/ferdinandvogler)
 ![Screenshot 1](https://cloud.githubusercontent.com/assets/8401092/10410604/d2e930f8-6f46-11e5-9138-8e36ba226a05.png)
 
 ![Screenshot 2](https://cloud.githubusercontent.com/assets/8401092/10410602/c97be5ce-6f46-11e5-9dbf-a065c796cb32.jpg)
+
+### Enjoy working with Native UI?
+
+[Tell others on Twitter](https://twitter.com/intent/tweet?text=Native%20UI,%20a%20Atom%20theme%20for%20El%20Capitan&url=http%3A%2F%2Fatom.io/themes/native-ui&via=ferdinandvogler) and [let's talk](https://twitter.com/intent/tweet?text=@ferdinandvogler) about other features you would like.
