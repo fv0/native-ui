@@ -1,4 +1,4 @@
-![](https://github.com/fv0/native-ui/raw/master/assets/logo__atom-native-ui.png)
+![Logo Native UI](https://github.com/fv0/native-ui/raw/master/assets/logo__atom-native-ui.png)
 
 # Native UI
 
@@ -14,4 +14,4 @@ Made by [@ferdinandvogler](http://www.twitter.com/ferdinandvogler)
 - Packages: [file-icons](https://atom.io/packages/file-icons)
 - High-resolution display
 
-### Screenshots
+![Screenshot 1](https://github.com/fv0/native-ui/blob/master/assets/screenshot__atom-native-ui--1.jpg)
