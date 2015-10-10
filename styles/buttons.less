@@ -38,10 +38,6 @@
   .btn-background(@bg, @hover, @selected, @border, @text-color-selected, @text-color-selected);
 }
 
-// .btn {
-//   .btn-background(@button-background-color, @button-background-color-hover, @button-background-color-selected, @button-border-color, @text-color, @text-color-highlight);
-// }
-
 //===============================================
 
 .btn-builder(@color) {
@@ -65,7 +61,6 @@
     border-right: 1px solid darken(@color, 15%);
     border-bottom: 1px solid darken(@color, 20%);
     box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.3);
-    // outline-style: none;
   }
 
   &:focus {
@@ -120,10 +115,6 @@
 
   .btn-selected-light(@background-color-info);
 }
-
-// .btn.btn-primary {
-//   .btn-variant(@background-color-info);
-// }
 
 .btn.btn-success {
   .btn-builder(@background-color-success);

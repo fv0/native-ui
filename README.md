@@ -1,4 +1,4 @@
-![](assets/logo__atom-native-ui.png)
+![](https://github.com/fv0/native-ui/raw/master/assets/logo__atom-native-ui.png)
 
 # Native UI
 
@@ -8,19 +8,10 @@ Made by [@ferdinandvogler](http://www.twitter.com/ferdinandvogler)
 
 ---
 
-### Key features
-
-- Updated to the new system font [San Francisco](https://developer.apple.com/fonts/)
-- Tab display like in Finder
-- Git status display similar to tags in Finder
-
 ### Recommended setup
 
 - OSX 10.11. El Capitan (necessary for correct font display)
-- [Package: file-icons](https://atom.io/packages/file-icons)
+- Packages: [file-icons](https://atom.io/packages/file-icons)
+- High-resolution display
 
-Please report any issues you find, I will look through them. I am also considering a dark theme.
-
-### How to install
-
-Download this package and extract to your home folder in `.atom` → `Packages`. Remove the Github branch name `-master` at the end of the extracted folder name.
+### Screenshots
