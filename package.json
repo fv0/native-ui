@@ -1,7 +1,7 @@
 {
   "name": "native-ui",
   "theme": "ui",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Your theme for a better code experience in OSX El Capitan.",
   "repository": "https://github.com/fv0/native-ui.git",
   "engines": {
