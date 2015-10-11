@@ -1,7 +1,5 @@
 ![Banner Native UI](https://cloud.githubusercontent.com/assets/8401092/10410603/c97caaf4-6f46-11e5-842d-43d67dc9c570.jpg)
 
-# Native UI
-
 Get the new OS X El Capitan user interface elements in Atom. Experience a reduced, more native feeling for your favorite code editor. No redundant transitions or fancy effects distracting you from your daily work.
 
 Made by [@ferdinandvogler](http://www.twitter.com/ferdinandvogler)
