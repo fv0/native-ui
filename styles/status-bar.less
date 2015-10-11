@@ -1,0 +1,49 @@
+@status-bar-spacing: 20px;
+
+status-bar {
+  box-shadow: 0 -1px rgba(0, 0, 0, 0.3);
+  background: @status-bar-background-color;
+  height: @tab-height;
+  line-height: @tab-height;
+}
+
+status-bar .status-bar-right .inline-block {
+  margin-left: @status-bar-spacing;
+}
+
+status-bar .flexbox-repaint-hack {
+  padding-right: 0;
+}
+
+status-bar .git-branch,
+status-bar .git-status {
+  background-color: darken(@status-bar-background-color, 50%);
+  padding: 0 @status-bar-spacing;
+  position: relative;
+  top: -1px;
+  color: @text-color-selected;
+}
+
+status-bar .git-branch {
+  margin-left: 0;
+}
+
+status-bar .git-status.inline-block {
+  margin-left: 0;
+  padding-left: 0;
+  padding-right: @status-bar-spacing;
+}
+
+status-bar .text-warning {
+  color: @text-color;
+
+  &:hover {
+    text-decoration: underline;
+    color: inherit;
+    cursor: pointer;
+  }
+}
+
+grammar-selector-status {
+  margin-right: @status-bar-spacing;
+}
