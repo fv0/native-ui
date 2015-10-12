@@ -16,6 +16,7 @@ status-bar .flexbox-repaint-hack {
 }
 
 status-bar .git-branch,
+status-bar .git-commits,
 status-bar .git-status {
   background-color: darken(@status-bar-background-color, 50%);
   padding: 0 @status-bar-spacing;
@@ -32,6 +33,11 @@ status-bar .git-status.inline-block {
   margin-left: 0;
   padding-left: 0;
   padding-right: @status-bar-spacing;
+}
+
+status-bar .git-commits.inline-block {
+  margin-left: 0;
+  padding-left: 0;
 }
 
 status-bar .text-warning {
