@@ -12,9 +12,9 @@ atom-panel atom-text-editor[mini],
   transition: box-shadow @transition--default;
 
   &.is-focused {
-    border-color: @tab-bar-border-color;;
+    border-color: @input-border-color-active;
     color: @text-color-highlight;
-    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 0 0 3px @input-outline-color-active;
   }
 }
 
