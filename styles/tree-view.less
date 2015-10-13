@@ -125,17 +125,17 @@
 	color: @text-color;
 }
 
-.status-modified .header.list-item {
+.expanded.status-modified .header.list-item:before,
+.expanded.status-added .header.list-item:before {
+	color: @text-color;
+}
+
+.status-modified > .header.list-item {
 	.git-status-bullet(@text-color-modified);
 	.git-status-folder(@text-color-modified);
 }
 
-.status-added .header.list-item {
+.status-added > .header.list-item {
 	.git-status-bullet(@text-color-added);
 	.git-status-folder(@text-color-added);
-}
-
-.expanded.status-modified .header.list-item:before,
-.expanded.status-added .header.list-item:before {
-	color: @text-color;
 }
