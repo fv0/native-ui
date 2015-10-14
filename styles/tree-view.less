@@ -1,5 +1,36 @@
 @import "ui-variables";
 
+// start MIXINS ==================================================
+
+.git-status-bullet(@color) {
+	&:after {
+		content: '';
+		float: left;
+		position: relative;
+		left: -12px;
+		margin-right: -13px;
+		margin-top: 10px;
+		background-color: @color;
+		border-radius: 100%;
+		width: 6px;
+		height: 6px;
+		border: 1px solid darken(@color, 10%);
+	}
+}
+
+.git-status-folder(@color) {
+	&:after {
+		margin-top: 10px;
+		left: 15px;
+		border-color: @base-background-color;
+		width: 6px;
+		height: 6px;
+	}
+}
+
+//================================================== end MIXINS
+
+
 .tree-view {
 	font-size: 12px;
 
@@ -36,6 +67,9 @@
 			&.project-root:not(.list-nested-item).selected,
 			&.project-root.list-nested-item.selected > div.list-item,
 
+			&.selected.expanded > .header.list-item:before,
+			&.selected.collapsed > .header.list-item:before,
+
 			&.list-tree li.file:not(.list-nested-item).status-modified.selected,
 			&.list-tree li.file:not(.list-nested-item).status-added.selected,
 
@@ -47,32 +81,6 @@
 				color: white;
 			}
 		}
-	}
-}
-
-.git-status-bullet(@color) {
-	&:after {
-		content: '';
-		float: left;
-		position: relative;
-		left: -12px;
-		margin-right: -13px;
-		margin-top: 10px;
-		background-color: @color;
-		border-radius: 100%;
-		width: 6px;
-		height: 6px;
-		border: 1px solid darken(@color, 10%);
-	}
-}
-
-.git-status-folder(@color) {
-	&:after {
-		margin-top: 10px;
-		left: 15px;
-		border-color: @base-background-color;
-		width: 6px;
-		height: 6px;
 	}
 }
 
