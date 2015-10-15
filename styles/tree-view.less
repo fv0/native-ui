@@ -147,3 +147,10 @@
 	.git-status-bullet(@text-color-added);
 	.git-status-folder(@text-color-added);
 }
+
+.list-group li:not(.list-nested-item),
+.list-tree li:not(.list-nested-item),
+.list-group li.list-nested-item > .list-item,
+.list-tree li.list-nested-item > .list-item {
+	text-shadow: none;
+}
