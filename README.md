@@ -1,6 +1,6 @@
 ![Banner Native UI](https://cloud.githubusercontent.com/assets/8401092/10431452/6cc37250-7105-11e5-85a8-86ef6c846ff4.png)
 
-Get the new OS X El Capitan user interface elements and typography in Atom. Experience a reduced, more native feeling for your favorite code editor. No redundant transitions or fancy effects distracting you from your daily work.
+Get the new OS X El Capitan user interface elements and improved typography in Atom. Experience a reduced, more native feeling for your favorite code editor. No redundant transitions or fancy effects distracting you from your daily work.
 
 Made by [@ferdinandvogler](http://www.twitter.com/ferdinandvogler)
 
@@ -9,8 +9,8 @@ Made by [@ferdinandvogler](http://www.twitter.com/ferdinandvogler)
 ### Recommended setup
 
 - OSX El Capitan (necessary for correct font display)
-- Packages: [file-icons](https://atom.io/packages/file-icons) (grayscale)
 - High-resolution display
+- Packages: [file-icons](https://atom.io/packages/file-icons) (grayscale)
 
 ![Screenshot 1](https://cloud.githubusercontent.com/assets/8401092/10428346/0270577e-70f1-11e5-8650-a06bf088b111.png)
 
