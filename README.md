@@ -20,6 +20,14 @@ Made by [@ferdinandvogler](http://www.twitter.com/ferdinandvogler)
 
 ![Screenshot 4](https://cloud.githubusercontent.com/assets/8401092/10428349/028637e2-70f1-11e5-880d-6f4c203f9fd2.png)
 
+---
+
+### OSX Icon
+
+- [Atom.icns](https://github.com/fv0/native-ui/raw/master/Atom.icns)
+
+---
+
 ### Enjoy working with Native UI?
 
 [Tell others on Twitter](https://twitter.com/intent/tweet?text=Native%20UI,%20a%20Atom%20theme%20for%20El%20Capitan&url=http%3A%2F%2Fatom.io/themes/native-ui&via=ferdinandvogler) and [let's talk](https://twitter.com/intent/tweet?text=@ferdinandvogler) about other features you would like.
