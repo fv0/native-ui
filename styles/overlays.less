@@ -77,7 +77,7 @@ atom-panel.modal {
   }
 
   .list-group .character-match {
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1);
     background: rgba(0, 0, 0, 0.1);
     color: inherit;
     font-weight: normal;
@@ -89,4 +89,8 @@ atom-panel.modal {
   border-radius: @border-radius--base;
   border: none;
   box-shadow: 0 0 0 1px @tab-bar-border-color;
+}
+
+.suggestion-list-scroller {
+  border-radius: @border-radius--base @border-radius--base 0 0;
 }
