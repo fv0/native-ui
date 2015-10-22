@@ -1,0 +1,130 @@
+ul.list-tree.matches > li.search-result.list-item {
+  padding-left: 0; // align with file type icon
+
+  &:before {
+    content: '';
+    background-color: transparent;
+    position: absolute;
+    left: @component-padding + 1;
+    right: @component-padding + 1;
+    height: 25px;
+  }
+
+  &.selected:before {
+    left: @component-padding + 1;
+    right: @component-padding + 1;
+  }
+
+  &:hover:before {
+    background-color: @base-background-color;
+    cursor: pointer;
+  }
+
+  &:hover.selected {
+    &:before {
+      background-color: @base-background-color;
+    }
+  }
+}
+
+.list-group .selected:before,
+.list-tree .selected:before {
+  left: @component-padding + 1;
+  right: @component-padding + 1;
+  background-color: @base-background-color;
+}
+
+
+
+.results-view li.search-result.list-item {
+  margin-left: 0;
+}
+
+
+
+ul.list-tree.matches {
+  &:hover {
+    cursor: pointer; // avoid cursor flashing between list items
+  }
+}
+
+
+.preview-pane .results-view .line-number,
+.preview-pane .results-view .preview {
+  position: relative; // otherwise the :before will overlay the text
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.preview-pane .results-view .search-result {
+  padding: 0;
+}
+
+.preview-pane .results-view .line-number {
+  width: 15px;
+  text-align: left;
+  margin-right: 22px; // align with file name
+}
+
+.preview-pane .results-view .selected .line-number {
+  color: @text-color-subtle;
+}
+
+
+
+
+
+.results-view li.path.list-nested-item {
+  margin-bottom: 20px; // seperate single files
+  background-color: @input-background-color;
+  border-radius: @border-radius--base;
+  padding: 8px 12px;
+  border: 1px solid @tab-bar-border-color;
+
+  &:hover {
+    cursor: pointer; // avoid cursor flashing between list items
+  }
+
+  &:first-child {
+    margin-top: 55px;
+  }
+}
+
+
+.results-view .path-details.list-item {
+  font-size: @font-size-h4;
+  margin-bottom: 8px; // same as vertical padding for container box
+
+  &:hover {
+    cursor: pointer;
+    color: @text-color-subtle;
+  }
+
+
+}
+
+.results-view .selected > div.path-details.list-item {
+  color: @text-color-selected;
+}
+
+.preview-pane .panel-heading {
+  padding: 17px 35px;
+  text-align: center;
+  font-family: @font-family-headlines;
+  font-size: 1.75em; // same as Atom settings headings
+  background-image: none;
+  font-weight: bold;
+  background-color: fade(@base-background-color, 90%);
+  border-top: 1px solid @tab-bar-border-color;
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+}
+
+.preview-pane .preview .match,
+.preview-pane .preview .replacement {
+  padding: 1px;
+  border-radius: 0;
+}
