@@ -1,10 +1,11 @@
 @status-bar-spacing: 20px;
+@status-bar-optical-corrector: 3px;
 
 status-bar {
   box-shadow: 0 -1px rgba(0, 0, 0, 0.3);
   background: @status-bar-background-color;
   height: @tab-height;
-  line-height: @tab-height;
+  line-height: @tab-height - @status-bar-optical-corrector; // optical correct to center vertically
 }
 
 status-bar .status-bar-right .inline-block {
@@ -23,6 +24,8 @@ status-bar .git-status {
   position: relative;
   top: -1px;
   color: @text-color-selected;
+  height: @tab-height + 1; // +1 because of border
+  padding-top: @status-bar-optical-corrector;
 }
 
 status-bar .git-branch.inline-block {
