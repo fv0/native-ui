@@ -12,13 +12,13 @@ Made by [@ferdinandvogler](http://www.twitter.com/ferdinandvogler)
 - High-resolution display
 - Packages: [file-icons](https://atom.io/packages/file-icons) (grayscale)
 
-![Screenshot 1](https://cloud.githubusercontent.com/assets/8401092/10428346/0270577e-70f1-11e5-8650-a06bf088b111.png)
+![Screenshot 1](https://cloud.githubusercontent.com/assets/8401092/10660279/2b90f2a0-78a6-11e5-8fe9-841e1f451832.png)
 
-![Screenshot 2](https://cloud.githubusercontent.com/assets/8401092/10428347/02712bc2-70f1-11e5-85d1-aa9515861bb8.png)
+![Screenshot 2](https://cloud.githubusercontent.com/assets/8401092/10660333/859edeba-78a6-11e5-91a6-1c9ec1b362ed.png)
 
-![Screenshot 3](https://cloud.githubusercontent.com/assets/8401092/10428348/02821e8c-70f1-11e5-93a7-4e56ed7d0b38.png)
+![Screenshot 3](https://cloud.githubusercontent.com/assets/8401092/10660282/2ba93d9c-78a6-11e5-96d3-1ed7fe2e3f2a.png)
 
-![Screenshot 4](https://cloud.githubusercontent.com/assets/8401092/10428349/028637e2-70f1-11e5-880d-6f4c203f9fd2.png)
+![Screenshot 4](https://cloud.githubusercontent.com/assets/8401092/10660332/859ed244-78a6-11e5-825e-dd04b77fcdc6.png)
 
 ---
 
