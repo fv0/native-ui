@@ -8,14 +8,36 @@ status-bar {
   line-height: @tab-height - @status-bar-optical-corrector; // optical correct to center vertically
 }
 
+status-bar .status-bar-right a.inline-block {
+  line-height: @tab-height;
+  margin-left: 0;
+  padding: 0 @status-bar-spacing;
+  height: @tab-height + 1;
+
+  &:hover {
+    background-color: @tab-background-color;
+    text-decoration: none;
+  }
+
+  &:active,
+  &:focus {
+    background-color: @tab-bar-background-color;
+    text-decoration: none;
+  }
+}
+
+// status-bar .status-bar-right .inline-block > .inline-block
+
 status-bar .status-bar-right .inline-block {
-  margin-left: @status-bar-spacing;
+  margin-left: 0;
 }
 
 status-bar .flexbox-repaint-hack {
   padding-right: 0;
 }
 
+// START ----------------------------------------
+// Git Bar
 status-bar .git-branch,
 status-bar .git-commits,
 status-bar .git-status {
@@ -42,6 +64,10 @@ status-bar .git-commits.inline-block {
   margin-left: 0;
   padding-left: 0;
 }
+// Git Bar
+// END ----------------------------------------
+
+
 
 status-bar .text-warning {
   color: @text-color;
@@ -51,10 +77,6 @@ status-bar .text-warning {
     color: inherit;
     cursor: pointer;
   }
-}
-
-grammar-selector-status.grammar-status.inline-block {
-  margin-right: @status-bar-spacing;
 }
 
 .package-updates-status-view.inline-block.text {
