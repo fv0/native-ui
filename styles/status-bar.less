@@ -13,6 +13,7 @@ status-bar .status-bar-right a.inline-block {
   margin-left: 0;
   padding: 0 @status-bar-spacing;
   height: @tab-height + 1;
+  border-left: 1px solid @tab-bar-border-color;
 
   &:hover {
     background-color: @tab-background-color;
@@ -24,9 +25,7 @@ status-bar .status-bar-right a.inline-block {
     background-color: @tab-bar-background-color;
     text-decoration: none;
   }
-}
-
-// status-bar .status-bar-right .inline-block > .inline-block
+}// status-bar .status-bar-right a.inline-block
 
 status-bar .status-bar-right .inline-block {
   margin-left: 0;
@@ -86,4 +85,8 @@ status-bar .text-warning {
   .icon-package {
     color: @text-color-info;
   }
+}
+
+status-bar .status-bar-right .release-notes-status {
+  padding: 0 @status-bar-spacing;
 }
