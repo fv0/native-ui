@@ -1,13 +1,11 @@
 @import "ui-variables";
 
 .tooltip {
-  @tip-background-color: #333;
-  @tip-text-color: #fff;
   white-space: nowrap;
 
   .keystroke {
-    font-family: Helvetica, Arial, sans-serif;
-    font-size: 13px;
+    // font-family: Helvetica, Arial, sans-serif;
+    // font-size: 13px;
     color: #c0c0c0;
     padding-left: 2px;
   }
@@ -15,36 +13,38 @@
   &.in { opacity: 1; }
 
   .tooltip-inner {
-    line-height: 19px;
-    border-radius: @component-border-radius;
+    // border-radius: @component-border-radius;
     background-color: @tip-background-color;
+    padding: (@component-padding / 2) @component-padding;
     color: @tip-text-color;
     white-space: nowrap;
     max-width: none;
+    box-shadow: 0 0 0 1px @tip-arrow-color;
+    border-radius: @border-radius--base;
   }
 
   &.top .tooltip-arrow {
-    border-top-color: @tip-background-color;
+    border-top-color: @tip-arrow-color;
   }
   &.top-left .tooltip-arrow {
-    border-top-color: @tip-background-color;
+    border-top-color: @tip-arrow-color;
   }
   &.top-right .tooltip-arrow {
-    border-top-color: @tip-background-color;
+    border-top-color: @tip-arrow-color;
   }
   &.right .tooltip-arrow {
-    border-right-color: @tip-background-color;
+    border-right-color: @tip-arrow-color;
   }
   &.left .tooltip-arrow {
-    border-left-color: @tip-background-color;
+    border-left-color: @tip-arrow-color;
   }
   &.bottom .tooltip-arrow {
-    border-bottom-color: @tip-background-color;
+    border-bottom-color: @tip-arrow-color;
   }
   &.bottom-left .tooltip-arrow {
-    border-bottom-color: @tip-background-color;
+    border-bottom-color: @tip-arrow-color;
   }
   &.bottom-right .tooltip-arrow {
-    border-bottom-color: @tip-background-color;
+    border-bottom-color: @tip-arrow-color;
   }
 }
