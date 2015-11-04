@@ -1,5 +1,7 @@
 @import "ui-variables";
 
+@height__list-item: @tab-height;
+
 // start MIXINS ==================================================
 
 .git-status-bullet(@color) {
@@ -37,6 +39,11 @@
 	.selected:before {
 		background: @background-color-highlight;
 	}
+}
+
+.list-group .selected:before,
+.list-tree .selected:before {
+	height: @height__list-item;
 }
 
 .tree-view-scroller {
@@ -160,11 +167,14 @@
 	.git-status-folder(@text-color-added);
 }
 
-
-
 .list-group li:not(.list-nested-item),
 .list-tree li:not(.list-nested-item),
 .list-group li.list-nested-item > .list-item,
 .list-tree li.list-nested-item > .list-item {
 	text-shadow: none;
+	line-height: @height__list-item;
+}
+
+.list-tree.has-collapsable-children .list-nested-item.collapsed.status-ignored > .list-item::before {
+	color: @text-color-ignored;
 }
