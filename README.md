@@ -27,7 +27,7 @@ Made by [@ferdinandvogler](http://www.twitter.com/ferdinandvogler)
 
 ![Screenshot 2](https://cloud.githubusercontent.com/assets/8401092/10660333/859edeba-78a6-11e5-91a6-1c9ec1b362ed.png)
 
-![Screenshot 3](https://cloud.githubusercontent.com/assets/8401092/10660282/2ba93d9c-78a6-11e5-96d3-1ed7fe2e3f2a.png)
+![Screenshot 3](https://cloud.githubusercontent.com/assets/8401092/11016652/e35d2536-8588-11e5-85f5-12cad96e212d.png)
 
 ![Screenshot 4](https://cloud.githubusercontent.com/assets/8401092/10660332/859ed244-78a6-11e5-825e-dd04b77fcdc6.png)
 
