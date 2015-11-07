@@ -98,3 +98,8 @@ atom-panel.modal {
 .suggestion-list-scroller {
   border-radius: @border-radius--base @border-radius--base 0 0;
 }
+
+// Don't display when no results
+ol.list-group:empty {
+  display: none;
+}
