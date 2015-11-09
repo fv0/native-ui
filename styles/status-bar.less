@@ -29,6 +29,14 @@ status-bar .status-bar-right a.inline-block {
 
 status-bar .status-bar-right .inline-block {
   margin-left: 0;
+
+  > div { // for fields that don't contain a link
+    border-left: 1px solid @tab-bar-border-color;
+    color: @text-color-subtle; // this is not a link, so make it more subtle
+    line-height: @tab-height;
+    height: @tab-height + 1;
+    padding: 0 @status-bar-spacing;
+  }
 }
 
 status-bar .flexbox-repaint-hack {
@@ -80,6 +88,7 @@ status-bar .text-warning {
 
 .package-updates-status-view.inline-block.text {
   margin-right: @status-bar-spacing;
+  margin-left: @status-bar-spacing;
   color: @text-color;
 
   .icon-package {
