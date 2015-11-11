@@ -1,3 +1,5 @@
+@import "syntax-variables";
+
 @status-bar-spacing: 20px;
 @status-bar-optical-corrector: 3px;
 
@@ -48,7 +50,7 @@ status-bar .flexbox-repaint-hack {
 status-bar .git-branch,
 status-bar .git-commits,
 status-bar .git-status {
-  background-color: darken(@status-bar-background-color, 50%);
+  background-color: hsl(@ui-hue, 10%, 30%);
   padding: 0 @status-bar-spacing;
   position: relative;
   top: -1px;
