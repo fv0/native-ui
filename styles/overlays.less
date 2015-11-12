@@ -19,6 +19,7 @@ atom-panel.modal,
 
     li {
       padding: @component-padding;
+      border-bottom: 1px solid @tab-bar-border-color;
 
       &.two-lines {
         padding: @component-padding/2 @component-padding;
@@ -41,6 +42,8 @@ atom-panel.modal,
       &.selected {
         color: #fff;
         background-color: @background-color-selected;
+        border-bottom-color: @background-color-selected;
+        box-shadow: 0 -1px 0 0 @background-color-selected;
       }
 
       .status.icon {

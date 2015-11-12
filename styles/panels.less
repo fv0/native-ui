@@ -48,3 +48,28 @@ atom-panel, .tool-panel {
 .project-find {
   box-shadow: 0 -1px @tab-bar-border-color;
 }
+
+// Make the panel more like the Spotlight search
+atom-panel.modal atom-text-editor[mini],
+.overlay atom-text-editor[mini] {
+  color: @text-color;
+  font-family: @font-family;
+  font-size: 1.75em;
+  max-height: 28px;
+  margin: 0 -@component-padding;
+  padding: 0 @component-padding 0 @component-padding;
+
+  &.is-focused,
+  &:hover {
+    border: none;
+    background-color: transparent;
+    box-shadow: none !important;
+  }
+
+  // Adjust the cursor
+  .cursor,
+  &::shadow .cursor {
+    height: 100% !important;
+    margin-top: 0px;
+  }
+}
