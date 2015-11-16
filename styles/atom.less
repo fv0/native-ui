@@ -16,3 +16,9 @@ atom-panel.panel-left,
 ::-webkit-scrollbar {
   display: none;
 }
+
+// Fix for #12
+atom-pane-container atom-pane,
+atom-pane-container atom-pane:focus {
+  background-color: @app-background-color !important;
+}
