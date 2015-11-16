@@ -6,7 +6,7 @@
   .keystroke {
     // font-family: Helvetica, Arial, sans-serif;
     // font-size: 13px;
-    color: #c0c0c0;
+    color: @text-color-subtle;
     padding-left: 2px;
   }
 
@@ -15,11 +15,10 @@
   .tooltip-inner {
     // border-radius: @component-border-radius;
     background-color: @tip-background-color;
-    padding: (@component-padding / 2) @component-padding;
+    padding: (@component-padding / 4) @component-padding;
     color: @tip-text-color;
     white-space: nowrap;
     max-width: none;
-    box-shadow: 0 0 0 1px @tip-arrow-color;
     border-radius: @border-radius--base;
   }
 
