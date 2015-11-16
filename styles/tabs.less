@@ -36,10 +36,14 @@
     // min-width: 12.5%; // 1/8
     max-width: 100%;
     flex-grow: 1;
-    transition: flex-grow 1s linear;
+    transition: background-color @transition--default;
 
     &.active {
       flex: 1; // don't change tab size when selected
+    }
+
+    &:hover {
+      background-color: @tab-background-color-hover;
     }
 
     &:first-child {
