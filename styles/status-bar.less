@@ -1,13 +1,12 @@
 @import "syntax-variables";
 
 @status-bar-spacing: 20px;
-@status-bar-optical-corrector: 3px;
 
 status-bar {
   box-shadow: 0 -1px @tab-bar-border-color;
   background: @status-bar-background-color;
   height: @tab-height;
-  line-height: @tab-height - @status-bar-optical-corrector; // optical correct to center vertically
+  line-height: @tab-height; // optical correct to center vertically
 }
 
 status-bar .status-bar-right a.inline-block {
@@ -52,11 +51,9 @@ status-bar .git-commits,
 status-bar .git-status {
   background-color: hsl(@ui-hue, 10%, 30%);
   padding: 0 @status-bar-spacing;
-  position: relative;
-  top: -1px;
+  margin-top: -1px;
   color: @text-color-selected;
   height: @tab-height + 1; // +1 because of border
-  padding-top: @status-bar-optical-corrector;
 }
 
 status-bar .git-branch.inline-block {
