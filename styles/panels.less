@@ -50,26 +50,31 @@ atom-panel, .tool-panel {
 }
 
 // Make the panel more like the Spotlight search
-atom-panel.modal atom-text-editor[mini],
-.overlay atom-text-editor[mini] {
-  color: @text-color;
-  font-family: @font-family;
-  font-size: 1.75em;
-  max-height: 28px;
-  margin: 0 -@component-padding;
-  padding: 0 @component-padding 0 @component-padding;
+.command-palette,
+.fuzzy-finder {
+  atom-text-editor[mini],
+  atom-text-editor[mini] {
+    color: @text-color;
+    font-family: @font-family;
+    font-size: 1.75em;
+    margin: 0 -@component-padding;
+    padding: 0 @component-padding 0 @component-padding;
 
-  &.is-focused,
-  &:hover {
-    border: none;
-    background-color: transparent;
-    box-shadow: none !important;
-  }
+    &.is-focused,
+    &:hover {
+      border: none;
+      background-color: transparent;
+      box-shadow: none !important;
+      height: 150px;
+      position: relative;
 
-  // Adjust the cursor
-  .cursor,
-  &::shadow .cursor {
-    height: 100% !important;
-    margin-top: 0px;
+    }
+
+    // Adjust the cursor
+    .cursor,
+    &::shadow .cursor {
+      height: 100% !important;
+      margin-top: 0px;
+    }
   }
 }
