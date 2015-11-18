@@ -9,73 +9,62 @@ status-bar {
   line-height: @tab-height; // optical correct to center vertically
 }
 
-status-bar .status-bar-right a.inline-block {
-  line-height: @tab-height;
-  margin-left: 0;
+// Override inherent padding
+status-bar .status-bar-right .inline-block {
+  margin: 0;
+}
+
+status-bar .status-bar-right a.inline-block,
+status-bar .status-bar-right div.inline-block {
+  margin: 0;
+  height: @tab-height + 2; // addition because of border
   padding: 0 @status-bar-spacing;
-  height: @tab-height + 1;
   border-left: 1px solid @tab-bar-border-color;
 
-  &:hover {
+  &:hover:not([class|="git"]) {
     background-color: @tab-background-color;
     text-decoration: none;
   }
 
-  &:active,
-  &:focus {
+  &:active:not([class|="git"]),
+  &:focus:not([class|="git"]) {
     background-color: @tab-bar-background-color;
     text-decoration: none;
   }
 }// status-bar .status-bar-right a.inline-block
 
-status-bar .status-bar-right .inline-block {
-  margin-left: 0;
-
-  > div { // for fields that don't contain a link
-    border-left: 1px solid @tab-bar-border-color;
-    color: @text-color-subtle; // this is not a link, so make it more subtle
-    line-height: @tab-height;
-    height: @tab-height + 1;
-    padding: 0 @status-bar-spacing;
-  }
-}
-
 status-bar .flexbox-repaint-hack {
   padding-right: 0;
+  padding-left: @status-bar-spacing;
 }
 
-// START ----------------------------------------
-// Git Bar
+
+
+//┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄ START ┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┐
+// Git status bar
+
+@background-git-view: hsl(@ui-hue, 10%, 30%);
+
+.git-view {
+  margin-right: -1px; // otherwise there's a thin white line on the right
+  background-color: @background-git-view;
+}
+
 status-bar .git-branch,
 status-bar .git-commits,
 status-bar .git-status {
-  background-color: hsl(@ui-hue, 10%, 30%);
-  padding: 0 @status-bar-spacing;
-  margin-top: -1px;
   color: @text-color-selected;
   height: @tab-height + 1; // +1 because of border
-}
-
-status-bar .git-branch.inline-block {
-  margin-left: 0;
-  padding-right: 0;
-}
-
-status-bar .git-status.inline-block {
-  margin-left: 0;
   padding-right: @status-bar-spacing;
+  border-left-color: lighten(@background-git-view, 20%) !important;
 }
 
-status-bar .git-commits.inline-block {
-  margin-left: 0;
-  padding-left: 0;
+status-bar .git-view > .git-branch.inline-block {
+  border-left: none;
 }
 
-.git-view {
-  margin-right: -1px;
-}
-// Git Bar
-// END ----------------------------------------
+// Git status bar
+//┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄ END ┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┘
 
 
 
