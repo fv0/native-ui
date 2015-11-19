@@ -1,29 +1,25 @@
 @import "syntax-variables";
 
-@status-bar-spacing: 20px;
+@status-bar-spacing: @component-padding * 2;
 
 status-bar {
-  box-shadow: 0 -1px @tab-bar-border-color;
+  box-shadow: 0 -1px @tab-bar-border-color-transparent;
   background: @status-bar-background-color;
   height: @tab-height;
   line-height: @tab-height; // optical correct to center vertically
 }
 
-// Override inherent padding
-status-bar .status-bar-right .inline-block {
+status-bar .status-bar-right > .inline-block,
+status-bar .status-bar-right .git-view .inline-block {
   margin: 0;
-}
-
-status-bar .status-bar-right a.inline-block,
-status-bar .status-bar-right div.inline-block {
-  margin: 0;
-  height: @tab-height + 2; // addition because of border
+  height: @tab-height; // addition because of border
   padding: 0 @status-bar-spacing;
-  border-left: 1px solid @tab-bar-border-color;
+  // border-left: 1px solid @tab-bar-border-color;
 
   &:hover:not([class|="git"]) {
     background-color: @tab-background-color;
     text-decoration: none;
+    color: inherit;
   }
 
   &:active:not([class|="git"]),
@@ -33,9 +29,13 @@ status-bar .status-bar-right div.inline-block {
   }
 }// status-bar .status-bar-right a.inline-block
 
+status-bar a:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
 status-bar .flexbox-repaint-hack {
   padding-right: 0;
-  padding-left: @status-bar-spacing;
 }
 
 
@@ -48,19 +48,14 @@ status-bar .flexbox-repaint-hack {
 .git-view {
   margin-right: -1px; // otherwise there's a thin white line on the right
   background-color: @background-git-view;
+  padding: 0 @status-bar-spacing;
+  padding-right: 0;
 }
 
-status-bar .git-branch,
-status-bar .git-commits,
-status-bar .git-status {
+status-bar .status-bar-right .git-view .inline-block {
   color: @text-color-selected;
-  height: @tab-height + 1; // +1 because of border
-  padding-right: @status-bar-spacing;
-  border-left-color: lighten(@background-git-view, 20%) !important;
-}
-
-status-bar .git-view > .git-branch.inline-block {
-  border-left: none;
+  padding: 0 @status-bar-spacing;
+  padding-left: 0;
 }
 
 // Git status bar
@@ -68,30 +63,30 @@ status-bar .git-view > .git-branch.inline-block {
 
 
 
-status-bar .text-warning {
+status-bar .text-warning,
+.package-updates-status-view {
   color: @text-color;
 
   &:hover {
-    text-decoration: underline;
-    color: inherit;
+    text-decoration: none;
     cursor: pointer;
   }
 }
 
-.package-updates-status-view.inline-block.text {
-  margin-right: @status-bar-spacing;
-  margin-left: @status-bar-spacing;
+.package-updates-status-view .icon-package {
   color: @text-color;
-
-  .icon-package {
-    color: @text-color-info;
-  }
 }
 
 status-bar .status-bar-right .release-notes-status {
   padding: 0 @status-bar-spacing;
 }
 
+// When nothing is displayed in the window sometimes there's a empty link which Atom produces
 a.line-ending-tile.inline-block:empty {
   display: none;
+}
+
+// Override default padding, because not necessary
+status-bar .status-bar-right {
+  padding-left: 0;
 }
