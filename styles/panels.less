@@ -51,7 +51,8 @@ atom-panel, .tool-panel {
 
 // Make the panel more like the Spotlight search
 .command-palette,
-.fuzzy-finder {
+.fuzzy-finder,
+.symbols-view {
   atom-text-editor[mini],
   atom-text-editor[mini] {
     color: @text-color;
@@ -77,4 +78,10 @@ atom-panel, .tool-panel {
       margin-top: 0px;
     }
   }
+}
+
+// Increase padding from label to the input
+.tree-view-dialog label + .editor.mini {
+  margin-top: @component-padding;
+  margin-bottom: 0;
 }
