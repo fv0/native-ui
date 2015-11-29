@@ -89,12 +89,21 @@
   }
 }
 
+autocomplete-suggestion-list .suggestion-list-scroller {
+  border-radius: @border-radius--base @border-radius--base 0 0;
+}
+
+autocomplete-suggestion-list.select-list.popover-list .suggestion-description {
+  border-radius: 0 0 @border-radius--base @border-radius--base;
+  background-color: @status-bar-background-color;
+  color: @text-color;
+  line-height: 1.15; // vertically center the text
+  border-top: 1px solid @tab-bar-border-color;
+}
+
 .select-list.popover-list {
-  background-color: @overlay-background-color;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
   padding: @component-padding/2;
-  border-radius: @border-radius--base;
-  // border: 1px solid @overlay-border-color;
 
   atom-text-editor {
     margin-bottom: @component-padding/2;
@@ -105,12 +114,14 @@
   }
 }
 
-autocomplete-suggestion-list.select-list.popover-list .suggestion-description {
-  border-top: 1px solid #949494;
+autocomplete-suggestion-list.select-list.popover-list ol.list-group li:not(.selected) {
+  background-color: @overlay-background-color;
 }
 
-// .select-list ol.list-group li.selected, .select-list ol.list-group li.selected {
-// }
+autocomplete-suggestion-list .list-group .selected .icon-container .icon {
+  color: @text-color-selected;
+  background: darken(@background-color-selected, 10%);
+}
 
 .ui-sortable {
   li {

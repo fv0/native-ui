@@ -43,13 +43,14 @@ status-bar .flexbox-repaint-hack {
 //┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄ START ┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┐
 // Git status bar
 
-@background-git-view: hsl(@ui-hue, 10%, 30%);
+@background-git-view: hsl(@ui-hue, (@ui-s-s - 25), 15%);
 
 .git-view {
   margin-right: -1px; // otherwise there's a thin white line on the right
   background-color: @background-git-view;
   padding: 0 @status-bar-spacing;
   padding-right: 0;
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.1);
 }
 
 status-bar .status-bar-right .git-view .inline-block {

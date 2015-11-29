@@ -5,21 +5,21 @@
 
 .btn-builder(@color) {
   border-radius: @border-radius--base;
-  background-image: linear-gradient(to top, @color, lighten(@color, 5%));
+  background-image: linear-gradient(to top, @color, lighten(@color, 15%));
   font-weight: 500;
   font-size: 13px;
-  border: 1px solid darken(@color, 5%);
-  border-left: 1px solid darken(@color, 10%);
-  border-right: 1px solid darken(@color, 10%);
   border-bottom: 1px solid darken(@color, 15%);
+  border-top: 1px solid darken(@color, 5%);
+  border-left: 1px solid darken(@color, 5%);
+  border-right: 1px solid darken(@color, 5%);
 
   &:hover {
     cursor: default;
   }
 
   &:active {
-    background-image: linear-gradient(to top, darken(@color, 8%), @color);
-    border: 1px solid darken(@color, 10%);
+    background-image: linear-gradient(to top, darken(@color, 15%), @color);
+    border-top: 1px solid darken(@color, 10%);
     border-left: 1px solid darken(@color, 15%);
     border-right: 1px solid darken(@color, 15%);
     border-bottom: 1px solid darken(@color, 20%);
@@ -58,13 +58,6 @@
 .btn {
   .btn-builder(@btn-base-color);
   .btn-selected-default(@btn-base-color);
-}
-
-.btn.btn-default {
-  &:hover {
-    border: 1px solid @button-border-color;
-    border-bottom: 1px solid @button-border-color--bottom;
-  }
 }
 
 .btn.btn-info,
@@ -137,4 +130,34 @@ fieldset[disabled] .btn {
 
 .section-heading .btn {
   font-family: @font-family;
+}
+
+// Fix button groups
+
+.btn-group > .btn:last-child,
+.btn-group > .btn.selected:last-child,
+.btn-group > .dropdown-toggle {
+  border-top-right-radius: @border-radius--base;
+  border-bottom-right-radius: @border-radius--base;
+}
+
+// Limit the scope
+.search-container {
+  .btn-group > .btn:first-child,
+  .btn-group > .btn:last-child {
+    border-left: none;
+    border-right: none;
+  }
+
+  .btn-group > .btn:active {
+    border-top: none;
+    border-bottom: none;
+  }
+
+  .btn-group .btn + .btn,
+  .btn-group .btn + .btn-group,
+  .btn-group .btn-group + .btn,
+  .btn-group .btn-group + .btn-group {
+    margin-left: 0; // this was set to -1
+  }
 }

@@ -51,18 +51,12 @@
     // Tab title
 
     .title {
-      -webkit-mask: linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1) 1em) no-repeat;
-      backface-visibility: hidden;
       text-overflow: hidden;
-    }
-
-    &:hover .title {
-      color: @text-color;
     }
 
     &:hover .title,
     &.modified .title {
-      -webkit-mask: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8) 1em) no-repeat;
+      -webkit-mask: linear-gradient(to right, transparent, black 1em) no-repeat;
       -webkit-mask-position: 1.3em 0;
     }
 
