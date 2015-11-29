@@ -23,11 +23,11 @@ Made by [@ferdinandvogler](http://www.twitter.com/ferdinandvogler)
 
 ---
 
-![Features](https://cloud.githubusercontent.com/assets/8401092/11131077/f423be08-8988-11e5-8cc0-580acc96e587.jpg)
+![Features](https://cloud.githubusercontent.com/assets/8401092/11460430/3f462f2c-96ec-11e5-95ee-0481fd3b2e70.png)
 
-![Screenshot 1](https://cloud.githubusercontent.com/assets/8401092/11131023/b81e7740-8988-11e5-9f7f-18851527ca11.png)
+![Screenshot 1](https://cloud.githubusercontent.com/assets/8401092/11460431/3f629fea-96ec-11e5-9b1b-74d2130e4171.png)
 
-![Screenshot 2](https://cloud.githubusercontent.com/assets/8401092/11131025/b81e9446-8988-11e5-8697-f5504032fcc3.png)
+![Screenshot 2](https://cloud.githubusercontent.com/assets/8401092/11460432/3f64ab28-96ec-11e5-85d6-95c6d1adb6f5.png)
 
 ---
 
