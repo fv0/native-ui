@@ -2,6 +2,7 @@
 
 @tab-top-padding: 5px;
 @tab-bottom-border-height: 5px;
+@tab-padding-sides: 6px;
 @tab-border: 1px solid @tab-border-color;
 
 .tab-bar {
@@ -26,7 +27,7 @@
     border-right: 1px solid @tab-bar-border-color;
     line-height: @tab-height;
     color: @tab-text-color;
-    padding: 0 6px;
+    padding: 0 @tab-padding-sides;
     margin: 0;
     max-width: 100%;
     flex-grow: 1;
@@ -98,10 +99,15 @@
         display: inline-block; // display modified indicator when close button is not there
         top: 50%;
 
-        &:before {
+        &:before { // color of the close X
           color: @text-color-highlight;
         }
       }
+    }
+
+    &.modified:not(:hover) .close-icon {
+      width: 6px;
+      height: 6px;
     }
 
     &:hover .close-icon {
@@ -133,10 +139,14 @@
     &.modified {
       .close-icon {
         left: 10px;
-      }
+        width: 6px;
+        height: 6px;
+       }
 
       &:hover .close-icon {
-        left: 6px ;
+        left: @tab-padding-sides;
+        width: 16px;
+        height: 16px;
       }
     }
 
@@ -164,4 +174,36 @@
 // Change the modified icon
 .tab-bar .tab.modified:not(:hover) .close-icon {
   border: 1px solid @background-color-selected;
+}
+
+// Git status bullets for tabs
+.tab-git-status-bullet {
+  content: "";
+  position: absolute;
+  top: 9px;
+  right: 10px;
+  border-radius: 100%;
+  width: 6px;
+  height: 6px;
+  font-size: 8px;
+}
+
+.tab .title.status-modified {
+  color: @text-color;
+
+  &:after {
+    .tab-git-status-bullet;
+    background-color: @text-color-warning;
+    border: 1px solid darken(@text-color-warning, 10%);
+  }
+}
+
+.tab .title.status-added {
+  color: @text-color;
+
+  &:after {
+    .tab-git-status-bullet;
+    background-color: @text-color-success;
+    border: 1px solid darken(@text-color-success, 10%);
+  }
 }
