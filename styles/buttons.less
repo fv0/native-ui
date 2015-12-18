@@ -15,6 +15,10 @@
 
   &:hover {
     cursor: default;
+    border-bottom: 1px solid darken(@color, 15%);
+    border-top: 1px solid darken(@color, 5%);
+    border-left: 1px solid darken(@color, 5%);
+    border-right: 1px solid darken(@color, 5%);
   }
 
   &:active {
@@ -160,4 +164,11 @@ fieldset[disabled] .btn {
   .btn-group .btn-group + .btn-group {
     margin-left: 0; // this was set to -1
   }
+}
+
+// Overwrites ===============================================
+
+a.icon:hover,
+button.icon:hover {
+  color: #444444;
 }
