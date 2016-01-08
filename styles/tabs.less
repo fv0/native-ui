@@ -27,7 +27,7 @@
     border-right: 1px solid @tab-bar-border-color;
     line-height: @tab-height;
     color: @tab-text-color;
-    padding: 0 @tab-padding-sides;
+    padding: 0 0 0 @tab-padding-sides;
     margin: 0;
     max-width: 100%;
     flex-grow: 1;
@@ -181,30 +181,72 @@
 .tab-git-status-bullet {
   content: "";
   position: absolute;
-  top: 9px;
-  right: 10px;
-  border-radius: 100%;
-  width: 6px;
-  height: 6px;
-  font-size: 8px;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 8px 8px 0;
 }
 
+// Tab modified
 .tab .title.status-modified {
   color: @text-color;
 
   &:after {
     .tab-git-status-bullet;
-    background-color: @text-color-warning;
-    border: 1px solid darken(@text-color-warning, 10%);
+    border-color: transparent desaturate(@text-color-modified, 20%) transparent transparent;
+  }
+
+  &:before {
+    .tab-git-status-bullet;
+    border-color: transparent darken(desaturate(@text-color-modified, 30%), 20%) transparent transparent;
+    right: -5px;
+    border-width: 0 9px 9px 0;
   }
 }
 
+.tab.active .title.status-modified {
+  &:after {
+    .tab-git-status-bullet;
+    border-color: transparent @text-color-modified transparent transparent;
+  }
+
+  &:before {
+    .tab-git-status-bullet;
+    border-color: transparent darken(@text-color-modified, 20%) transparent transparent;
+    right: -5px;
+    border-width: 0 9px 9px 0;
+  }
+}
+
+// Tab added
 .tab .title.status-added {
   color: @text-color;
 
   &:after {
     .tab-git-status-bullet;
-    background-color: @text-color-success;
-    border: 1px solid darken(@text-color-success, 10%);
+    border-color: transparent desaturate(@text-color-added, 20%) transparent transparent;
+  }
+
+  &:before {
+    .tab-git-status-bullet;
+    border-color: transparent darken(desaturate(@text-color-added, 30%), 12%) transparent transparent;
+    right: -5px;
+    border-width: 0 9px 9px 0;
+  }
+}
+
+.tab.active .title.status-added {
+  &:after {
+    .tab-git-status-bullet;
+    border-color: transparent @text-color-added transparent transparent;
+  }
+
+  &:before {
+    .tab-git-status-bullet;
+    border-color: transparent darken(@text-color-added, 12%) transparent transparent;
+    right: -5px;
+    border-width: 0 9px 9px 0;
   }
 }
