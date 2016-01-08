@@ -3,7 +3,6 @@
 atom-panel.modal,
 .overlay {
   color: @text-color;
-  background-color: @base-background-color;
   padding: @component-padding;
   border-radius: @border-radius--base;
 
@@ -13,7 +12,6 @@ atom-panel.modal,
 
   .select-list ol.list-group,
   &.select-list ol.list-group {
-    box-shadow: inset 0 0 0 1px @tab-bar-border-color;
     background-color: @input-background-color;
     padding-top: 0; // prevents it from jumping sometimes
 
@@ -40,7 +38,7 @@ atom-panel.modal,
         }
       }
       &.selected {
-        color: #fff;
+        color: @text-color-selected;
         background-color: @background-color-selected;
         border-bottom-color: @background-color-selected;
         box-shadow: 0 -1px 0 0 @background-color-selected;
@@ -56,6 +54,11 @@ atom-panel.modal,
     }
 
   }
+}
+
+.select-list.popover-list {
+  border-radius: @border-radius--base; // make the box shadow follow the rounded edges of the children
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.22), 0 14px 56px rgba(0, 0, 0, 0.25);
 }
 
 .select-list.corrections {
@@ -78,7 +81,7 @@ atom-panel.modal {
     right: 0;
     bottom: 0;
     border-radius: @border-radius--base;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 15px 24px rgba(0, 0, 0, 0.22), 0 19px 76px rgba(0, 0, 0, 0.3);
   }
 
   .select-list .error-message {
@@ -107,11 +110,13 @@ autocomplete-suggestion-list .suggestion-list-scroller {
 }
 
 autocomplete-suggestion-list .suggestion-description {
-  margin-top: -4px;
-  box-shadow: inset 0 5px 5px -5px black;
+  margin-top: -5px;
   border-top: none;
   min-height: auto;
-  padding: 7px 0;
+}
+
+autocomplete-suggestion-list.select-list.popover-list .suggestion-description {
+  padding: 9px @component-padding 5px;
 }
 
 // Don't display when no results
