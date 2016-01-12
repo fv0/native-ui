@@ -5,6 +5,7 @@
 status-bar {
   box-shadow: 0 -1px @tab-bar-border-color-transparent;
   background: @status-bar-background-color;
+  background-image: linear-gradient(to top, @status-bar-background-color, #EDEBED);
   height: @tab-height;
   line-height: @tab-height; // optical correct to center vertically
 }
@@ -44,7 +45,7 @@ status-bar .flexbox-repaint-hack {
 //┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄ START ┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┐
 // Git status bar
 
-@background-git-view: hsl(@ui-hue, (@ui-s-s - 25), 15%);
+@background-git-view: hsl(@ui-hue, @ui-s-s, 25%);
 
 .git-view {
   margin-right: -1px; // otherwise there's a thin white line on the right
