@@ -1,5 +1,12 @@
 ### Changelog
 
+### 0.13.0
+
+- Perfected close buttons.
+- Made the tabs and treeview have a lighter color, when the window is out of focus. Thanks to [leo](https://github.com/leo).
+- Added subtle gradient to status bar like in Finder.
+- Adjusted the Git status indicators for the tabs.
+
 ### 0.12.0
 
 - Simplified the *modified* indicator and removed the color of it.
