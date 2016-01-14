@@ -5,6 +5,12 @@
 @tab-padding-sides: 6px;
 @tab-border: 1px solid @tab-border-color;
 
+@padding-top-close-icon: 3px;
+@dimensions-close-icon: 17px;
+
+@top-modified-icon: 9px;
+@left-modified-icon: 11px;
+
 .tab-bar {
   height: @tab-height;
   background: @tab-bar-background-color;
@@ -15,7 +21,7 @@
   z-index: 1;
 
   .is-blurred & {
-    border-bottom-color: lighten(@tab-bar-border-color, 27%);
+    border-bottom-color: @tab-bar-border-color--blurred;
     background: lighten(@tab-bar-background-color, 19%)
   }
 
@@ -38,7 +44,7 @@
     flex-grow: 1;
 
     .is-blurred & {
-      border-right-color: lighten(@tab-bar-border-color, 27%);
+      border-right-color: @tab-bar-border-color--blurred;
     }
 
     &.active {
@@ -73,30 +79,28 @@
 
     .close-icon {
       display: none;
-      left: 10px;
-      height: 16px;
-      width: 16px;
-      top: 50%;
-      transform: translateY(-50%);
-      border-radius: 3px;
+      top: @padding-top-close-icon;
+      left: 5px;
+      height: @dimensions-close-icon;
+      width: @dimensions-close-icon;
+      border-radius: 2px;
       z-index: 3;
       text-align: left;
       color: @text-color;
 
-      &:hover {
-        background: @background-close-button;
-      }
-
+      &:hover,
       &:active {
-        background-color: @background-close-button-hover;
+        background: @background-close-button-hover;
       }
 
-      &:before {
+      &:before { // the close icon itself
         content: "✕";
         position: absolute;
-        font-size: 11px;
-        line-height: 17px;
-        left: 4px;
+        display: block;
+        width: 100%;
+        font-size: 12px;
+        text-align: center;
+        line-height: 18px;
       }
     } // close-icon
 
@@ -105,7 +109,8 @@
     &.modified:not(:hover) {
       .close-icon {
         display: inline-block; // display modified indicator when close button is not there
-        top: 50%;
+        top: @top-modified-icon;
+        left: @left-modified-icon;
 
         &:before { // color of the close X
           color: @text-color-highlight;
@@ -118,9 +123,13 @@
       height: 6px;
     }
 
-    &:hover .close-icon {
+    &:hover .close-icon,
+    &.modified:hover .close-icon { // display of the close icon when modified icon is hovered
       display: inline-block;
-      left: 6px;
+      top: @padding-top-close-icon;
+      left: @tab-padding-sides;
+      width: @dimensions-close-icon;
+      height: @dimensions-close-icon;
     }
   } // tab
 
@@ -138,8 +147,9 @@
     &.modified,
     &.modified:hover,
     &.modified:not(:hover) {
-      .close-icon {
+      .close-icon { // the modified bullet
         display: inline-block;
+        left: @left-modified-icon;
 
         &:before {
           color: @text-color-highlight;
@@ -155,9 +165,10 @@
        }
 
       &:hover .close-icon {
+        top: @padding-top-close-icon;
         left: @tab-padding-sides;
-        width: 16px;
-        height: 16px;
+        width: @dimensions-close-icon;
+        height: @dimensions-close-icon;
       }
     }
 
@@ -188,16 +199,18 @@
   background-color: @text-color;
 }
 
+
+
 // Git status bullets for tabs
 .tab-git-status-bullet {
   content: "";
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 2px;
+  right: 2px;
   width: 0;
   height: 0;
   border-style: solid;
-  border-width: 0 8px 8px 0;
+  border-width: 0 7px 7px 0;
 }
 
 // Tab modified
@@ -206,14 +219,7 @@
 
   &:after {
     .tab-git-status-bullet;
-    border-color: transparent desaturate(@text-color-modified, 20%) transparent transparent;
-  }
-
-  &:before {
-    .tab-git-status-bullet;
-    border-color: transparent darken(desaturate(@text-color-modified, 30%), 20%) transparent transparent;
-    right: -5px;
-    border-width: 0 9px 9px 0;
+    border-color: transparent darken(desaturate(@text-color-modified, 20%), 15%) transparent transparent;
   }
 }
 
@@ -221,13 +227,6 @@
   &:after {
     .tab-git-status-bullet;
     border-color: transparent @text-color-modified transparent transparent;
-  }
-
-  &:before {
-    .tab-git-status-bullet;
-    border-color: transparent darken(@text-color-modified, 20%) transparent transparent;
-    right: -5px;
-    border-width: 0 9px 9px 0;
   }
 }
 
@@ -237,14 +236,7 @@
 
   &:after {
     .tab-git-status-bullet;
-    border-color: transparent desaturate(@text-color-added, 20%) transparent transparent;
-  }
-
-  &:before {
-    .tab-git-status-bullet;
-    border-color: transparent darken(desaturate(@text-color-added, 30%), 12%) transparent transparent;
-    right: -5px;
-    border-width: 0 9px 9px 0;
+    border-color: transparent darken(desaturate(@text-color-added, 20%), 10%) transparent transparent;
   }
 }
 
@@ -252,12 +244,5 @@
   &:after {
     .tab-git-status-bullet;
     border-color: transparent @text-color-added transparent transparent;
-  }
-
-  &:before {
-    .tab-git-status-bullet;
-    border-color: transparent darken(@text-color-added, 12%) transparent transparent;
-    right: -5px;
-    border-width: 0 9px 9px 0;
   }
 }

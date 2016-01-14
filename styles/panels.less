@@ -9,31 +9,27 @@
   }
 }
 
-atom-panel, .tool-panel {
+atom-panel,
+.tool-panel {
   .text(normal);
   position: relative;
   background-color: @tool-panel-background-color;
   text-shadow: none;
 
-  // &.left, &.panel-left {
-  //   border-right: 1px solid @tool-panel-border-color;
-  // }
+  .is-blurred & {
+    background-color: lighten(@tool-panel-background-color, 27%);
+  }
 
-  &.right, &.panel-right {
+  &.right,
+  &.panel-right {
     border-left: 1px solid @tool-panel-border-color;
   }
 
   .inset-panel {
     border-radius: @component-border-radius;
-
     border: 1px solid @tool-panel-border-color;
   }
 }
-
-// .inset-panel {
-//   position: relative;
-//   background-color: @inset-panel-background-color;
-// }
 
 .panel-heading {
   border-bottom: none;
