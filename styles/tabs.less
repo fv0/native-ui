@@ -20,11 +20,6 @@
   border-bottom: 1px solid @tab-bar-border-color;
   z-index: 1;
 
-  .is-blurred & {
-    border-bottom-color: @tab-bar-border-color--blurred;
-    background: lighten(@tab-bar-background-color, 19%)
-  }
-
   // Adjust icon sizes to text
   .icon:before {
     font-size: 14px;
@@ -35,6 +30,7 @@
     text-align: center;
     top: 0;
     height: @tab-height;
+    background-color: @tab-background-color;
     border-right: 1px solid @tab-bar-border-color;
     line-height: @tab-height;
     color: @tab-text-color;
@@ -43,15 +39,11 @@
     max-width: 100%;
     flex-grow: 1;
 
-    .is-blurred & {
-      border-right-color: @tab-bar-border-color--blurred;
-    }
-
     &.active {
       flex: 1; // don't change tab size when selected
     }
 
-    &:not(.active):hover {
+    &:hover {
       background-color: @tab-background-color-hover;
     }
 
@@ -64,7 +56,6 @@
     }
 
     // Tab title
-
     .title {
       text-overflow: hidden;
     }
@@ -139,10 +130,6 @@
     z-index: 1;
     color: @text-color-highlight;
     background-color: @tab-background-color-active;
-
-    .is-blurred & {
-      background: lighten(@tab-background-color-active, 16%);
-    }
 
     &.modified,
     &.modified:hover,
@@ -223,13 +210,6 @@
   }
 }
 
-.tab.active .title.status-modified {
-  &:after {
-    .tab-git-status-bullet;
-    border-color: transparent @text-color-modified transparent transparent;
-  }
-}
-
 // Tab added
 .tab .title.status-added {
   color: @text-color;
@@ -237,12 +217,5 @@
   &:after {
     .tab-git-status-bullet;
     border-color: transparent darken(desaturate(@text-color-added, 20%), 10%) transparent transparent;
-  }
-}
-
-.tab.active .title.status-added {
-  &:after {
-    .tab-git-status-bullet;
-    border-color: transparent @text-color-added transparent transparent;
   }
 }
