@@ -1,4 +1,12 @@
-### Changelog
+# Changelog
+
+### 0.14.0
+
+- Increased contrast between active tab and normal tabs.
+- The status bar items and display of the Git status have been slightly modified.
+- Added a border around the list of items when toggling the command palette, fuzzy finder, etc
+- All elements now have a decreased opacity when not in focus.
+- Fixed bug that the border between editor and tree view sometimes vanished (might relate to [#39](https://github.com/fv0/native-ui/issues/39)).
 
 ### 0.13.0
 
