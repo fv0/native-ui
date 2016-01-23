@@ -2,7 +2,7 @@
 
 Get the new OS X El Capitan user interface elements and improved typography in Atom. Experience a reduced, more native feeling for your favorite code editor. No redundant transitions or fancy effects distracting you from your daily work.
 
-Made by [@ferdinandvogler](http://www.twitter.com/ferdinandvogler)
+###### Made by [@ferdinandvogler](http://www.twitter.com/ferdinandvogler)
 
 ---
 
@@ -23,32 +23,33 @@ Made by [@ferdinandvogler](http://www.twitter.com/ferdinandvogler)
 
 ---
 
-![Features](https://cloud.githubusercontent.com/assets/8401092/11460430/3f462f2c-96ec-11e5-95ee-0481fd3b2e70.png)
+![Features](https://cloud.githubusercontent.com/assets/8401092/12528956/4b89994a-c1a8-11e5-9a88-e96279cb766f.jpg)
 
-![Screenshot 1](https://cloud.githubusercontent.com/assets/8401092/11460431/3f629fea-96ec-11e5-9b1b-74d2130e4171.png)
+![Screenshot 1](https://cloud.githubusercontent.com/assets/8401092/12528992/a407bf9c-c1a9-11e5-8b73-6b11575b0ea4.jpg)
 
-![Screenshot 2](https://cloud.githubusercontent.com/assets/8401092/11460432/3f64ab28-96ec-11e5-85d6-95c6d1adb6f5.png)
+![Screenshot 2](https://cloud.githubusercontent.com/assets/8401092/12528993/a408dc06-c1a9-11e5-97b7-98b40193174c.jpg)
 
 ---
 
-### OSX Icon
+### Icons
 
-- [Atom.icns](https://github.com/fv0/native-ui/raw/master/Atom.icns)
+As seen in the Native UI logo above.
+
+- Mac: [Atom.icns](https://github.com/fv0/native-ui/raw/master/Atom.icns)
+- Windows: [Atom.ico](https://github.com/fv0/native-ui/raw/master/Atom.ico)
 
 ---
 
 ### How to install
 
-Go to `Settings` → `Install`, switch the tab from `Packages` to `Themes` and search for **native-ui**. After that select the theme **Native** in `Settings` → `Themes`. Done!
+Go to `Settings` → `Install`, switch the tab from `Packages` to `Themes` and search for **native-ui**. After that select the theme **Native** in `Settings` → `Themes`.
 
-If you have the Atom Package Manager installed you can also fire up Terminal and run
+**OR**
 
-```bash
-apm install native-ui
-```
+If you have the Atom Package Manager installed you can  launch Terminal and run `apm install native-ui`.
 
 ---
 
-### Enjoy working with Native UI?
+### Enjoy working with Native UI? 😎
 
 [Tell others on Twitter](https://twitter.com/intent/tweet?text=Native%20UI,%20a%20Atom%20theme%20for%20El%20Capitan&url=http%3A%2F%2Fatom.io/themes/native-ui&via=ferdinandvogler) and [let's talk](https://twitter.com/intent/tweet?text=@ferdinandvogler) about other features you would like.
