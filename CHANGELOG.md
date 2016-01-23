@@ -1,5 +1,12 @@
 # Changelog
 
+### 0.15.0
+
+- Added ICO file for Windows users
+- Fixed double border on top of project search results
+- Removed right margin on Git status bar items
+- Updated screenshots
+
 ### 0.14.0
 
 - Increased contrast between active tab and normal tabs.
