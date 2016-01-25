@@ -101,3 +101,8 @@ a.line-ending-tile.inline-block:empty {
 status-bar .status-bar-right {
   padding-left: 0;
 }
+
+// Add a small margin between commits behind and ahead
+.commits-ahead-label + .commits-behind-label {
+  margin-left: @status-bar-spacing;
+}
