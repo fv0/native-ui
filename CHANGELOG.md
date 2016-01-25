@@ -1,5 +1,9 @@
 # Changelog
 
+### 0.15.1
+
+- [#42](https://github.com/fv0/native-ui/issues/42): Fix for two icons looking messed up.
+
 ### 0.15.0
 
 - Added ICO file for Windows users
