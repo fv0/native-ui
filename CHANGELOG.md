@@ -1,5 +1,12 @@
 # Changelog
 
+# 0.16.0
+
+- Removed window blur
+- New folder arrows
+- Increase of the tab color contrast
+- Finetuned status bar appearance
+
 ### 0.15.1
 
 - [#42](https://github.com/fv0/native-ui/issues/42): Fix for two icons looking messed up.
