@@ -41,16 +41,15 @@
 	}
 }
 
-.tree-view-resizer {
-	border-right: 1px solid @tab-bar-border-color;
-}
-
 .list-group .selected:before,
 .list-tree .selected:before {
 	height: @height__list-item;
 }
 
 .tree-view-resizer {
+	border-right: 1px solid @tab-bar-border-color;
+
+	// Make the resizing easier
 	.tree-view-resize-handle {
 		width: 10px;
 	}
@@ -198,4 +197,21 @@
 	&:before {
 		display: none;
 	}
+}
+
+
+
+// Use Octicons that match the OSX finder more
+
+.list-tree.has-collapsable-children .list-nested-item > .list-item::before {
+	content: "▶";
+	font-size: 9px;
+	transform: rotate(90deg);
+	transform-origin: 30% 30%;
+}
+
+.list-tree.has-collapsable-children .list-nested-item.collapsed > .list-item::before {
+	content: "▶";
+	font-size: 9px;
+	transform: none;
 }
