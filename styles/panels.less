@@ -16,10 +16,6 @@ atom-panel,
   background-color: @tool-panel-background-color;
   text-shadow: none;
 
-  .is-blurred & {
-    background-color: lighten(@tool-panel-background-color, 27%);
-  }
-
   &.right,
   &.panel-right {
     border-left: 1px solid @tool-panel-border-color;
@@ -34,10 +30,8 @@ atom-panel,
 .panel-heading {
   border-bottom: none;
   padding: @component-padding - 2px @component-padding;
-
   background-color: transparent;
   background-image: -webkit-linear-gradient(@panel-heading-background-color, darken(@panel-heading-background-color, 10%));
-
 }
 
 .find-and-replace,
