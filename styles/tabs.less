@@ -20,6 +20,10 @@
   border-bottom: 1px solid @tab-bar-border-color;
   z-index: 1;
 
+  .is-blurred & {
+    background-color: @tab-bar-background-color--blurred;
+  }
+
   // Adjust icon sizes to text
   .icon:before {
     font-size: 14px;
@@ -40,10 +44,6 @@
     flex-grow: 1;
     transition: background @transition--default;
 
-    &.active {
-      flex: 1; // don't change tab size when selected
-    }
-
     &:hover {
       background-color: @tab-background-color-hover;
     }
@@ -54,6 +54,14 @@
 
     &:last-child {
       border-right: none;
+    }
+
+    .is-blurred & {
+      opacity: @opacity-blurred;
+    }
+
+    &.active {
+      flex: 1; // don't change tab size when selected
     }
 
     // Tab title

@@ -7,6 +7,10 @@ status-bar {
   background-image: linear-gradient(to top, @status-bar-background-color, #EDEBED);
   height: @tab-height + 1;
   line-height: @tab-height;
+
+  .is-blurred & {
+    opacity: @opacity-blurred;
+  }
 }
 
 status-bar .status-bar-right > .inline-block,

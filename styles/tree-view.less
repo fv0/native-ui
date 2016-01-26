@@ -49,6 +49,10 @@
 .tree-view-resizer {
 	border-right: 1px solid @tab-bar-border-color;
 
+	.is-blurred & {
+		opacity: @opacity-blurred;
+	}
+
 	// Make the resizing easier
 	.tree-view-resize-handle {
 		width: 10px;

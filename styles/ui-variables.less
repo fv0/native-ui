@@ -67,33 +67,34 @@
 @overlay-background-color: #ececec;
 @overlay-border-color: @base-border-color;
 
-@button-background-color: @base-background-color;
-@button-background-color-hover: lighten(@button-background-color, 5%);
-@button-background-color-selected: #888;
-@button-border-color: #D3D3D3;
-@button-border-color--bottom: #B4B4B4;
-@button-text-color: @text-color;
+@button-background-color:             @base-background-color;
+@button-background-color-hover:       lighten(@button-background-color, 5%);
+@button-background-color-selected:    #888;
+@button-border-color:                 #D3D3D3;
+@button-border-color--bottom:         #B4B4B4;
+@button-text-color:                   @text-color;
 
-@btn-base-color: #f4f4f4;
+@btn-base-color:                      #f4f4f4;
 
-@tab-bar-border-color: #999799;
-@tab-bar-border-color-transparent: rgba(0, 0, 0, 0.3);
-@tab-bar-border-color--blurred: lighten(@tab-bar-border-color, 27%);
-@tab-background-color: darken(#fff, 30%);
-@tab-bar-background-color: @tab-background-color;
-@tab-background-color-active: darken(#fff, 17%);
-@tab-background-color-hover: darken(#fff, 35%);
-@tab-border-color: @tab-bar-border-color;
-@tab-text-color: @text-color-highlight;
+@tab-bar-border-color:                #999799;
+@tab-bar-border-color-transparent:    rgba(0, 0, 0, 0.3);
+@tab-bar-border-color--blurred:       lighten(@tab-bar-border-color, 27%);
+@tab-background-color:                darken(#fff, 30%);
+@tab-bar-background-color:            @tab-background-color;
+@tab-bar-background-color--blurred:   #fff;
+@tab-background-color-active:         darken(#fff, 17%);
+@tab-background-color-hover:          darken(#fff, 35%);
+@tab-border-color:                    @tab-bar-border-color;
+@tab-text-color:                      @text-color-highlight;
 
-@tip-background-color: hsl(@ui-hue, 10%, 30%);
-@tip-text-color: @text-color-selected;
-@tip-arrow-color: hsl(@ui-hue, 10%, 30%);
+@tip-background-color:                hsl(@ui-hue, 10%, 30%);
+@tip-text-color:                      @text-color-selected;
+@tip-arrow-color:                     hsl(@ui-hue, 10%, 30%);
 
-@status-bar-background-color: @tab-background-color-active;
+@status-bar-background-color:         @tab-background-color-active;
 
-@tree-view-background-color: #eee;
-@tree-view-border-color: @base-border-color;
+@tree-view-background-color:          #eee;
+@tree-view-border-color:              @base-border-color;
 
 @ui-site-color-1: @background-color-success; // green
 @ui-site-color-2: @background-color-info; // blue
@@ -129,3 +130,4 @@
 
 @border-radius--base: 4px;
 @transition--default: 0.15s ease;
+@opacity-blurred: 0.5;
