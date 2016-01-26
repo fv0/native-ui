@@ -1,6 +1,10 @@
 # Changelog
 
-# 0.16.0
+### 0.16.1
+
+- Bringing back an improved unfocused window state
+
+### 0.16.0
 
 - Removed window blur
 - New folder arrows
