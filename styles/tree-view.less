@@ -56,6 +56,15 @@
 	// Make the resizing easier
 	.tree-view-resize-handle {
 		width: 10px;
+		transition: all @transition--default;
+
+		&:hover {
+			background: @resize-handle-color-hover;
+		}
+
+		&:active {
+			background: @resize-handle-color-active;
+		}
 	}
 }
 
