@@ -1,5 +1,11 @@
 # Changelog
 
+### 0.17.0
+
+- Removed deprecated classes highlighted by Deprecation Cop.
+- Show resize handle on hover in the treeview
+- Unfocused state of tab bar when no file is open gets displayed in the correct color.
+
 ### 0.16.1
 
 - Bringing back an improved unfocused window state
