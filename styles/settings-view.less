@@ -104,3 +104,20 @@ ul.background-message.centered {
     display: none;
   }
 }
+
+.alert.alert-info.icon-hourglass {
+  background-image: url(atom://native-ui/images/spinner-128.gif);
+  background-color: @background-color-highlight;
+  background-repeat: no-repeat;
+  background-size: 16px;
+  background-position: 12px 50%;
+  padding-left: 35px;
+  animation: none;
+  border-color: @base-border-color;
+  color: @text-color-highlight;
+  height: 48px; // somehow necessary because the other box is one pixel higher
+
+  &:before {
+    display: none; // don't show old icon
+  }
+}
