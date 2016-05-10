@@ -1,5 +1,15 @@
 # Changelog
 
+### 0.18.1
+
+- Added some new loading indicators.
+
+### 0.18.0
+
+- [#48](https://github.com/fv0/native-ui/issues/42): Removed :before of modal
+- When renaming large file paths they are displayed in one text field and not in one line
+- If the tree view is hidden and only one file is shown, the tab bar gets hidden (thanks @leo).
+
 ### 0.17.0
 
 - Removed deprecated classes highlighted by Deprecation Cop.
