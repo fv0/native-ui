@@ -8,7 +8,6 @@ atom-panel atom-text-editor[mini],
   border-color: @input-border-color;
   border-radius: @border-radius--base;
   padding: 0 8px;
-  max-height: 100%;
   background: @text-color-selected;
   transition: box-shadow @transition--default;
 
@@ -17,6 +16,10 @@ atom-panel atom-text-editor[mini],
     color: @text-color-highlight;
     box-shadow: 0 0 0 3px @input-outline-color-active;
   }
+}
+
+.tree-view-dialog atom-text-editor[mini] {
+  max-height: 100%;
 }
 
 atom-text-editor[mini] .cursor,
