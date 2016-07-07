@@ -1,0 +1,43 @@
+@import "syntax-variables";
+@import "ui-variables";
+
+@linter-spacing: @component-padding * 1.5; // same as status-bar-spacing
+
+linter-bottom-container {
+    margin-right: @linter-spacing;
+}
+
+linter-bottom-tab {
+    line-height: 18px;
+    display: inline-block;
+    padding: 0 @linter-spacing;
+    color: @text-color-subtle;
+    background-image: linear-gradient(to top, @btn-base-color, lighten(@btn-base-color, 15%)); // same as buttons
+    border: none;
+    border-bottom: 1px solid darken(@btn-base-color, 25%);
+
+    &:nth-child(2) { // first item is a hidden one
+        border-radius: @border-radius--base 0 0 @border-radius--base;
+    }
+
+    &:nth-child(3) { // first item is a hidden one
+        border-radius: 0 @border-radius--base @border-radius--base 0;
+    }
+
+    &.active { // same as buttons
+        background-image: linear-gradient(to top, darken(@btn-base-color, 60%), darken(@btn-base-color, 35%));
+        color: @text-color-selected;
+    }
+}
+
+linter-bottom-status {
+    margin-left: @linter-spacing;
+}
+
+linter-bottom-status.linter-highlight.status-success {
+    color: darken(@text-color-success, 15%);
+}
+
+linter-bottom-status.linter-highlight.status-success {
+    color: darken(@text-color-success, 15%);
+}

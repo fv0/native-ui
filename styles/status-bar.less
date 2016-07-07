@@ -51,14 +51,13 @@ status-bar a:hover {
 
 status-bar .flexbox-repaint-hack {
   padding-right: 0;
+  padding-left: 15px;
 }
 
 
 
 //┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄ START ┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┐
 // Git status bar
-
-@background-git-view: hsl(@ui-hue, @ui-s-s, 25%);
 
 .git-view {
   background-color: @background-git-view;
@@ -114,4 +113,12 @@ status-bar .status-bar-right {
 // Add a small margin between commits behind and ahead
 .commits-ahead-label + .commits-behind-label {
   margin-left: @status-bar-spacing;
+}
+
+.file-info {
+    margin-right: @status-bar-spacing;
+}
+
+.cursor-position {
+    letter-spacing: 0.05rem;
 }
