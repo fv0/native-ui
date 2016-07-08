@@ -11,5 +11,6 @@
   "repository": "https://github.com/fv0/native-ui.git",
   "engines": {
     "atom": ">0.50.0"
-  }
+  },
+  "main": "lib/main"
 }
