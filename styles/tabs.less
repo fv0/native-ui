@@ -5,11 +5,14 @@
 @tab-padding-sides: 6px;
 @tab-border: 1px solid @tab-border-color;
 
-@padding-top-close-icon: 3px;
 @dimensions-close-icon: 17px;
+@dimensions-close-icon-modified: 6px;
 
-@top-modified-icon: 9px;
+@padding-top-close-icon: (@tab-height - @dimensions-close-icon) / 2;
+@top-modified-icon: (@tab-height - @dimensions-close-icon-modified) / 2;
 @left-modified-icon: 11px;
+
+@tab-max-width: 100%;
 
 .tab-bar {
   height: @tab-height;
@@ -40,7 +43,7 @@
     color: @tab-text-color;
     padding: 0 0 0 @tab-padding-sides;
     margin: 0;
-    max-width: 100%;
+    max-width: @tab-max-width;
     flex-grow: 1;
     transition: background @transition--default;
 
@@ -226,5 +229,39 @@
   &:after {
     .tab-git-status-bullet;
     border-color: transparent darken(desaturate(@text-color-added, 20%), 10%) transparent transparent;
+  }
+}
+
+// Tab for close icon on the right
+.tab-bar.close-icon-right {
+  .tab {
+    .close-icon {
+      left: auto !important;
+    }
+
+    &.active.modified .close-icon,
+    &.active.modified:hover .close-icon,
+    &.active.active.modified:not(:hover) .close-icon {
+      right: @left-modified-icon;
+    }
+
+    &.modified .close-icon,
+    &.modified:not(:hover) .close-icon {
+      top: @top-modified-icon;
+      right: @left-modified-icon;
+    }
+
+    &:hover .close-icon,
+    &.modified:hover .close-icon,
+    &.active.modified:hover .close-icon {
+      top: @padding-top-close-icon;
+      right: 5px;
+    }
+
+    &:hover .title,
+    &.modified .title {
+      -webkit-mask: linear-gradient(to left, transparent 20px, #000000 28px) no-repeat;
+      -webkit-mask-position: 0 0;
+    }
   }
 }
