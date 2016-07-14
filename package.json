@@ -1,14 +1,14 @@
 {
-  "name": "native-ui",
+  "name": "native-ui-customizable",
   "theme": "ui",
   "version": "0.18.2",
-  "description": "Experience better coding in OS X El Capitan.",
+  "description": "Experience better coding in OS X El Capitan. Added some customization options based on the original.",
   "keywords": [
     "elcapitan",
     "macosx",
     "sanfrancisco"
   ],
-  "repository": "https://github.com/fv0/native-ui.git",
+  "repository": "https://github.com/gekowa/native-ui-customizable.git",
   "engines": {
     "atom": ">0.50.0"
   },
