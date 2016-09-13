@@ -3,31 +3,30 @@
 }
 
 .settings-view input[type="checkbox"] {
-  margin: 0 0.75em 0 -2.25em;
-  vertical-align: top;
-  width: 1.45em;
-  height: 1.45em;
-  cursor: pointer;
-  outline: 0;
-  border-radius: 3px;
-  border: 1px solid #B7B7B7;
-  background-color: #fff;
-  transition: background-color @transition--default;
+  @dimensions: 1.15rem;
+
+  margin-right: @dimensions;
+  vertical-align: text-bottom;
+  width: @dimensions;
+  height: @dimensions;
+  cursor: default;
+  box-shadow: 0 0 0 1px @base-border-color;
+  background-color: @input-background-color;
 
   &:checked {
-    border-color: #919197;
-    background-color: #99999E;
+    box-shadow: 0 0 0 1px @background-color-selected;
+    background-color: @background-color-selected;
   }
 
   &:after,
   &:before {
-    top: 11px;
+    top: 10px;
     left: 5px;
-    height: 0;
+    background-color: @text-color-selected;
   }
 
-  &:focus {
-    box-shadow: none;
+  &:after {
+    width: 0.8rem;
   }
 }
 
@@ -38,9 +37,10 @@
 
 atom-text-editor[mini] .placeholder-text,
 atom-text-editor[mini]::shadow .placeholder-text {
-  color: #ccc;
+  color: fadeout(@text-color-ignored, 25%);
 }
 
+// Make avatars round
 .settings-view .package-card .meta-user .avatar {
   border-radius: 100%;
 }
@@ -51,11 +51,10 @@ atom-text-editor[mini]::shadow .placeholder-text {
 
 .settings-view .package-card {
   cursor: pointer;
-  overflow: visible
+  overflow: visible;
 }
 
 .badge {
-
   font-weight: bold;
   font-size: 12px;
   color: #fff;
