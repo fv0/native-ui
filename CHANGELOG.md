@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.18.4
+
+- [#60](https://github.com/fv0/native-ui/issues/60): Fix font-family for macOS Sierra.
+- Adjustments for the display of checkboxes.
+
 ## 0.18.3
 
 - Make the [Linter Package](https://atom.io/packages/linter) match Native UI's appearance.
