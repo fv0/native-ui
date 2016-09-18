@@ -1,6 +1,10 @@
 # Changelog
 
-## 0.18.4
+## 0.19.1
+
+- [#57](https://github.com/fv0/native-ui/issues/57): No border seperating the treeview and status bar.
+
+## 0.19.0
 
 - [#60](https://github.com/fv0/native-ui/issues/60): Fix font-family for macOS Sierra.
 - Adjustments for the display of checkboxes.
