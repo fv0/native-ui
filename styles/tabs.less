@@ -9,12 +9,11 @@
 @dimensions-close-icon: 17px;
 
 @top-modified-icon: 9px;
-@left-modified-icon: 11px;
+@left-modified-icon: 12px;
 
 .tab-bar {
   height: @tab-height;
   background: @tab-bar-background-color;
-  padding: 0;
   overflow-x: auto;
   overflow-y: hidden;
   border-bottom: 1px solid @tab-bar-border-color;
@@ -42,7 +41,6 @@
     margin: 0;
     max-width: 100%;
     flex-grow: 1;
-    transition: background @transition--default;
 
     &:hover {
       background-color: @tab-background-color-hover;
@@ -79,8 +77,8 @@
 
     .close-icon {
       display: none;
+      position: absolute;
       top: @padding-top-close-icon;
-      left: 5px;
       height: @dimensions-close-icon;
       width: @dimensions-close-icon;
       border-radius: 2px;
@@ -100,7 +98,7 @@
         width: 100%;
         font-size: 12px;
         text-align: center;
-        line-height: 18px;
+        line-height: 1.5;
       }
     } // close-icon
 
