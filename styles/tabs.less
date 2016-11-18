@@ -53,129 +53,128 @@
     &:last-child {
       border-right: none;
     }
+  }
 
-    .is-blurred & {
-      opacity: @opacity-blurred;
+  .tab .is-blurred & {
+    opacity: @opacity-blurred;
+  }
+
+  .tab.active {
+    flex: 1; // don't change tab size when selected
+  }
+
+  // Tab title
+  .tab .title {
+    text-overflow: hidden;
+  }
+
+  .tab:hover .title,
+  .tab.modified .title {
+    -webkit-mask: linear-gradient(to right, transparent, black 1em) no-repeat;
+    -webkit-mask-position: 1.3em 0;
+  }
+
+  // Close icon
+
+  .tab .close-icon {
+    display: none;
+    position: absolute;
+    top: @padding-top-close-icon;
+    height: @dimensions-close-icon;
+    width: @dimensions-close-icon;
+    border-radius: 2px;
+    z-index: 3;
+    text-align: left;
+    color: @text-color;
+
+    &:hover,
+    &:active {
+      background: @background-close-button-hover;
     }
 
-    &.active {
-      flex: 1; // don't change tab size when selected
-    }
-
-    // Tab title
-    .title {
-      text-overflow: hidden;
-    }
-
-    &:hover .title,
-    &.modified .title {
-      -webkit-mask: linear-gradient(to right, transparent, black 1em) no-repeat;
-      -webkit-mask-position: 1.3em 0;
-    }
-
-    // Close icon
-
-    .close-icon {
-      display: none;
+    &:before { // the close icon itself
+      content: "✕";
       position: absolute;
-      top: @padding-top-close-icon;
-      height: @dimensions-close-icon;
-      width: @dimensions-close-icon;
-      border-radius: 2px;
-      z-index: 3;
-      text-align: left;
-      color: @text-color;
+      display: block;
+      width: 100%;
+      font-size: 12px;
+      text-align: center;
+      line-height: 1.5;
+    }
+  } // close-icon
 
-      &:hover,
-      &:active {
-        background: @background-close-button-hover;
-      }
+  .tab.modified,
+  .tab.modified:hover,
+  .tab.modified:not(:hover) {
+    .close-icon {
+      display: inline-block; // display modified indicator when close button is not there
+      top: @top-modified-icon;
+      left: @left-modified-icon;
 
-      &:before { // the close icon itself
-        content: "✕";
-        position: absolute;
-        display: block;
-        width: 100%;
-        font-size: 12px;
-        text-align: center;
-        line-height: 1.5;
-      }
-    } // close-icon
-
-    &.modified,
-    &.modified:hover,
-    &.modified:not(:hover) {
-      .close-icon {
-        display: inline-block; // display modified indicator when close button is not there
-        top: @top-modified-icon;
-        left: @left-modified-icon;
-
-        &:before { // color of the close X
-          color: @text-color-highlight;
-        }
+      &:before { // color of the close X
+        color: @text-color-highlight;
       }
     }
+  }
 
-    &.modified:not(:hover) .close-icon {
+  .tab.modified:not(:hover) .close-icon {
+    width: 6px;
+    height: 6px;
+  }
+
+  .tab:hover .close-icon,
+  .tab.modified:hover .close-icon { // display of the close icon when modified icon is hovered
+    display: inline-block;
+    top: @padding-top-close-icon;
+    left: @tab-padding-sides;
+    width: @dimensions-close-icon;
+    height: @dimensions-close-icon;
+  }
+
+  // Active tab
+  .tab.active {
+    z-index: 1;
+    color: @text-color-highlight;
+    background: linear-gradient(to top, @tab-background-color-active, lighten(@tab-background-color-active, 6%));
+  }
+
+  .tab.active.modified,
+  .tab.active.modified:hover,
+  .tab.active.modified:not(:hover) {
+    .close-icon { // the modified bullet
+      display: inline-block;
+      left: @left-modified-icon;
+
+      &:before {
+        color: @text-color-highlight;
+      }
+    }
+  }
+
+  .tab.active.modified {
+    .close-icon {
+      left: 10px;
       width: 6px;
       height: 6px;
-    }
+     }
 
-    &:hover .close-icon,
-    &.modified:hover .close-icon { // display of the close icon when modified icon is hovered
-      display: inline-block;
+    &:hover .close-icon {
       top: @padding-top-close-icon;
       left: @tab-padding-sides;
       width: @dimensions-close-icon;
       height: @dimensions-close-icon;
     }
-  } // tab
+  }
 
-  // Active tab
+  // Center the title
+  .tab.active .title {
+    padding-right: 0;
+  }
 
-  .tab.active {
-    z-index: 1;
+  .tab.active:hover .title {
     color: @text-color-highlight;
-    background-color: @tab-background-color-active;
+  }
 
-    &.modified,
-    &.modified:hover,
-    &.modified:not(:hover) {
-      .close-icon { // the modified bullet
-        display: inline-block;
-        left: @left-modified-icon;
-
-        &:before {
-          color: @text-color-highlight;
-        }
-      }
-    }
-
-    &.modified {
-      .close-icon {
-        left: 10px;
-        width: 6px;
-        height: 6px;
-       }
-
-      &:hover .close-icon {
-        top: @padding-top-close-icon;
-        left: @tab-padding-sides;
-        width: @dimensions-close-icon;
-        height: @dimensions-close-icon;
-      }
-    }
-
-    // Center the title
-    .title {
-      padding-right: 0;
-    }
-
-    &:hover .title {
-      color: @text-color-highlight;
-    }
-
-  } // tab.active
 
   .tab.active:hover .close-icon {
     color: @text-color;
