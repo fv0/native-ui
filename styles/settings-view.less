@@ -30,13 +30,13 @@
   }
 }
 
-.settings-view .section atom-text-editor[mini],
-.settings-view .section atom-text-editor[mini]::shadow {
+.settings-view .section .editor.mini,
+.settings-view .section .editor.mini::shadow {
   opacity: 1;
 }
 
-atom-text-editor[mini] .placeholder-text,
-atom-text-editor[mini]::shadow .placeholder-text {
+.editor.mini .placeholder-text,
+.editor.mini::shadow .placeholder-text {
   color: fadeout(@text-color-ignored, 25%);
 }
 

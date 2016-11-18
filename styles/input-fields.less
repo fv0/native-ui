@@ -1,8 +1,8 @@
-.input-block-item atom-text-editor.mini,
-.controls atom-text-editor.mini,
-atom-panel atom-text-editor[mini],
+.input-block-item .editor.mini,
+.controls .editor.mini,
+atom-panel .editor.mini,
 .settings-view select.form-control,
-.editor-container atom-text-editor.mini {
+.editor-container .editor.mini {
   font-size: 1.15rem;
   box-shadow: none;
   border-color: @input-border-color;
@@ -18,12 +18,12 @@ atom-panel atom-text-editor[mini],
   }
 }
 
-.tree-view-dialog atom-text-editor[mini] {
+.tree-view-dialog .editor.mini {
   max-height: 100%;
 }
 
-atom-text-editor[mini] .cursor,
-atom-text-editor[mini]::shadow .cursor {
+.editor.mini .cursor,
+.editor.mini::shadow .cursor {
   border-width: 1px;
   height: 18px !important;
   margin-top: 4px;

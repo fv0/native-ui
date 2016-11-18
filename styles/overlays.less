@@ -4,21 +4,26 @@ atom-panel.modal,
 .overlay {
   color: @text-color;
   padding: @component-padding;
-  border-radius: @border-radius--base;
+  border-radius: @border-radius--large;
 
-  atom-text-editor[mini] {
+  .editor.mini {
     margin-bottom: @component-padding;
   }
 
+  // Seach results
   .select-list ol.list-group,
   &.select-list ol.list-group {
     background-color: @input-background-color;
     padding-top: 0; // prevents it from jumping sometimes
     box-shadow: inset 0 0 0 1px @tab-bar-border-color;
+    border-bottom-left-radius: @border-radius--large * 0.5;
+    border-bottom-right-radius: @border-radius--large * 0.5;
 
     li {
       padding: @component-padding;
-      border-bottom: 1px solid @tab-bar-border-color;
+      border-bottom: 1px solid @base-border-color;
+      margin-left: 1px; // otherwise box-shadow and border overlap
+      margin-right: 1px;
 
       &.two-lines {
         padding: @component-padding/2 @component-padding;
@@ -43,11 +48,14 @@ atom-panel.modal,
         background-color: @background-color-selected;
         border-bottom-color: @background-color-selected;
         box-shadow: 0 -1px 0 0 @background-color-selected;
+        margin-left: 0; // nullify the margin of `li`
+        margin-right: 0;
       }
 
       .status.icon {
         float: right;
         margin-left: @component-icon-padding;
+
         &:before {
           margin-right: 0;
         }
@@ -58,19 +66,20 @@ atom-panel.modal,
 }
 
 .select-list.popover-list {
-  border-radius: @border-radius--base; // make the box shadow follow the rounded edges of the children
+  border-radius: @border-radius--large; // make the box shadow follow the rounded edges of the children
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.22), 0 14px 56px rgba(0, 0, 0, 0.25);
 }
 
 .select-list.corrections {
   background-color: @base-background-color;
-  border-radius: @border-radius--base;
+  border-radius: @border-radius--large;
 }
 
+// The window itself
 atom-panel.modal {
-  top: 20% !important;
-  border-top-right-radius: @border-radius--base !important;
-  border-top-left-radius: @border-radius--base !important;
+  top: 16% !important;
+  border-top-right-radius: @border-radius--large !important;
+  border-top-left-radius: @border-radius--large !important;
   box-shadow: 0 15px 24px rgba(0, 0, 0, 0.22), 0 19px 76px rgba(0, 0, 0, 0.3);
 
   .select-list .error-message {
