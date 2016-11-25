@@ -1,5 +1,22 @@
 # Changelog
 
+## 0.20
+
+I took the time to make some changes to the interface. At some points the macOS interface elements lack contrast and since a code editor should not stand in your way of working efficiently I adapted some parts. This wasn't easy for me since I wanted to stay to the original as close as possible, but if something is bad, then sometimes you have to make a decision. I hope you like the revamped Native UI and if everything appears wrong, please file an issue in the Github repository. Happy coding! – [Ferdinand](https://twitter.com/ferdinandvogler)
+
+- [#61](https://github.com/fv0/native-ui/issues/61): Theme will now work in Atom 0.13: fixed deprecated selector because of Shadow DOM removal in upcoming release.
+- Tabs: active tab now better visible. When closing a tab, there is now a subtle resize animation.
+- Design changes to the control panel overlay.
+- Design changes for search results page.
+- New app icon.
+- Updated screenshots for the README file.
+
+## 0.19.2
+
+- Fixed fonts for macOS Sierra. The wrong font style was used (slightly condensed).
+- Changed height of status bar to make elements be vertically aligned again.
+- Removed background-transition effect from tabs.
+
 ## 0.19.1
 
 - [#57](https://github.com/fv0/native-ui/issues/57): No border seperating the treeview and status bar.

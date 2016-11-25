@@ -1,55 +1,50 @@
-![Banner Native UI](https://cloud.githubusercontent.com/assets/8401092/10865409/64cbe3b6-800a-11e5-985c-7a63b2bdd402.png)
+![Banner Native UI](https://cloud.githubusercontent.com/assets/8401092/20631149/769f190a-b335-11e6-91ba-aad73f7f4c49.jpg)
 
-Get the new OS X El Capitan user interface elements and improved typography in Atom. Experience a reduced, more native feeling for your favorite code editor. No redundant transitions or fancy effects distracting you from your daily work.
+Get the newest macOS interface elements in Atom. Experience a reduced, more native feeling for your favorite code editor. No redundant transitions or fancy effects distracting you from your daily work. Over 90.000 downloads.
 
-###### Made by [@ferdinandvogler](http://www.twitter.com/ferdinandvogler)
+**Made by [Ferdinand Vogler](http://www.twitter.com/ferdinandvogler)**
 
----
+--------------------------------------------------------------------------------
 
-### Features
+# Features
 
-- Dynamic tab behaviour as known from Finder
+- Dynamic tab behavior as known from Finder
 - Apple's new system font San Francisco
-- Major redesign of the entire Atom interface
-- Better organized file search results
-- No unnecessary animations creating a sluggish experience
-- A lot more – just try it!
+- Structured search results
+- Redesign of many parts in Atom
+- Built fast and reliant with an eye for details
 
-### Recommended setup
+# Recommended Setup
 
 - OSX El Capitan (necessary for correct font display)
+- Atom 0.13
 - High-resolution display
-- Packages: [file-icons](https://atom.io/packages/file-icons) (grayscale)
+- The package [file-icons](https://atom.io/packages/file-icons) by Dan Brooker
 
----
+--------------------------------------------------------------------------------
 
-![Features](https://cloud.githubusercontent.com/assets/8401092/12528956/4b89994a-c1a8-11e5-9a88-e96279cb766f.jpg)
+# Screenshots
 
-![Screenshot 1](https://cloud.githubusercontent.com/assets/8401092/12528992/a407bf9c-c1a9-11e5-8b73-6b11575b0ea4.jpg)
+[![Screenshot Editor](https://cloud.githubusercontent.com/assets/8401092/20631962/3d6a0ce4-b33a-11e6-9f99-c1c2669a3cf2.png)](https://cloud.githubusercontent.com/assets/8401092/20631962/3d6a0ce4-b33a-11e6-9f99-c1c2669a3cf2.png) [![Screenshot File Switcher](https://cloud.githubusercontent.com/assets/8401092/20631963/3d6a5ab4-b33a-11e6-87e1-7b28dcb5f8cd.png)](https://cloud.githubusercontent.com/assets/8401092/20631963/3d6a5ab4-b33a-11e6-87e1-7b28dcb5f8cd.png) [![Screenshot Search Results](https://cloud.githubusercontent.com/assets/8401092/20631964/3d6ac788-b33a-11e6-9392-457bc5bda5cc.png)](https://cloud.githubusercontent.com/assets/8401092/20631964/3d6ac788-b33a-11e6-9392-457bc5bda5cc.png)
 
-![Screenshot 2](https://cloud.githubusercontent.com/assets/8401092/12528993/a408dc06-c1a9-11e5-97b7-98b40193174c.jpg)
+--------------------------------------------------------------------------------
 
----
+# Icons
 
-### Icons
+![](https://cloud.githubusercontent.com/assets/8401092/20631850/50eec71a-b339-11e6-9cf1-e245e8d6451b.png)
 
-As seen in the Native UI logo above.
+macOS                                                                                                                                                                                | Windows
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+[Download](https://github.com/fv0/native-ui/raw/master/Atom.icns) ![Icon ICNS](https://cloud.githubusercontent.com/assets/8401092/20631777/e3d4c3e6-b338-11e6-94aa-b1830ff29866.png) | [Download](https://github.com/fv0/native-ui/raw/master/Atom.ico) ![Icon ICO](https://cloud.githubusercontent.com/assets/8401092/20631776/e3d4d192-b338-11e6-8c66-62bc40270f11.png)
 
-- Mac: [Atom.icns](https://github.com/fv0/native-ui/raw/master/Atom.icns)
-- Windows: [Atom.ico](https://github.com/fv0/native-ui/raw/master/Atom.ico)
+--------------------------------------------------------------------------------
 
----
+# How To Install
 
-### How to install
+Terminal                                                                           | Atom
+---------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------
+If you have the Atom Package Manager installed you can run `apm install native-ui` | Go to `Settings → Install`, switch the tab from `Packages` to `Themes` and search for **native-ui**. After that select the theme **Native** in `Settings → Themes`.
 
-Go to `Settings` → `Install`, switch the tab from `Packages` to `Themes` and search for **native-ui**. After that select the theme **Native** in `Settings` → `Themes`.
-
-**OR**
-
-If you have the Atom Package Manager installed you can  launch Terminal and run `apm install native-ui`.
-
----
-
-### Enjoy working with Native UI? 😎
+# Enjoy working with Native UI? 😎
 
 [Tell others on Twitter](https://twitter.com/intent/tweet?text=Native%20UI,%20a%20Atom%20theme%20for%20El%20Capitan&url=http%3A%2F%2Fatom.io/themes/native-ui&via=ferdinandvogler) and [let's talk](https://twitter.com/intent/tweet?text=@ferdinandvogler) about other features you would like.
