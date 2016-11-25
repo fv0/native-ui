@@ -4,6 +4,7 @@
 @tab-bottom-border-height: 5px;
 @tab-padding-sides: 6px;
 @tab-border: 1px solid @tab-border-color;
+@tab-bar-inset-box-shadow: inset 0 -2px 2px -2px rgba(0, 0, 0, 0.4);
 
 @padding-top-close-icon: 3px;
 @dimensions-close-icon: 17px;
@@ -12,15 +13,18 @@
 @left-modified-icon: 12px;
 
 .tab-bar {
-  height: @tab-height;
-  background: @tab-bar-background-color;
+  background: linear-gradient(to top, darken(@tab-bar-background-color, 10%), darken(@tab-bar-background-color, 20%));
   overflow-x: auto;
   overflow-y: hidden;
-  border-bottom: 1px solid @tab-bar-border-color;
+  box-shadow: @tab-bar-inset-box-shadow;
   z-index: 1;
 
   .is-blurred & {
     background-color: @tab-bar-background-color--blurred;
+  }
+
+  &:empty {
+    display: none;
   }
 
   // Adjust icon sizes to text
@@ -31,9 +35,9 @@
   .tab {
     position: relative;
     text-align: center;
-    top: 0;
     height: @tab-height;
     background-color: @tab-background-color;
+    box-shadow: @tab-bar-inset-box-shadow;
     border-right: 1px solid @tab-bar-border-color;
     line-height: @tab-height;
     color: @tab-text-color;
@@ -41,16 +45,23 @@
     margin: 0;
     max-width: 100%;
     flex-grow: 1;
+    transition: max-width 0.35s cubic-bezier(0.785, 0.135, 0.150, 0.860); // resize tabs with animation
 
     &:hover {
       background-color: @tab-background-color-hover;
     }
 
-    &:first-child {
-      border-left: none;
+    &:first-child,
+    &.active:first-child {
+      box-shadow:
+        inset 4px 0 4px -4px rgba(0,0,0, 0.4),
+        @tab-bar-inset-box-shadow;
     }
 
     &:last-child {
+      box-shadow:
+        inset -4px 0 4px -4px rgba(0,0,0, 0.4),
+        @tab-bar-inset-box-shadow;
       border-right: none;
     }
   }
@@ -136,6 +147,9 @@
     z-index: 1;
     color: @text-color-highlight;
     background: linear-gradient(to top, @tab-background-color-active, lighten(@tab-background-color-active, 6%));
+    box-shadow:
+      inset 0 0.5px 0 rgba(255, 255, 255, 0.3),
+      @tab-bar-inset-box-shadow;
   }
 
   .tab.active.modified,
@@ -190,38 +204,4 @@
 .tab-bar .tab.modified:not(:hover) .close-icon {
   border: none;
   background-color: @text-color;
-}
-
-
-
-// Git status bullets for tabs
-.tab-git-status-bullet {
-  content: "";
-  position: absolute;
-  top: 2px;
-  right: 2px;
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 0 7px 7px 0;
-}
-
-// Tab modified
-.tab .title.status-modified {
-  color: @text-color;
-
-  &:after {
-    .tab-git-status-bullet;
-    border-color: transparent darken(desaturate(@text-color-modified, 20%), 15%) transparent transparent;
-  }
-}
-
-// Tab added
-.tab .title.status-added {
-  color: @text-color;
-
-  &:after {
-    .tab-git-status-bullet;
-    border-color: transparent darken(desaturate(@text-color-added, 20%), 10%) transparent transparent;
-  }
 }

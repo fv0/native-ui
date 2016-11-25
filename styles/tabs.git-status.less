@@ -1,0 +1,51 @@
+// Git status bullets for tabs
+.tab-git-status-bullet { // mixin
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 12px 12px 0;
+}
+
+// Tab modified
+.tab.active .title.status-modified {
+  color: @text-color;
+
+  &:after {
+    .tab-git-status-bullet;
+    border-color: transparent @text-color-modified transparent transparent;
+  }
+}
+
+// Active tab added
+.tab .title.status-modified {
+  color: @text-color;
+
+  &:after {
+    .tab-git-status-bullet;
+    border-color: transparent darken(desaturate(@text-color-modified, 20%), 25%) transparent transparent;
+  }
+}
+
+// Normal Tab added
+.tab .title.status-added {
+  color: @text-color;
+
+  &:after {
+    .tab-git-status-bullet;
+    border-color: transparent darken(desaturate(@text-color-added, 20%), 15%) transparent transparent;
+  }
+}
+
+// Active Tab added
+.tab.active .title.status-added {
+  color: @text-color;
+
+  &:after {
+    .tab-git-status-bullet;
+    border-color: transparent @text-color-added transparent transparent;
+  }
+}
