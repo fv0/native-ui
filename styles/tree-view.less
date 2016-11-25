@@ -35,6 +35,9 @@
 
 .tree-view {
 	font-size: @font-size;
+	background: linear-gradient(to right, @base-background-color, darken(@base-background-color, 5%));
+	padding-left: 5px;
+	padding-right: 5px;
 
 	.selected:before {
 		background: @background-color-highlight;
@@ -47,7 +50,6 @@
 }
 
 .tree-view-resizer {
-	border-right: 1px solid @tab-bar-border-color;
 
 	.is-blurred & {
 		opacity: @opacity-blurred;
@@ -56,7 +58,6 @@
 	// Make the resizing easier
 	.tree-view-resize-handle {
 		width: 10px;
-		transition: all @transition--default;
 
 		&:hover {
 			background: @resize-handle-color-hover;
@@ -71,8 +72,10 @@
 .focusable-panel { // when the tree view is focused
 
 	&:focus {
+		// A selected item
 		.selected:before {
-			background: @background-color-selected;
+			background: linear-gradient(to right, @background-color-selected, darken(@background-color-selected, 8%));
+
 		}
 
 		// Change border color of git status on folders when selected
@@ -201,30 +204,17 @@
 	color: @text-color-ignored;
 }
 
-
-
-// Remove repo icon and display the text in bold
-.project-root > .list-item > .icon-repo {
-	font-weight: bold;
-
-	&:before {
-		display: none;
-	}
-}
-
-
-
-// Use Octicons that match the OSX finder more
-
+// Folder is open
 .list-tree.has-collapsable-children .list-nested-item > .list-item::before {
 	content: "▶";
-	font-size: 9px;
+	font-size: 10px;
 	transform: rotate(90deg);
-	transform-origin: 30% 30%;
+	transform-origin: 40% 40%;
 }
 
+// Folder is closed
 .list-tree.has-collapsable-children .list-nested-item.collapsed > .list-item::before {
 	content: "▶";
-	font-size: 9px;
+	font-size: 10px;
 	transform: none;
 }
