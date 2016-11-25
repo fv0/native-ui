@@ -58,7 +58,10 @@
   // know their size.
   li.selected {
     background-color: @background-color-selected;
-    &:before{ display: none; }
+
+    &:before {
+      display: none;
+    }
   }
 
   &.mark-active{
@@ -68,7 +71,7 @@
     // active items with a 'fake' icon so other classes can pad the item
     // without worrying about the icon padding.
     li:before {
-      content: '';
+      content: "";
       background-color: transparent;
       position: static;
       display: inline-block;
@@ -90,10 +93,10 @@
 }
 
 autocomplete-suggestion-list .suggestion-list-scroller {
-  border-radius: @border-radius--base @border-radius--base 0 0;
+  border-radius: 0 !important;
 }
 
-autocomplete-suggestion-list.select-list.popover-list .suggestion-description {
+autocomplete-suggestion-list .select-list.popover-list .suggestion-description {
   border-radius: 0 0 @border-radius--base @border-radius--base;
   background-color: @status-bar-background-color;
   color: @text-color;
