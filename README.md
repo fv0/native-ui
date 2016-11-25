@@ -1,6 +1,6 @@
 ![Banner Native UI](https://cloud.githubusercontent.com/assets/8401092/20631149/769f190a-b335-11e6-91ba-aad73f7f4c49.jpg)
 
-Get the newest macOS interface elements in Atom. Experience a reduced, more native feeling for your favorite code editor. No redundant transitions or fancy effects distracting you from your daily work. Over 90.000 downloads.
+Get the newest macOS interface elements in Atom. Experience a reduced, more native feeling for your favorite code editor. No redundant transitions or fancy effects distracting you from your daily work. Over 90,000 downloads.
 
 **Made by [Ferdinand Vogler](http://www.twitter.com/ferdinandvogler)**
 
@@ -17,7 +17,7 @@ Get the newest macOS interface elements in Atom. Experience a reduced, more nati
 # Recommended Setup
 
 - OSX El Capitan (necessary for correct font display)
-- Atom 0.13
+- Atom 1.13.0
 - High-resolution display
 - The package [file-icons](https://atom.io/packages/file-icons) by Dan Brooker
 
