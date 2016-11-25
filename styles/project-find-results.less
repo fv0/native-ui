@@ -31,7 +31,7 @@ ul.list-tree.matches > li.search-result.list-item {
 .preview-pane .list-tree .selected:before {
   left: @component-padding + 1;
   right: @component-padding + 1;
-  background-color: @base-background-color;
+  // background-color: @base-background-color;
 }
 
 
@@ -63,13 +63,21 @@ ul.list-tree.matches {
 }
 
 .preview-pane .results-view .line-number {
-  width: 15px;
+  width: 35px;
   text-align: left;
   margin-right: 22px; // align with file name
+  color: @text-color-subtle;
+  border-right: 1px solid lighten(@text-color-subtle, 25%);
 }
 
+// The selected line item
+.preview-pane .results-view .selected .preview span {
+  color: lighten(@background-color-selected, 30%);
+  border-color: currentColor
+}
 .preview-pane .results-view .selected .line-number {
-  color: @text-color-subtle;
+  color: lighten(@background-color-selected, 30%);
+  border-color: currentColor;
 }
 
 
@@ -89,7 +97,7 @@ ul.list-tree.matches {
   }
 
   &:first-child {
-    margin-top: 57px;
+    margin-top: 100px;
   }
 }
 
@@ -102,8 +110,6 @@ ul.list-tree.matches {
     cursor: pointer;
     color: @text-color-subtle;
   }
-
-
 }
 
 .results-view .selected > div.path-details.list-item {
@@ -114,14 +120,16 @@ ul.list-tree.matches {
   color: @text-color;
 }
 
-.preview-pane .panel-heading {
-  padding: 17px 35px;
+.preview-pane .preview-header {
+  padding: 25px 50px 25px 50px;
   text-align: center;
   font-family: @font-family-headlines;
   font-size: 1.75em; // same as Atom settings headings
   background-image: none;
   font-weight: bold;
-  background-color: fade(@base-background-color, 90%);
+  background: linear-gradient(to top, @base-background-color, lighten(@base-background-color, 10%));
+  box-shadow: 0 20px 20px -20px rgba(0, 0, 0, 0.3);
+  border-bottom: none;
   position: absolute;
   width: 100%;
   z-index: 1;
@@ -131,4 +139,17 @@ ul.list-tree.matches {
 .preview-pane .preview .replacement {
   padding: 1px;
   border-radius: 0;
+}
+
+// Search result file name
+.path-details.list-item .icon {
+  margin-left: 10px;
+}
+
+.list-tree li.list-nested-item.selected.collapsed .path-details.list-item {
+  color: @text-color-selected;
+}
+
+.list-tree li.list-nested-item.selected.collapsed .path-details.list-item .path-match-number {
+  color: lighten(@background-color-selected, 30%);
 }
