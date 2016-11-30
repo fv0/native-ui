@@ -65,16 +65,6 @@ code {
   padding: 1px 3px;
 }
 
-.highlight-color(@name, @color) {
-  .highlight-@{name} {
-    color: @text-color-selected;
-    font-weight: bold;
-    text-shadow: none;
-    background-color: @color;
-    border-radius: @component-border-radius;
-    padding: 1px 5px;
-  }
-}
 .highlight-color(info, @background-color-info);
 .highlight-color(warning, @background-color-warning);
 .highlight-color(error, @background-color-error);

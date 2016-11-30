@@ -51,27 +51,13 @@
       background-color: @tab-background-color-hover;
     }
 
-    &:first-child,
-    &.active:first-child {
-      box-shadow:
-        inset 4px 0 4px -4px rgba(0,0,0, 0.4),
-        @tab-bar-inset-box-shadow;
-    }
-
     &:last-child {
-      box-shadow:
-        inset -4px 0 4px -4px rgba(0,0,0, 0.4),
-        @tab-bar-inset-box-shadow;
       border-right: none;
     }
   }
 
   .tab .is-blurred & {
     opacity: @opacity-blurred;
-  }
-
-  .tab.active {
-    flex: 1; // don't change tab size when selected
   }
 
   // Tab title
@@ -145,6 +131,7 @@
   // Active tab
   .tab.active {
     z-index: 1;
+    flex: 1;
     color: @text-color-highlight;
     background: linear-gradient(to top, @tab-background-color-active, lighten(@tab-background-color-active, 6%));
     box-shadow:

@@ -1,0 +1,62 @@
+.btn-builder(@color) {
+  border-radius: @border-radius--base;
+  background-image: linear-gradient(to top, @color, lighten(@color, 15%));
+  font-weight: 500;
+  font-size: 13px;
+  border-bottom: 1px solid darken(@color, 15%);
+  border-top: 1px solid darken(@color, 5%);
+  border-left: 1px solid darken(@color, 5%);
+  border-right: 1px solid darken(@color, 5%);
+
+  &:hover {
+    cursor: default;
+    border-bottom: 1px solid darken(@color, 15%);
+    border-top: 1px solid darken(@color, 5%);
+    border-left: 1px solid darken(@color, 5%);
+    border-right: 1px solid darken(@color, 5%);
+  }
+
+  &:active {
+    background-image: linear-gradient(to top, darken(@color, 15%), @color);
+    border-top: 1px solid darken(@color, 10%);
+    border-left: 1px solid darken(@color, 15%);
+    border-right: 1px solid darken(@color, 15%);
+    border-bottom: 1px solid darken(@color, 20%);
+    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.3);
+  }
+
+  &:focus {
+    outline: none !important;
+  }
+}
+
+.btn-selected-light(@color) {
+  &.selected {
+    background-image: linear-gradient(to top, darken(@color, 16%), darken(@color, 8%));
+    color: @text-color-selected;
+    border-top-color: darken(@color, 8%);
+    border-right-color: darken(@color, 10%);
+    border-bottom-color: darken(@color, 16%);
+    border-left-color: darken(@color, 10%);
+  }
+}
+
+.btn-selected-default(@color) {
+  &.selected {
+    background-image: linear-gradient(to top, darken(@color, 50%), darken(@color, 25%));
+    color: @text-color-selected;
+    border-top-color: darken(@color, 25%);
+    border-right-color: darken(@color, 35%);
+    border-bottom-color: darken(@color, 50%);
+    border-left-color: darken(@color, 35%);
+  }
+}
+
+.btn-group-borders(@color) {
+  &:first-child,
+  &:last-child {
+    border-left: 1px solid darken(@color, 10%);
+    border-right: 1px solid darken(@color, 10%);
+    border-radius: @border-radius--base;
+  }
+}
