@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.20.1
+
+- Removed small box-shadows on left and right of tabs
+- Cleaned up files
+- Code clean-up
+
 ## 0.20
 
 I took the time to make some changes to the interface. At some points the macOS interface elements lack contrast and since a code editor should not stand in your way of working efficiently I adapted some parts. This wasn't easy for me since I wanted to stay to the original as close as possible, but if something is bad, then sometimes you have to make a decision. I hope you like the revamped Native UI and if everything appears wrong, please file an issue in the Github repository. Happy coding! – [Ferdinand](https://twitter.com/ferdinandvogler)
