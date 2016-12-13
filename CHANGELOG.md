@@ -1,6 +1,10 @@
 # Changelog
 
-## 0.20.1
+## 0.20.3
+
+- [#62](https://github.com/fv0/native-ui/issues/62): Brought back scrollbars for some areas of Native UI. Thanks for the tip, Matt!
+
+## 0.20.2
 
 - Removed small box-shadows on left and right of tabs
 - Cleaned up files

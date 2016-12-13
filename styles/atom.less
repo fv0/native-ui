@@ -11,9 +11,12 @@ atom-panel.panel-left,
   border-right: none !important;
 }
 
-// Remove visible scrollbars but don't prevent scrolling
-::-webkit-scrollbar {
-  display: none;
+// Partially hide scrollbars
+// https://github.com/fv0/native-ui/issues/62
+.suggestion-list-scroller {
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 // Fix for #12
