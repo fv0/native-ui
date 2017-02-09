@@ -3,18 +3,13 @@
 
 @linter-spacing: @component-padding * 1.5; // same as status-bar-spacing
 
-linter-bottom-container {
-    margin-right: @linter-spacing;
-}
-
 linter-bottom-tab {
-    line-height: 18px;
+    line-height: 23px;
     display: inline-block;
     padding: 0 @linter-spacing;
     color: @text-color-subtle;
     background-image: linear-gradient(to top, @btn-base-color, lighten(@btn-base-color, 15%)); // same as buttons
     border: none;
-    border-bottom: 1px solid darken(@btn-base-color, 25%);
 
     &:nth-child(2) { // first item is a hidden one
         border-radius: @border-radius--base 0 0 @border-radius--base;
@@ -31,13 +26,10 @@ linter-bottom-tab {
 }
 
 linter-bottom-status {
-    margin-left: @linter-spacing;
+    margin-left: 10px;
+    line-height: 23px;
 }
 
 linter-bottom-status.linter-highlight.status-success {
-    color: darken(@text-color-success, 15%);
-}
-
-linter-bottom-status.linter-highlight.status-success {
-    color: darken(@text-color-success, 15%);
+    color: darken(@text-color-success, 20%);
 }
