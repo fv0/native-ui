@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.20.4
+
+- Made character match better visible.
+- Increased opacity of the border separating the tabs.
+- Adjusted baseline alignments of status bar elements.
+
 ## 0.20.3
 
 - [#62](https://github.com/fv0/native-ui/issues/62): Brought back scrollbars for some areas of Native UI. Thanks for the tip, Matt!
