@@ -5,8 +5,8 @@
 status-bar {
   box-shadow: 0 -1px 0 rgba(0,0,0, 0.15); // imitates border top
   background-image: linear-gradient(to top, @status-bar-background-color, #EDEBED);
-  height: @tab-height + 3;
-  line-height: @tab-height;
+  height: @tab-height + 4;
+  position: relative;
 
   .is-blurred & {
     opacity: @opacity-blurred;
@@ -39,9 +39,25 @@ status-bar .status-bar-right .git-view .inline-block {
   }
 }// status-bar .status-bar-right a.inline-block
 
+status-bar .status-bar-right,
+status-bar .status-bar-left {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
 status-bar .status-bar-right {
-  line-height: @tab-height - 6px;
-  margin-top: 3px;
+  right: 0;
+}
+
+status-bar .status-bar-left {
+  left: 0;
+  margin-left: 3px;
+}
+
+.status-bar-left > .inline-block {
+  margin-left: 10px;
+  margin-right: 0;
 }
 
 status-bar a:hover {
@@ -50,8 +66,7 @@ status-bar a:hover {
 }
 
 status-bar .flexbox-repaint-hack {
-  padding-right: 0;
-  padding-left: 15px;
+  padding: 0;
 }
 
 status-bar .text-warning,
@@ -75,11 +90,6 @@ status-bar .status-bar-right .release-notes-status {
 // When nothing is displayed in the window sometimes there's a empty link which Atom produces
 a.line-ending-tile.inline-block:empty {
   display: none;
-}
-
-// Override default padding, because not necessary
-status-bar .status-bar-right {
-  padding-left: 0;
 }
 
 // Add a small margin between commits behind and ahead
