@@ -18,12 +18,12 @@ status-bar .status-bar-right .git-view .inline-block {
   margin: 0 3px 0 0;
   padding: 0 @status-bar-spacing;
 
-  &:hover:not([class|="git"]) {
+  &:hover:not([class|="git"]):not(busy-signal) {
     background-color: darken(@tab-background-color, 5%);
     border-radius: @border-radius--base;
     text-decoration: none;
     color: inherit;
-    color: white;
+    color: @text-color-selected;
     cursor: pointer;
 
     a,
@@ -56,22 +56,13 @@ status-bar .status-bar-left {
 }
 
 .status-bar-left > .inline-block {
-  margin-left: 10px;
+  margin-left: @status-bar-spacing;
   margin-right: 0;
 }
 
-.status-bar-left > .status-bar {
-	position: relative;
-	vertical-align: middle;
-}
-
+// Dont show underlines when hovering over some links
 status-bar a:hover {
   text-decoration: none;
-  color: inherit;
-}
-
-status-bar .flexbox-repaint-hack {
-  padding: 0;
 }
 
 status-bar .text-warning,

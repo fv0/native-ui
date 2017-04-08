@@ -1,0 +1,28 @@
+@import "syntax-variables";
+@import "ui-variables";
+
+// → START: Linter
+@linter-spacing: @component-padding * 1.5; // same as status-bar-spacing
+
+// Fix #66
+busy-signal.loading-spinner-tiny {
+  background-size: contain;
+}
+
+.linter-status-count {
+  border-radius: @border-radius--base;
+
+  span {
+    border-radius: 0;
+    font-weight: normal; // same as status-bar hover items
+    color: @text-color-selected;
+    text-align: center;
+  }
+
+  // If there are no errors, display the values in a lighter tone
+  .highlight {
+    color: darken(@text-color-selected, 15%);
+    background-color: darken(@tab-background-color, 5%);
+  }
+}
+// ← END
