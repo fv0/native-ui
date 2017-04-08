@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.20.5
+
+- [#66](https://github.com/fv0/native-ui/issues/66): Broken loading icon for the Linter 2 package.
+
 ## 0.20.4
 
 - Made character match better visible.
