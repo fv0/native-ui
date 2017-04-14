@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.20.6
+
+- [#67](https://github.com/fv0/native-ui/issues/67): Fix for the weird display of search results when updating to Atom 1.16.
+
 ## 0.20.5
 
 - [#66](https://github.com/fv0/native-ui/issues/66): Broken loading icon for the Linter 2 package.
