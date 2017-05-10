@@ -3,37 +3,28 @@
 }
 
 .settings-view input[type="checkbox"] {
-  @dimensions: 1.15rem;
-
-  margin-right: @dimensions;
-  vertical-align: text-bottom;
-  width: @dimensions;
-  height: @dimensions;
-  cursor: default;
-  box-shadow: 0 0 0 1px @base-border-color;
+  box-shadow: 0 0 0 1/@rem @base-border-color;
   background-color: @input-background-color;
 
   &:checked {
-    box-shadow: 0 0 0 1px @background-color-selected;
+    box-shadow: 0 0 0 1/@rem @background-color-selected;
     background-color: @background-color-selected;
   }
 
   &:after,
   &:before {
-    top: 10px;
-    left: 5px;
     background-color: @text-color-selected;
   }
 
-  &:after {
-    width: 0.8rem;
+  &:before {
+    width: 6/@rem;
   }
 }
 
-.settings-view .section .editor.mini,
-.settings-view .section .editor.mini::shadow {
-  opacity: 1;
-}
+// .settings-view .section .editor.mini,
+// .settings-view .section .editor.mini::shadow {
+//   opacity: 1;
+// }
 
 .editor.mini .placeholder-text,
 .editor.mini::shadow .placeholder-text {
@@ -52,6 +43,19 @@
 .settings-view .package-card {
   cursor: pointer;
   overflow: visible;
+}
+
+.settings-view .package-card .package-version {
+  color: @text-color-subtle;
+}
+
+.settings-view .package-card .stats .stats-item {
+  color: @text-color-subtle;
+  font-size: 0.9em;
+}
+
+.settings-view .package-card .stats .stats-item .icon:before {
+  font-size: 1.2em;
 }
 
 .badge {
@@ -119,4 +123,35 @@ ul.background-message.centered {
   &:before {
     display: none; // don't show old icon
   }
+}
+
+.settings-view .config-menu .nav > li > a {
+  cursor: default; // Remove the mouse hand on hover
+  font-size: 1.15rem;
+  padding: @component-padding/1.5 @component-padding*2;
+  color: @text-color-highlight;
+
+  &:hover {
+    cursor: default; // Remove the mouse hand on hover
+    background-color: transparent;
+    color: @text-color-highlight;
+  }
+
+  &:before { // icon
+    margin-right: @component-padding;
+    color: lighten(@text-color-highlight, 45%);
+  }
+}
+
+.settings-view .config-menu .nav > li.active > a {
+  color: @text-color-highlight;
+  background-color: rgba(0,0,0, 0.1);
+}
+
+.settings-view .setting-description {
+  letter-spacing: 0.02rem; // increase legibility
+}
+
+.settings-view div > section.section.settings-panel {
+  border-top: none;
 }
