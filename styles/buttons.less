@@ -10,12 +10,19 @@
 .btn.btn-primary {
   .btn-builder(@background-color-info);
   color: @text-color-selected;
+  border-top-color: lighten(@background-color-selected, 10%);
+  border-right-color: lighten(@background-color-selected, 5%) !important;
+  border-left-color: lighten(@background-color-selected, 5%) !important;
 
   &.icon:hover {
     color: @text-color-selected;
   }
 
   .btn-selected-light(@background-color-info);
+
+  &:hover {
+    border-top-color: lighten(@background-color-selected, 10%);
+  }
 }
 
 .btn.btn-success {
