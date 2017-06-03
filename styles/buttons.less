@@ -2,68 +2,61 @@
 @import "ui-mixins";
 
 .btn {
-  .btn-builder(@btn-base-color);
-  .btn-selected-default(@btn-base-color);
+  .MIXIN__btn-builder(@btn-base-color);
+  .MIXIN__btn-selected-default(@btn-base-color);
 }
 
 .btn.btn-info,
 .btn.btn-primary {
-  .btn-builder(@background-color-info);
+  .MIXIN__btn-builder(@background-color-info);
   color: @text-color-selected;
-  border-top-color: lighten(@background-color-selected, 10%);
-  border-right-color: lighten(@background-color-selected, 5%) !important;
-  border-left-color: lighten(@background-color-selected, 5%) !important;
 
   &.icon:hover {
     color: @text-color-selected;
   }
 
-  .btn-selected-light(@background-color-info);
-
-  &:hover {
-    border-top-color: lighten(@background-color-selected, 10%);
-  }
+  .MIXIN__btn-selected-light(@background-color-info);
 }
 
 .btn.btn-success {
-  .btn-builder(@background-color-success);
+  .MIXIN__btn-builder(@background-color-success);
   color: @text-color-selected;
 
   &.icon:hover {
     color: @text-color-selected;
   }
 
-  .btn-selected-light(@background-color-success);
+  .MIXIN__btn-selected-light(@background-color-success);
 }
 
 .btn.btn-warning {
-  .btn-builder(@background-color-warning);
+  .MIXIN__btn-builder(@background-color-warning);
   color: @text-color-selected;
 
   &.icon:hover {
     color: @text-color-selected;
   }
 
-  .btn-selected-light(@background-color-warning);
+  .MIXIN__btn-selected-light(@background-color-warning);
 }
 
 .btn.btn-error {
-  .btn-builder(@background-color-error);
+  .MIXIN__btn-builder(@background-color-error);
   color: @text-color-selected;
 
   &.icon:hover {
     color: @text-color-selected;
   }
 
-  .btn-selected-light(@background-color-error);
+  .MIXIN__btn-selected-light(@background-color-error);
 }
 
 .btn-group > .btn {
-  .btn-group-borders(@btn-base-color);
+  .MIXIN__btn-group-borders(@btn-base-color);
 }
 
 .btn-group > .btn-info {
-  .btn-group-borders(@background-color-info);
+  .MIXIN__btn-group-borders(@background-color-info);
 }
 
 .btn.disabled,
@@ -87,23 +80,23 @@ fieldset[disabled] .btn {
 
 // Limit the scope
 .search-container {
-  .btn-group > .btn:first-child,
-  .btn-group > .btn:last-child {
-    border-left: none;
-    border-right: none;
-  }
+  // .btn-group > .btn:first-child,
+  // .btn-group > .btn:last-child {
+  //   border-left: none;
+  //   border-right: none;
+  // }
 
-  .btn-group > .btn:active {
-    border-top: none;
-    border-bottom: none;
-  }
+  // .btn-group > .btn:active {
+  //   border-top: none;
+  //   border-bottom: none;
+  // }
 
-  .btn-group .btn + .btn,
-  .btn-group .btn + .btn-group,
-  .btn-group .btn-group + .btn,
-  .btn-group .btn-group + .btn-group {
-    margin-left: 0; // this was set to -1
-  }
+  // .btn-group .btn + .btn,
+  // .btn-group .btn + .btn-group,
+  // .btn-group .btn-group + .btn,
+  // .btn-group .btn-group + .btn-group {
+  //   margin-left: 0; // this was set to -1
+  // }
 }
 
 // Overwrites ===============================================
