@@ -1,136 +1,72 @@
-ul.list-tree.matches > li.search-result.list-item {
-  padding-left: 0; // align with file type icon
-  margin-left: 0;
-  padding-bottom: 0;
-  padding-top: 0;
+.preview-pane .preview-header {
+  padding: @component-padding * 2 @component-padding ;
+  font-size: 1.75em;
+  font-weight: bold;
+  background-color: @base-background-color;
+  font-family: @font-family-headlines;
+  border-bottom: none; // ow
+  width: 100%;
+  z-index: 1;
 
-  &:before {
-    content: "";
-    background-color: transparent;
-    position: absolute;
-    left: @component-padding + 1;
-    right: @component-padding + 1;
-    height: 2rem;
-  }
-
-  &:hover:before {
-    background-color: @base-background-color;
-  }
-
-  &.selected:before {
-    left: @component-padding + 1;
-    right: @component-padding + 1;
-  }
-
-  &:hover.selected {
-    &:before {
-      background-color: @base-background-color;
-    }
+  .preview-controls {
+    font-family: @font-family;
   }
 }
 
-.preview-pane .results-view .search-result {
-  padding-top: 0;
-  padding-bottom: 0;
-
-  &.selected {
-    color: @text-color-selected;
-  }
-
-  &:hover {
-    background-color: @background-color-highlight;
-  }
-}
-
-// Name of the file
-.results-view .path.list-nested-item.selected {
-  &:before {
-    height: 32/@rem; // height of the selected background element
-  }
-}
-
-.preview-pane .results-view .line-number,
-.preview-pane .results-view .preview {
-  position: relative; // otherwise the :before will overlay the text
-}
-
-.results-view .line-number {
-  min-width: 35/@rem;
-  text-align: right;
-  margin-right: @component-padding; // align with file name
-  padding-right: @component-padding;
-  color: @text-color-subtle;
-  border-right: 1/@rem solid lighten(@text-color-subtle, 25%);
-}
-
-.preview-pane .results-view .selected .line-number {
-  color: @text-color-subtle; // overwrite
-}
-
-.preview-pane .results-view .search-result.selected .line-number {
-  color: @text-color-selected;
-}
-
-.results-view li.path.list-nested-item {
+.results-view .list-tree > div {
   background-color: @input-background-color;
-  box-shadow: inset 0 0 0 1/@rem @button-border-color;
-  overflow: hidden;
+  border-bottom: 1px solid @base-border-color;
+
+  &:first-child {
+    border-top: 1px solid @base-border-color;
+  }
 }
 
 .results-view .list-tree.has-collapsable-children {
-  padding: @component-padding;
+  padding: 0;
 }
 
-// Name of the file the search results were found in
-.results-view .path-details.list-item {
-  background-image: linear-gradient(to top, @background-color-highlight, transparent);
-  border-bottom: 1px solid @button-border-color;
-  font-size: @font-size-h4;
-  padding: 4px 8px;
+.preview-pane .results-view .selected {
+  > .line-number,
+  > .preview,
+  > .path-details.list-item,
+  .path-match-number {
+    color: @text-color-selected !important;
+  }
 
-  &:hover {
-    background-color: @background-color-highlight;
+  .path-match-number {
+    opacity: 0.65;
   }
 }
 
-.results-view .selected > div.path-details.list-item {
-  color: @text-color-selected;
+.preview-pane .results-view .selected .line-number {
+  color: @text-color-subtle;
 }
 
-.results-view .selected.collapsed > div.path-details.list-item {
-  color: @text-color;
+// Increase distance to search result in code
+.preview-pane .results-view .line-number {
+  margin-right: 1rem;
 }
 
-.preview-pane .preview-header {
-  padding: @component-padding;
-  text-align: center;
-  font-size: 1.2em;
-  font-weight: bold;
-  background-image: linear-gradient(to top, @base-background-color, lighten(@base-background-color, 10%));
-  border-bottom: none; // ow
-  box-shadow: 0 1rem 2rem -1rem rgba(0,0,0, 0.35);
-  width: 100%;
-  z-index: 1;
+// Name of the file the search result was found in
+.results-view .path-details.list-item {
+  padding: 0 @component-padding;
 }
 
-.preview-pane .preview .match,
-.preview-pane .preview .replacement {
-  padding: 1px;
-  border-radius: 0;
+.results-view .selected > .path-details.list-item {
+  &:hover {
+    background-color: darken(@background-color-selected, 5%);
+  }
 }
 
-.list-tree li.list-nested-item.selected.collapsed .path-details.list-item {
-  color: @text-color-selected;
-}
-
-.list-tree .path.selected .path-match-number {
-  color: lighten(@background-color-selected, 30%);
-}
-
-.results-view .list-tree.has-collapsable-children li.search-result.list-item {
+// Don’t indent the list items
+.results-view .list-tree.has-collapsable-children li.list-item {
   margin-left: 0;
 }
 
-.preview-pane .results-view .list-tree.has-collapsable-children > div {
-  margin-top: @component-padding;
+.results-view .search-result.list-item,
+.results-view .path-details.list-item {
+  &:hover {
+    background-color: darken(@base-background-color, 3%);
+  }
 }
