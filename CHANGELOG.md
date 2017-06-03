@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.21.0
+
+- Fixed [#69](https://github.com/fv0/native-ui/issues/69): Styled the new “Docks” feature in Atom.
+- Simpfified code for the status bar.
+- Simpfified code for buttons. They might appear a bit less “native” than before, but they don’t break as much in different parts of the UI since they overwrite the default only minorly.
+- Fixed [#70](https://github.com/fv0/native-ui/issues/70): Find in project is showing incomplete/incorrect results.
+
 ## 0.20.6
 
 - [#67](https://github.com/fv0/native-ui/issues/67): Fix for the weird display of search results when updating to Atom 1.16.
