@@ -35,10 +35,7 @@
 
 .tree-view {
 	font-size: @font-size;
-	background: linear-gradient(to right, @base-background-color, darken(@base-background-color, 5%));
-	box-shadow: inset -0.5px 0 0 0 @tree-view-border-color;
-	padding-left: 5px;
-	padding-right: 5px;
+	background: @background-tree-view;
 
 	.selected:before {
 		background: @background-color-highlight;
@@ -48,26 +45,6 @@
 .list-group .selected:before,
 .list-tree .selected:before {
 	height: @height__list-item;
-}
-
-.tree-view-resizer {
-
-	.is-blurred & {
-		opacity: @opacity-blurred;
-	}
-
-	// Make the resizing easier
-	.tree-view-resize-handle {
-		width: 10px;
-
-		&:hover {
-			background: @resize-handle-color-hover;
-		}
-
-		&:active {
-			background: @resize-handle-color-active;
-		}
-	}
 }
 
 .focusable-panel { // when the tree view is focused
