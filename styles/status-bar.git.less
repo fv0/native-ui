@@ -1,4 +1,4 @@
-status-bar-git {
+.github-StatusBarTileController {
   background-color: @background-git-view;
 
   &:hover {
@@ -6,14 +6,15 @@ status-bar-git {
   }
 }
 
-status-bar .status-bar-right .git-view .inline-block {
+status-bar .status-bar-right .github-StatusBarTileController .inline-block {
   color: @text-color-selected;
 }
 
-status-bar .inline-block + .git-view {
+status-bar .inline-block + .github-StatusBarTileController {
   margin-left: @component-padding;
 }
 
-status-bar-git .git-branch.inline-block {
+.github-StatusBarTileController .inline-block:only-child,
+.github-StatusBarTileController .github-branch.inline-block {
   margin-left: 0;
 }
