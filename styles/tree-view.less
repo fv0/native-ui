@@ -7,26 +7,23 @@
 .git-status-bullet(@color) {
 	&:after {
 		content: "";
+		width: 7px;
+		height: 7px;
 		float: left;
 		position: relative;
-		left: -12px;
-		margin-right: -13px;
-		margin-top: 9px;
+		top: 8px;
+		left: -13px;
+		margin-right: -12px;
 		background-color: @color;
-		border-radius: 100%;
-		width: 6px;
-		height: 6px;
 		border: 1px solid darken(@color, 10%);
+		border-radius: 100%;
 	}
 }
 
-.git-status-folder(@color) {
+.git-status-bullet--folder(@color) {
 	&:after {
-		margin-top: 9px;
+		border-color: @text-color;
 		left: 15px;
-		border-color: @base-background-color;
-		width: 6px;
-		height: 6px;
 	}
 }
 
@@ -35,7 +32,8 @@
 
 .tree-view {
 	font-size: @font-size;
-	background: @background-tree-view;
+	text-shadow: none;
+  background: @tree-view-background-color;
 
 	.selected:before {
 		background: @background-color-highlight;
@@ -46,51 +44,6 @@
 .list-tree .selected:before {
 	height: @height__list-item;
 }
-
-.focusable-panel { // when the tree view is focused
-
-	&:focus {
-		// A selected item
-		.selected:before {
-			background: linear-gradient(to right, @background-color-selected, darken(@background-color-selected, 8%));
-
-		}
-
-		// Change border color of git status on folders when selected
-		.status-modified.selected,
-		.status-added.selected {
-			& > .header.list-item:after {
-				border-color: @background-color-selected;
-			}
-		}
-
-		.file,
-		.directory,
-		.entries {
-			.list-group li:not(.list-nested-item).selected,
-			.list-tree li:not(.list-nested-item).selected,
-			.list-group li.list-nested-item.selected > .list-item,
-			.list-tree li.list-nested-item.selected > .list-item,
-
-			&.project-root:not(.list-nested-item).selected,
-			&.project-root.list-nested-item.selected > div.list-item,
-
-			&.selected.expanded > .header.list-item:before,
-			&.selected.collapsed > .header.list-item:before,
-
-			&.list-tree li.file:not(.list-nested-item).status-modified.selected,
-			&.list-tree li.file:not(.list-nested-item).status-added.selected,
-
-			&.list-nested-item.status-modified.selected > .list-item:before,
-			&.list-nested-item.status-added.selected > .list-item:before,
-
-			&.list-nested-item.status-modified.selected > .list-item,
-			&.list-nested-item.status-added.selected > .list-item {
-				color: white;
-			}
-		}
-	}
-}// .focusable-panel
 
 .list-item,
 .header.list-item {
@@ -113,14 +66,16 @@
 	}
 }
 
+// These classes are needed so that different files don’t appear color-coded based on their Git status
+// Selected
 .list-group li:not(.list-nested-item).selected,
 .list-tree li:not(.list-nested-item).selected,
 .list-group li.list-nested-item.selected > .list-item,
 .list-tree li.list-nested-item.selected > .list-item,
-
+// Selected project root
 .project-root li:not(.list-nested-item).selected,
 .project-root li.list-nested-item.selected > .list-item,
-
+// Modified
 .list-group li.file:not(.list-nested-item).status-modified,
 .list-tree li.file:not(.list-nested-item).status-modified,
 .list-group li.file.list-nested-item.status-modified > .list-item,
@@ -129,7 +84,7 @@
 .list-tree li.directory:not(.list-nested-item).status-modified,
 .list-group li.directory.list-nested-item.status-modified > .list-item,
 .list-tree li.directory.list-nested-item.status-modified > .list-item,
-
+// Added
 .list-group li.file:not(.list-nested-item).status-added,
 .list-tree li.file:not(.list-nested-item).status-added,
 .list-group li.file.list-nested-item.status-added > .list-item,
@@ -137,9 +92,7 @@
 .list-group li.directory:not(.list-nested-item).status-added,
 .list-tree li.directory:not(.list-nested-item).status-added,
 .list-group li.directory.list-nested-item.status-added > .list-item,
-.list-tree li.directory.list-nested-item.status-added > .list-item {
-	color: @text-color;
-}
+.list-tree li.directory.list-nested-item.status-added > .list-item,
 
 .expanded.status-modified .header.list-item:before,
 .expanded.status-added .header.list-item:before {
@@ -148,51 +101,38 @@
 
 .status-modified > .header.list-item {
 	.git-status-bullet(@text-color-modified);
-	.git-status-folder(@text-color-modified);
+	.git-status-bullet--folder(@text-color-modified);
 }
 
+// Border color around the modified bullet, when selected
 .status-modified.selected > .header.list-item:after {
-	border-color: #D5D5D5;
+	border-color: @tree-view-background-color;
 }
 
 .status-added > .header.list-item {
 	.git-status-bullet(@text-color-added);
-	.git-status-folder(@text-color-added);
+	.git-status-bullet--folder(@text-color-added);
 }
 
 .list-group li:not(.list-nested-item),
 .list-tree li:not(.list-nested-item),
 .list-group li.list-nested-item > .list-item,
 .list-tree li.list-nested-item > .list-item {
-	text-shadow: none;
 	line-height: @height__list-item;
-}
-
-
-
-// Ignored tree view items
-
-.list-tree.has-collapsable-children .list-nested-item.collapsed.status-ignored > .list-item::before {
-	color: @text-color-ignored;
-}
-
-.list-group li:not(.list-nested-item).status-ignored,
-.list-tree li:not(.list-nested-item).status-ignored,
-.list-group li.list-nested-item.status-ignored > .list-item, .list-tree li.list-nested-item.status-ignored > .list-item {
-	color: @text-color-ignored;
+	text-shadow: none;
 }
 
 // Folder is open
-.list-tree.has-collapsable-children .list-nested-item > .list-item::before {
+.list-tree.has-collapsable-children .list-nested-item > .list-item:before {
 	content: "▶";
 	font-size: 10px;
-	transform: rotate(90deg);
-	transform-origin: 40% 40%;
+	transform: rotate(90deg) translate(1px, 1px);
+	transform-origin: center;
 }
 
 // Folder is closed
-.list-tree.has-collapsable-children .list-nested-item.collapsed > .list-item::before {
+.list-tree.has-collapsable-children .list-nested-item.collapsed > .list-item:before {
 	content: "▶";
 	font-size: 10px;
-	transform: none;
+	transform: rotate(0deg);
 }

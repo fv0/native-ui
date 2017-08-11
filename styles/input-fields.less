@@ -1,34 +1,43 @@
-.input-block-item .editor.mini,
-.controls .editor.mini,
-atom-panel .editor.mini,
-.settings-view select.form-control,
 .editor-container .editor.mini {
   font-size: 1.15rem;
   box-shadow: none;
-  border-color: @input-border-color;
+  border: 1px solid @input-border-color;
   border-radius: @border-radius--base;
-  padding: 0 8px;
+  padding: 0 @component-padding/1.5;
   background: @text-color-selected;
   transition: box-shadow @transition--default;
+
+  .selection .region {
+    background-color: rgba(0, 0, 0, .2);
+  }
+
+  .cursor {
+    border-width: 1px;
+    height: 18px !important;
+    margin-top: 4px;
+    border-color: @text-color;
+  }
 
   &.is-focused {
     border-color: @input-border-color-active;
     color: @text-color-highlight;
     box-shadow: 0 0 0 3px @input-outline-color-active;
-  }
-}
+
+    .placeholder-text {
+      color: @text-color-subtle;
+    }
+
+    .selection .region {
+      background-color: lighten(@background-color-info, 30%);
+    }
+  } // .is-focused
+} // editor.mini
 
 .tree-view-dialog .editor.mini {
   max-height: 100%;
 }
 
-.editor.mini .cursor,
-.editor.mini::shadow .cursor {
-  border-width: 1px;
-  height: 18px !important;
-  margin-top: 4px;
-}
-
+// A `select` input field
 .settings-view select.form-control,
 .settings-view select.form-control:hover,
 .settings-view select.form-control:focus {
