@@ -1,5 +1,7 @@
+@import "ui-variables";
+
 .preview-pane .preview-header {
-  padding: @component-padding * 2 @component-padding ;
+  padding: @component-padding ;
   font-size: 1.75em;
   font-weight: bold;
   background-color: @base-background-color;
@@ -13,9 +15,15 @@
   }
 }
 
+.results-view {
+  padding: 0 @component-padding;
+}
+
+// Single search result
 .results-view .list-tree > div {
   background-color: @input-background-color;
-  border-bottom: 1px solid @base-border-color;
+  border: 1px solid @base-border-color;
+  border-top: none;
 
   &:first-child {
     border-top: 1px solid @base-border-color;
@@ -29,41 +37,51 @@
 .preview-pane .results-view .selected {
   > .line-number,
   > .preview,
-  > .path-details.list-item,
+  > .path-details.list-item.collapsed,
   .path-match-number {
-    color: @text-color-selected !important;
+    color: @text-color-selected;
   }
+}
 
-  .path-match-number {
-    opacity: 0.65;
-  }
+// Increase distance to search result in code
+.preview-pane .results-view .line-number {
+  border-right: 1px solid @base-border-color;
+  margin-right: @component-padding / 2;
+  min-width: @component-padding * 4; // width of a 5-digit number
+  padding-right: @component-padding / 2;
 }
 
 .preview-pane .results-view .selected .line-number {
   color: @text-color-subtle;
 }
 
-// Increase distance to search result in code
-.preview-pane .results-view .line-number {
-  margin-right: 1rem;
-}
-
 // Name of the file the search result was found in
 .results-view .path-details.list-item {
   padding: 0 @component-padding;
+
+  .path-name {
+    font-weight: bold;
+  }
+
+  .path-match-number {
+    color: @text-color;
+  }
 }
 
 .results-view .selected > .path-details.list-item {
-  &:hover {
-    background-color: darken(@background-color-selected, 5%);
-  }
+  color: @text-color;
 }
 
 // Don’t indent the list items
 .results-view .list-tree.has-collapsable-children li.list-item {
   margin-left: 0;
+
+  &.selected .preview {
+    color: @text-color;
+  }
 }
 
+// Hover over the list results in a different color
 .results-view .search-result.list-item,
 .results-view .path-details.list-item {
   &:hover {
