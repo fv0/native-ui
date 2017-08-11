@@ -1,38 +1,51 @@
 ![Banner Native UI](https://cloud.githubusercontent.com/assets/8401092/20631149/769f190a-b335-11e6-91ba-aad73f7f4c49.jpg)
 
-Get the newest macOS interface elements in Atom. Experience a reduced, more native feeling for your favorite code editor. No redundant transitions or fancy effects distracting you from your daily work.
+Native UI brings macOS’ looks to Atom. Experience a reduced, more native feeling for your favorite code editor. No redundant transitions or fancy effects distracting you from your daily work.
 
-**Made by [Ferdinand Vogler](https://www.twitter.com/ferdinandvogler)**
+Created by **[Ferdinand Vogler](https://www.twitter.com/ferdinandvogler)**, Product Designer.
 
 # Features
 
-- Tab behavior as known from Finder
-- Apple’s new system font San Francisco
-- Better structured search results
-- Redesign of many parts in Atom
-- Built fast and reliant with an eye for details
+- Tab behavior known from Finder.
+- `NEW` macOS transparent blur effect for the directory list.
+- Apple’s new system font San Francisco.
+- Better structured search results.
+- Redesign of many parts in Atom.
+- Built fast and reliant with an eye for details.
+
+# What Developers say about Native UI
+
+> “This theme makes Atom look like it should on macOS. It’s the gold standard for native themes.”  
+> — [Nick Balsbaugh](https://github.com/fv0/native-ui/issues/70#issuecomment-306361702)
+>
+> “Just started working on Atom’s Native UI theme this week and it’s awesome!”  
+> — [Odicro](https://twitter.com/odicro/status/744053690164723712)
+>
+> “Native UI, an Atom theme for El Capitan is flat out amazing. I love this theme.”  
+> — [Amy](https://twitter.com/lexicalunit/status/715246366293934083)
+>
+> “Started using Native UI, a super cool Atom theme for El Capitan. Really well made.”  
+> — [Alexey](https://twitter.com/laughedelic/status/667736559064621058)
 
 # Screenshots
 
-[![Screenshot File Switcher](https://cloud.githubusercontent.com/assets/8401092/26756018/c76578ee-4899-11e7-9a8f-ac415d12db36.png)](https://cloud.githubusercontent.com/assets/8401092/26756018/c76578ee-4899-11e7-9a8f-ac415d12db36.png)
+![Editor](https://user-images.githubusercontent.com/8401092/29223143-ca3f182e-7ec5-11e7-95e0-62dd1f2b6878.jpg)
+![File Switcher](https://user-images.githubusercontent.com/8401092/29223144-ca5851fe-7ec5-11e7-80ff-bdf86afff71f.jpg)
+![Search Results](https://user-images.githubusercontent.com/8401092/29223145-ca5eaafe-7ec5-11e7-85c4-066a71c5a535.jpg)
+![Settings](https://user-images.githubusercontent.com/8401092/29223146-ca5ebeb8-7ec5-11e7-932b-b0ef74986ddb.jpg)
 
-[![Screenshot Settings](https://cloud.githubusercontent.com/assets/8401092/26756016/adb96068-4899-11e7-8503-4413e52c5ffb.png)](https://cloud.githubusercontent.com/assets/8401092/26756016/adb96068-4899-11e7-8503-4413e52c5ffb.png)
-
-[![Screenshot Search Results](https://cloud.githubusercontent.com/assets/8401092/26755974/b623d77a-4898-11e7-8680-708a672e3b50.png)](https://cloud.githubusercontent.com/assets/8401092/26755974/b623d77a-4898-11e7-8680-708a672e3b50.png)
 
 # Icons
 
 ![](https://cloud.githubusercontent.com/assets/8401092/20631850/50eec71a-b339-11e6-9cf1-e245e8d6451b.png)
 
-macOS | Windows
---- | ---
-[Download](https://github.com/fv0/native-ui/raw/master/Atom.icns) ![Icon ICNS](https://cloud.githubusercontent.com/assets/8401092/20631777/e3d4c3e6-b338-11e6-94aa-b1830ff29866.png) | [Download](https://github.com/fv0/native-ui/raw/master/Atom.ico) ![Icon ICO](https://cloud.githubusercontent.com/assets/8401092/20631776/e3d4d192-b338-11e6-8c66-62bc40270f11.png)
+Choose between [macOS (.icns)](https://github.com/fv0/native-ui/raw/master/Atom.icns) or [Windows (.ico)](https://github.com/fv0/native-ui/raw/master/Atom.ico).
 
 # How To Install
 
 Terminal | Atom
 --- | ---
-If you have the Atom Package Manager installed you can run `apm install native-ui` | Go to `Settings → Install`, switch the tab from `Packages` to `Themes` and search for **native-ui**. After that select the theme **Native** in `Settings → Themes`.
+If you have the Atom Package Manager installed you can run `apm install native-ui` | Go to <kbd>Settings</kbd> → <kbd>Install</kbd>, switch the tab from <kbd>Packages</kbd> to <kbd>Themes</kbd> and search for **native-ui**. After that select the theme **Native** in <kbd>Settings</kbd> → <kbd>Themes</kbd>.
 
 # Enjoy working with Native UI?
 

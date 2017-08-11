@@ -1,5 +1,13 @@
 # Changelog
 
+# 0.22.0
+
+- Implemented [#72](https://github.com/fv0/native-ui/issues/72): Supported by Atom 1.19 I added macOS transparency for file and directory list. Thanks to [Guillaume](https://github.com/the0neyouseek) for mentioning and helping with this.
+- The Git status in the bottom bar is now back to its old look with a dark background.
+- Cosmetic adjustments here and there.
+- Some design adjustments to the “Project Find Results”.
+- Added testimonials and new screenshots to `README.md`.
+
 ## 0.21.0
 
 - Fixed [#69](https://github.com/fv0/native-ui/issues/69): Styled the new “Docks” feature in Atom.
