@@ -1,7 +1,10 @@
 @import "ui-variables";
 
-atom-workspace {
-  background-color: @app-background-color;
+html,
+atom-workspace,
+.atom-dock-mask,
+.pane {
+	background: transparent;
 }
 
 atom-panel.left,
@@ -11,16 +14,10 @@ atom-panel.panel-left,
   border-right: none !important;
 }
 
-// Partially hide scrollbars
+// #62: Partially hide scrollbars
 // https://github.com/fv0/native-ui/issues/62
 .suggestion-list-scroller {
   &::-webkit-scrollbar {
     display: none;
   }
-}
-
-// Fix for #12
-atom-pane-container atom-pane,
-atom-pane-container atom-pane:focus {
-  background-color: @app-background-color !important;
 }

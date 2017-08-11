@@ -1,4 +1,7 @@
-.editor-container .editor.mini {
+
+.editor-container atom-text-editor,
+.settings-view atom-text-editor,
+.modal atom-text-editor {
   font-size: 1.15rem;
   box-shadow: none;
   border: 1px solid @input-border-color;
@@ -6,13 +9,15 @@
   padding: 0 @component-padding/1.5;
   background: @text-color-selected;
   transition: box-shadow @transition--default;
+  color: @text-color;
 
   .selection .region {
     background-color: rgba(0, 0, 0, .2);
   }
 
   .cursor {
-    border-width: 1px;
+    width: 1/@em !important;
+    border-left-width: 1/@em !important;
     height: 18px !important;
     margin-top: 4px;
     border-color: @text-color;

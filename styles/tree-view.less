@@ -1,9 +1,5 @@
 @import "ui-variables";
 
-@height__list-item: @tab-height;
-
-// start MIXINS ==================================================
-
 .git-status-bullet(@color) {
 	&:after {
 		content: "";
@@ -27,24 +23,21 @@
 	}
 }
 
-//================================================== end MIXINS
-
+@height__list-item: @tab-height;
 
 .tree-view {
 	font-size: @font-size;
-	text-shadow: none;
+	text-shadow: none; // overwrite
   background: @tree-view-background-color;
-
-	.selected:before {
-		background: @background-color-highlight;
-	}
 }
 
 .list-group .selected:before,
 .list-tree .selected:before {
 	height: @height__list-item;
+	background: @background-color-highlight;
 }
 
+// Modified file
 .list-item,
 .header.list-item {
 	&.status-modified {
@@ -52,6 +45,7 @@
 	}
 }
 
+// Added file
 .list-item,
 .header.list-item {
 	&.status-added {
@@ -59,11 +53,24 @@
 	}
 }
 
+// Removed file
 .list-item,
 .header.list-item {
 	&.status-removed {
 		.git-status-bullet(@text-color-removed);
 	}
+}
+
+// Modified folder
+.status-modified > .header.list-item {
+	.git-status-bullet(@text-color-modified);
+	.git-status-bullet--folder(@text-color-modified);
+}
+
+// Added folder
+.status-added > .header.list-item {
+	.git-status-bullet(@text-color-added);
+	.git-status-bullet--folder(@text-color-added);
 }
 
 // These classes are needed so that different files don’t appear color-coded based on their Git status
@@ -99,21 +106,6 @@
 	color: @text-color;
 }
 
-.status-modified > .header.list-item {
-	.git-status-bullet(@text-color-modified);
-	.git-status-bullet--folder(@text-color-modified);
-}
-
-// Border color around the modified bullet, when selected
-.status-modified.selected > .header.list-item:after {
-	border-color: @tree-view-background-color;
-}
-
-.status-added > .header.list-item {
-	.git-status-bullet(@text-color-added);
-	.git-status-bullet--folder(@text-color-added);
-}
-
 .list-group li:not(.list-nested-item),
 .list-tree li:not(.list-nested-item),
 .list-group li.list-nested-item > .list-item,
@@ -126,8 +118,7 @@
 .list-tree.has-collapsable-children .list-nested-item > .list-item:before {
 	content: "▶";
 	font-size: 10px;
-	transform: rotate(90deg) translate(1px, 1px);
-	transform-origin: center;
+	transform: rotate(90deg) translate(1px, 2px);
 }
 
 // Folder is closed

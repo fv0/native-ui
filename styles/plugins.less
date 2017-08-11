@@ -11,10 +11,10 @@ busy-signal {
 }
 
 .linter-status-count {
-  background-color: @background-color-highlight;
+  background-color: darken(@base-background-color, 15%);
   border-radius: @border-radius--base;
 
-  a {
+  a { // each linter item
 
     &:not(:last-child) {
       margin-right: @component-padding/2;
@@ -26,7 +26,9 @@ busy-signal {
     }
 
     .icon {
-      margin-right: @component-padding/3;
+      position: relative;
+      top: -2px; // vertically center the icon with the text
+      margin-right: @component-padding / 3;
     }
   }
 }

@@ -1,10 +1,9 @@
 @import "syntax-variables";
 
 status-bar {
-  box-shadow: 0 -1px 0 rgba(0,0,0, 0.15); // imitates border top
+  border-top: 1px solid @base-border-color; // imitates border top
   background-image: linear-gradient(to top, @status-bar-background-color, #EDEBED);
-  height: 28px;
-  line-height: 20px;
+  height: 31px;
 
   .is-blurred & {
     opacity: @opacity-blurred;
@@ -12,7 +11,7 @@ status-bar {
 
   .status-bar-right,
   .status-bar-left {
-    padding-top: @component-padding/3;
+    padding-top: 3px;
   }
 }
 
