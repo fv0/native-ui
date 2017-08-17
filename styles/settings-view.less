@@ -94,14 +94,14 @@ ul.background-message.centered {
 .settings-view .package-card .meta-controls .install-button.is-installing,
 .settings-view .package-card .meta-controls .uninstall-button.is-uninstalling {
   background-image: url(atom://native-ui/images/spinner-128.gif);
-  background-color: @background-color-highlight;
+  background-color: transparent;
   background-repeat: no-repeat;
   background-size: 16px;
   background-position: 8px 50%;
   padding-left: 30px;
   animation: none;
   border-color: transparent;
-  color: @text-color-subtle;
+  color: @text-color;
 
   &:before { // don't show the current icon
     display: none;
