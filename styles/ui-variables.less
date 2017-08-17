@@ -1,11 +1,10 @@
 @import "syntax-variables";
-@ui-syntax-color: @syntax-background-color;
 
-// Color guards -----------------
-@ui-s-h: hue(@ui-syntax-color);
-@ui-s-s: saturation(@ui-syntax-color);
-@ui-s-l: lightness(@ui-syntax-color);
-@ui-inv: 10%; // inverse lightness if below
+@ui-syntax-color                     : @syntax-background-color;
+@ui-s-h                              : hue(@ui-syntax-color);
+@ui-s-s                              : saturation(@ui-syntax-color);
+@ui-s-l                              : lightness(@ui-syntax-color);
+@ui-inv                              : 10%; // inverse lightness if below
 
 .ui-hue() when (@ui-s-s = 0) { // Use blue hue when no saturation
   @ui-hue: 220;
@@ -17,126 +16,118 @@
 
 .ui-hue();
 
-// Colors
+@text-color                          : #444;
+@text-color-subtle                   : #999;
+@text-color-highlight                : #000;
+@text-color-selected                 : #fff;
 
-@text-color: #444;
-@text-color-subtle: #999;
-@text-color-highlight: #000;
-@text-color-selected: #fff;
+@text-color-info                     : #157AFB;
+@text-color-success                  : #70CA57;
+@text-color-warning                  : #F7A550;
+@text-color-error                    : #FB3A37;
 
-@text-color-info: #157AFB;
-@text-color-success: #70CA57;
-@text-color-warning: #F7A550;
-@text-color-error: #FB3A37;
+@text-color-ignored                  : @text-color-subtle;
+@text-color-added                    : @text-color-success;
+@text-color-renamed                  : @text-color-info;
+@text-color-modified                 : @text-color-warning;
+@text-color-removed                  : @text-color-error;
 
-@text-color-ignored: @text-color-subtle;
-@text-color-added: @text-color-success;
-@text-color-renamed: @text-color-info;
-@text-color-modified: @text-color-warning;
-@text-color-removed: @text-color-error;
+@background-color-info               : @text-color-info;
+@background-color-success            : @text-color-success;
+@background-color-warning            : @text-color-warning;
+@background-color-error              : @text-color-error;
+@background-color-highlight          : #ccc;
+@background-color-selected           : @text-color-info;
 
-@background-color-info: @text-color-info;
-@background-color-success: @text-color-success;
-@background-color-warning: @text-color-warning;
-@background-color-error: @text-color-error;
-@background-color-highlight: linear-gradient(to right, rgba(0,0,0,0.1), rgba(0,0,0, 0.08), rgba(0,0,0, 0.12));
-@background-color-selected: @text-color-info;
+@app-background-color                : #ccc;
 
-@app-background-color: #ccc;
+@base-background-color               : #ECECEC;
+@base-border-color                   : #C7C7C7;
 
-@base-background-color: #ECECEC;
-@base-border-color: #C7C7C7;
+@pane-item-background-color          : @base-background-color;
+@pane-item-border-color              : @base-border-color;
 
-@pane-item-background-color: @base-background-color;
-@pane-item-border-color: @base-border-color;
+@input-background-color              : white;
+@input-border-color                  : fadeout(@base-border-color, 10%);
+@input-border-color-active           : #86B1DF;
+@input-outline-color-active          : #92BEEC;
 
-@input-background-color: white;
-@input-border-color: fadeout(@base-border-color, 10%);
-@input-border-color-active: #86B1DF;
-@input-outline-color-active: #92BEEC;
+@tool-panel-background-color         : @base-background-color;
+@tool-panel-border-color             : @base-border-color;
 
-@tool-panel-background-color: @base-background-color;
-@tool-panel-border-color: @base-border-color;
+@inset-panel-background-color        : #fff;
+@inset-panel-border-color            : fadeout(@base-border-color, 10%);
 
-@inset-panel-background-color: #fff;
-@inset-panel-border-color: fadeout(@base-border-color, 10%);
+@panel-heading-background-color      : #c3c3c3;
+@panel-heading-border-color          : transparent;
 
-@panel-heading-background-color: #c3c3c3;
-@panel-heading-border-color: transparent;
+@overlay-background-color            : #ececec;
+@overlay-border-color                : @base-border-color;
 
-@overlay-background-color: #ececec;
-@overlay-border-color: @base-border-color;
+@button-background-color             : @base-background-color;
+@button-background-color-hover       : lighten(@button-background-color, 5%);
+@button-background-color-selected    : #888;
+@button-border-color                 : #D3D3D3;
+@button-border-color--bottom         : #B4B4B4;
+@button-text-color                   : @text-color;
 
-@button-background-color:             @base-background-color;
-@button-background-color-hover:       lighten(@button-background-color, 5%);
-@button-background-color-selected:    #888;
-@button-border-color:                 #D3D3D3;
-@button-border-color--bottom:         #B4B4B4;
-@button-text-color:                   @text-color;
+@btn-base-color                      : #f4f4f4;
 
-@btn-base-color:                      #f4f4f4;
+@tab-bar-border-color                : hsl(0, 0, 55%);
+@tab-bar-border-color-transparent    : rgba(0, 0, 0, 0.3);
+@tab-background-color                : darken(#fff, 30%);
+@tab-bar-background-color            : @tab-background-color;
+@tab-background-color-active         : #d3d3d3;
+@tab-bar-background-color--blurred   : @tab-background-color-active;
+@tab-background-color-hover          : darken(#fff, 35%);
+@tab-border-color                    : @tab-bar-border-color;
+@tab-text-color                      : @text-color-highlight;
 
-@tab-bar-border-color:                hsl(0, 0, 55%);
-@tab-bar-border-color-transparent:    rgba(0, 0, 0, 0.3);
-@tab-background-color:                darken(#fff, 30%);
-@tab-bar-background-color:            @tab-background-color;
-@tab-background-color-active:         #d3d3d3;
-@tab-bar-background-color--blurred:   @tab-background-color-active;
-@tab-background-color-hover:          darken(#fff, 35%);
-@tab-border-color:                    @tab-bar-border-color;
-@tab-text-color:                      @text-color-highlight;
+@resize-handle-color-hover           : rgba(0, 0, 0, 0.2);
+@resize-handle-color-active          : @tab-bar-border-color-transparent;
 
-@resize-handle-color-hover:           rgba(0, 0, 0, 0.2);
-@resize-handle-color-active:          @tab-bar-border-color-transparent;
+@tip-background-color                : hsl(@ui-hue, 10%, 30%);
+@tip-text-color                      : @text-color-selected;
+@tip-arrow-color                     : hsl(@ui-hue, 10%, 30%);
 
-@tip-background-color:                hsl(@ui-hue, 10%, 30%);
-@tip-text-color:                      @text-color-selected;
-@tip-arrow-color:                     hsl(@ui-hue, 10%, 30%);
+@status-bar-background-color         : @tab-background-color-active;
+@status-bar-border-color             : @tab-bar-border-color-transparent;
 
-@status-bar-background-color:         @tab-background-color-active;
-@status-bar-border-color:             @tab-bar-border-color-transparent;
+@tree-view-background-color          : transparent;
+@tree-view-border-color              : @tab-bar-border-color-transparent;
+@tree-view-background-color-highlight: linear-gradient(to right, rgba(0,0,0,0.1), rgba(0,0,0, 0.08), rgba(0,0,0, 0.12));
 
-@tree-view-background-color:          transparent;
-@tree-view-border-color:              @tab-bar-border-color-transparent;
+@ui-site-color-1                     : @background-color-success; // green
+@ui-site-color-2                     : @background-color-info; // blue
+@ui-site-color-3                     : @background-color-warning; // orange
+@ui-site-color-4                     : #db2ff4; // purple
+@ui-site-color-5                     : #f5e11d; // yellow
 
-@ui-site-color-1: @background-color-success; // green
-@ui-site-color-2: @background-color-info; // blue
-@ui-site-color-3: @background-color-warning; // orange
-@ui-site-color-4: #db2ff4; // purple
-@ui-site-color-5: #f5e11d; // yellow
+@background-close-button-hover       : rgba(0, 0, 0, 0.12);
 
-@background-close-button-hover: rgba(0, 0, 0, 0.12);
+@font-size                           : 11px;
+@input-font-size                     : 14px;
+@disclosure-arrow-size               : 12px;
+@font-size-h4                        : 1.2em;
 
+@component-padding                   : 10px;
+@component-icon-padding              : 5px;
+@component-icon-size                 : 16px;
+@component-line-height               : 25px;
+@component-border-radius             : 4px;
 
-// Sizes
-
-@font-size: 11px;
-@input-font-size: 14px;
-@disclosure-arrow-size: 12px;
-@font-size-h4: 1.2em;
-
-@component-padding: 10px;
-@component-icon-padding: 5px;
-@component-icon-size: 16px;
-@component-line-height: 25px;
-@component-border-radius: 4px;
-
-@tab-height: 24px;
+@tab-height                          : 24px;
 
 // Make it possible to convert pixel to relative units
-@html-font-size: unit(@font-size); // Your base font-size in pixels
-@em: @html-font-size * 1em; // Shorthand for outputting ems, e.g. "12/@em"
-@rem: @html-font-size * 1rem; // Shorthand for outputting ems, e.g. "12/@rem"
+@html-font-size                      : unit(@font-size); // Your base font-size in pixels
+@em                                  : @html-font-size * 1em; // Shorthand for outputting ems, e.g. “12/@em”
+@rem                                 : @html-font-size * 1rem; // Shorthand for outputting ems, e.g. “12/@rem
 
-// Other
+@font-family                         : '.SFNSText', 'Lucida Grande', 'Segoe UI', sans-serif;
+@font-family-headlines               : '.SFNSDisplay', 'Lucida Grande', 'Segoe UI', sans-serif;
 
-@font-family: '.SFNSText', 'Lucida Grande', 'Segoe UI', sans-serif;
-@font-family-headlines: '.SFNSDisplay', 'Lucida Grande', 'Segoe UI', sans-serif;
-
-///////////////////////////////////////////////
-
-@border-radius--base: 4px;
-@border-radius--large: 8px;
-@transition--default: 0.15s ease-out;
-@opacity-blurred: 0.5;
-@background-git-view: hsl(@ui-hue, @ui-s-s, 25%);
+@border-radius--base                 : 4px;
+@border-radius--large                : 8px;
+@transition--default                 : 0.15s ease-out;
+@opacity-blurred                     : 0.5;
+@background-git-view                 : hsl(@ui-hue, @ui-s-s, 25%);
