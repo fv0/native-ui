@@ -1,6 +1,11 @@
 # Changelog
 
-# 0.22.0
+## 0.22.1
+
+- Fixed [#74](https://github.com/fv0/native-ui/issues/74)
+- Small design adjustments to Atoms notifications to resemble the appearance of macOS notifications.
+
+## 0.22.0
 
 - Implemented [#72](https://github.com/fv0/native-ui/issues/72): Supported by Atom 1.19 I added macOS transparency for file and directory list. Thanks to [Guillaume](https://github.com/the0neyouseek) for mentioning and helping with this.
 - The Git status in the bottom bar is now back to its old look with a dark background.
