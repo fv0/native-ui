@@ -2,12 +2,12 @@
 .editor-container atom-text-editor,
 .settings-view atom-text-editor,
 .modal atom-text-editor {
-  font-size: 1.15rem;
+  font-size: @input-font-size;
   box-shadow: none;
   border: 1px solid @input-border-color;
   border-radius: @border-radius--base;
-  padding: 0 @component-padding/1.5;
-  background: @text-color-selected;
+  padding: 0 round(@component-padding/1.5);
+  background-color: @input-background-color;
   transition: box-shadow @transition--default;
   color: @text-color;
 
@@ -32,6 +32,7 @@
       color: @text-color-subtle;
     }
 
+    // Background of highlighted text
     .selection .region {
       background-color: lighten(@background-color-info, 30%);
     }
@@ -44,10 +45,9 @@
 
 // A `select` input field
 .settings-view select.form-control,
-.settings-view select.form-control:hover,
-.settings-view select.form-control:focus {
+.settings-view select.form-control:hover {
   height: 27px;
   border: 1px solid @button-border-color;
-  border-bottom: 1px solid @button-border-color--bottom;
   background: @input-background-color;
+  box-shadow: none; // overwrite
 }
