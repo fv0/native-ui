@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.23
+
+- I added some user settings for Native UI. Go to `Settings` → `Themes` and click on the `Settings` button next to the theme selection.
+  - You can choose between tabs that are either fixed-width or flexible.
+  - You can turn of the transparency effect for the sidebar, if you don’t like the effect.
+- Dock titles now look more similar to tabs again.
+- Code clean-up.
+
 ## 0.22.1
 
 - Fixed [#74](https://github.com/fv0/native-ui/issues/74)
