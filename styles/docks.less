@@ -2,50 +2,69 @@
 @color-highlight-handle: lighten(@base-background-color, 20%);
 @dock-border-color: @base-border-color;
 
+// Title of the dock
+atom-dock .tab-bar.inset-panel .tab .title {
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
 atom-dock .tab-bar.inset-panel .tab {
-	box-shadow: none;
-	border-bottom: 1px solid @dock-border-color;
-	background: @base-background-color;
-	text-align: left;
-	padding-left: @component-padding / 4;
+  box-shadow: inset 0 -1px 0 0 @dock-border-color;
 
-	// Improve UX by showing that the panel is draggable
-	&.sortable:hover {
-		cursor: -webkit-grab;
-	}
-
-	.title {
-		color: @text-color;
-		text-transform: uppercase;
-		font-weight: bold;
-		font-size: 0.85rem;
-		display: inline;
-		padding: @component-padding/6 @component-padding;
-		border-radius: 1rem;
-		border: 1px solid @base-border-color;
-	}
-
-	&:hover .title {
-		@_BG: darken(@dock-border-color, 50%);
-
-    -webkit-mask: none;
-		background-color: @_BG;
-		color: @text-color-selected;
-		border-color: @_BG;
+  &.active {
+    background: @base-background-color;
   }
-} // atom-dock .tab-bar.inset-panel .tab
+}
 
 .atom-dock-resize-handle.bottom {
-	border-bottom: 1px solid @dock-border-color;
-	border-top: 1px solid @dock-border-color;
-	height: @width-resize-handle;
-	background-image: linear-gradient(to bottom, @color-highlight-handle, transparent);
+  position: absolute;
+  z-index: 99999;
+  height: @width-resize-handle;
+  width: 100%;
+  box-shadow: inset 0 1px 0 @dock-border-color;
 }
 
 .atom-dock-resize-handle.left,
 .atom-dock-resize-handle.right {
-	border-left: 1px solid @dock-border-color;
-	border-right: 1px solid @dock-border-color;
-	width: @width-resize-handle;
-	background-image: linear-gradient(to right, @color-highlight-handle, transparent);
+  position: absolute;
+  z-index: 99999;
+  width: @width-resize-handle;
+  height: 100%;
+}
+
+.atom-dock-resize-handle.left {
+  box-shadow: inset -1px 0 0 0 @dock-border-color;
+}
+
+.atom-dock-resize-handle.right {
+  box-shadow: inset 1px 0 0 0 @dock-border-color;
+}
+
+.atom-dock-toggle-button .atom-dock-toggle-button-inner {
+  border-radius: @border-radius--base;
+
+  &.left {
+    border-left: none;
+
+    .icon {
+      transform: translateX(12px);
+    }
+  }
+
+  &.right {
+    border-right: none;
+
+    .icon {
+      transform: translateX(-12px);
+    }
+  }
+
+  &.bottom {
+    border-bottom: none;
+
+    .icon {
+      transform: translateY(-12px);
+    }
+  }
 }
