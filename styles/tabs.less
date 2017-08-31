@@ -3,189 +3,125 @@
 @tab-top-padding: 5px;
 @tab-bottom-border-height: 5px;
 @tab-padding-sides: 6px;
-@tab-border: 1px solid @tab-border-color;
+@tab-border: 1px solid @base-border-color;
 @tab-bar-inset-box-shadow: inset 0 -2px 2px -2px rgba(0, 0, 0, 0.15);
 
+// “Modified” icon
+@dimensions-modified-icon: 6px;
 @top-modified-icon: 9px;
 @left-modified-icon: 12px;
 
+// “Close” icon
+@dimensions-close-icon: 18px;
+@padding-top-close-icon: 3px;
+
 .tab-bar {
-  background: linear-gradient(to top, darken(@tab-bar-background-color, 10%), darken(@tab-bar-background-color, 20%));
+  background: linear-gradient(
+    to top,
+    darken(@tab-bar-background-color, 10%),
+    darken(@tab-bar-background-color, 20%)
+  );
   overflow-x: auto;
   overflow-y: hidden;
   box-shadow: @tab-bar-inset-box-shadow;
   z-index: 1;
   border-radius: 0;
 
-  .is-blurred & {
-    background-color: @tab-bar-background-color--blurred;
-  }
-
   &:empty {
     display: none;
   }
-
-  // Adjust icon sizes to text
-  .icon:before {
-    font-size: 14px;
-  }
-
-  .tab {
-    position: relative;
-    text-align: center;
-    background-color: @tab-background-color;
-    box-shadow: @tab-bar-inset-box-shadow;
-    border-right: 1px solid @tab-bar-border-color;
-    line-height: @tab-height;
-    color: @tab-text-color;
-    padding: 0 0 0 @tab-padding-sides;
-    margin: 0;
-    max-width: 100%;
-    flex-grow: 1;
-    transition: max-width 0.35s cubic-bezier(0.785, 0.135, 0.150, 0.860); // resize tabs with animation
-
-    &:hover {
-      background-color: @tab-background-color-hover;
-    }
-
-    &:last-child {
-      border-right: none;
-    }
-  }
-
-  .tab .is-blurred & {
-    opacity: @opacity-blurred;
-  }
-
-  // Tab title
-  .tab .title {
-    text-overflow: hidden;
-  }
-
-  .tab:hover .title,
-  .tab.modified .title {
-    -webkit-mask: linear-gradient(to right, transparent, black 1em) no-repeat;
-    -webkit-mask-position: 1.3em 0;
-  }
-
-  // Close icon
-  @dimensions-close-icon: 18px;
-  @padding-top-close-icon: 3px;
-
-  .tab .close-icon {
-    display: none;
-    position: absolute;
-    height: @dimensions-close-icon;
-    width: @dimensions-close-icon;
-    border-radius: 2px;
-    z-index: 3;
-    text-align: left;
-    color: @text-color;
-
-    &:hover,
-    &:active {
-      background: @background-close-button-hover;
-    }
-
-    &:before { // the close icon itself
-      content: "✕";
-      position: absolute;
-      width: 100%;
-      font-size: 12px;
-      text-align: center;
-      line-height: 1.48; // vertically center the icon in its container
-    }
-  } // close-icon
-
-  .tab.modified,
-  .tab.modified:hover,
-  .tab.modified:not(:hover) {
-    .close-icon {
-      display: inline-block; // display modified indicator when close button is not there
-      top: @top-modified-icon;
-      left: @left-modified-icon;
-
-      &:before { // color of the close X
-        color: @text-color-highlight;
-      }
-    }
-  }
-
-  .tab.modified:not(:hover) .close-icon {
-    width: 6px;
-    height: 6px;
-  }
-
-  .tab:hover .close-icon,
-  .tab.modified:hover .close-icon { // display of the close icon when modified icon is hovered
-    display: inline-block;
-    top: @padding-top-close-icon;
-    left: @tab-padding-sides;
-    width: @dimensions-close-icon;
-    height: @dimensions-close-icon;
-  }
-
-  // Active tab
-  .tab.active {
-    z-index: 1;
-    flex: 1;
-    color: @text-color-highlight;
-    background: linear-gradient(to top, @tab-background-color-active, lighten(@tab-background-color-active, 6%));
-    box-shadow:
-      inset 0 1px 0 rgba(255, 255, 255, 0.15),
-      @tab-bar-inset-box-shadow;
-  }
-
-  .tab.active.modified,
-  .tab.active.modified:hover,
-  .tab.active.modified:not(:hover) {
-    .close-icon { // the modified bullet
-      display: inline-block;
-      left: @left-modified-icon;
-
-      &:before {
-        color: @text-color-highlight;
-      }
-    }
-  }
-
-  .tab.active.modified {
-    .close-icon {
-      left: 10px;
-      width: 6px;
-      height: 6px;
-     }
-
-    &:hover .close-icon {
-      top: @padding-top-close-icon;
-      left: @tab-padding-sides;
-      width: @dimensions-close-icon;
-      height: @dimensions-close-icon;
-    }
-  }
-
-  // Center the title
-  .tab.active .title {
-    padding-right: 0;
-  }
-
-  .tab.active:hover .title {
-    color: @text-color-highlight;
-  }
-
-
-  .tab.active:hover .close-icon {
-    color: @text-color;
-
-    &:hover {
-      color: inherit;
-    }
-  }
-
 } // tab-bar
 
-// Change the modified icon
+.tab-bar .tab {
+  position: relative;
+  text-align: center;
+  background-color: @tab-background-color;
+  box-shadow: @tab-bar-inset-box-shadow;
+  border-right: 1px solid @tab-bar-border-color;
+  line-height: @tab-height;
+  color: @tab-text-color;
+  padding: 0 0 0 @tab-padding-sides;
+  margin: 0;
+  max-width: 100%;
+  flex-grow: 1;
+  transition: max-width 0.35s cubic-bezier(0.785, 0.135, 0.150, 0.860); // resize tabs with animation
+
+  &:hover {
+    background-color: @tab-background-color-hover;
+  }
+
+  &:last-child {
+    border-right: none;
+  }
+}
+
+.tab:hover .title,
+.tab.modified .title {
+  -webkit-mask: linear-gradient(to right, transparent, black 1em) no-repeat;
+  -webkit-mask-position: 1.3em 0;
+}
+
+// Active tab
+.tab-bar .tab.active {
+  flex: 1;
+  color: @text-color-highlight;
+  background: linear-gradient(
+    to top,
+    @tab-background-color-active,
+    lighten(@tab-background-color-active, 6%)
+  );
+}
+
+.tab-bar .tab.active .title {
+  padding-right: 0; // otherwise the title jumps when it’s the active tab
+}
+
+.tab-bar .tab .close-icon {
+  display: none;
+  z-index: 3;
+  height: @dimensions-close-icon;
+  width: @dimensions-close-icon;
+  color: @text-color !important;
+  border-radius: 2px;
+  text-align: left;
+
+  &:hover,
+  &:active {
+    background: @background-close-button-hover;
+  }
+
+  &:before { // the close icon itself
+    content: "✕";
+    position: relative;
+    top: -3px;
+    width: 100%;
+    text-align: center;
+  }
+} // .close-icon
+
+// Change the modified icon to a black bullet
 .tab-bar .tab.modified:not(:hover) .close-icon {
   border: none;
   background-color: @text-color;
+}
+
+// Display close icon only when the tab is hovered
+.tab-bar .tab:hover .close-icon,
+.tab-bar .tab.modified:hover .close-icon { // Display close icon when modified icon is hovered
+  display: inline-block;
+  top: @padding-top-close-icon;
+  left: @tab-padding-sides;
+  width: @dimensions-close-icon;
+  height: @dimensions-close-icon;
+}
+
+// display modified indicator in the tab when not hovered
+.tab-bar .tab.modified:not(:hover) {
+  .close-icon {
+    display: inline-block;
+    top: @top-modified-icon;
+    left: @left-modified-icon;
+    width: @dimensions-modified-icon;
+    height: @dimensions-modified-icon;
+  }
 }
