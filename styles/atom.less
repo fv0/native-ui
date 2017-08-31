@@ -1,10 +1,23 @@
 @import "ui-variables";
 
-html,
 atom-workspace,
 .atom-dock-mask,
 .pane {
-	background: transparent;
+  background: @base-background-color;
+
+  // User settings
+  .native-ui-macTransparency & {
+    background: transparent;
+  }
+}
+
+html {
+  background: @base-background-color;
+
+  // User settings
+  &.native-ui-macTransparency {
+    background: transparent;
+  }
 }
 
 atom-panel.left,

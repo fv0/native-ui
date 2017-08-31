@@ -16,5 +16,33 @@
   "repository": "https://github.com/fv0/native-ui.git",
   "engines": {
     "atom": ">= 1.19"
+  },
+  "configSchema": {
+    "tabs": {
+      "order": 1,
+      "type": "object",
+      "title": "Tabs",
+      "properties": {
+        "autoResizeTabs": {
+          "title": "Flexible tabs",
+          "description": "Resize tabs proportional to the space available.",
+          "type": "boolean",
+          "default": true
+        }
+      }
+    },
+    "ui": {
+      "order": 2,
+      "type": "object",
+      "title": "User Interface",
+      "properties": {
+        "macTransparency": {
+          "title": "macOS transparency",
+          "description": "Enable transparency for the sidebars.",
+          "type": "boolean",
+          "default": true
+        }
+      }
+    }
   }
 }

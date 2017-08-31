@@ -43,8 +43,6 @@
   padding: 0 0 0 @tab-padding-sides;
   margin: 0;
   max-width: 100%;
-  flex-grow: 1;
-  transition: max-width 0.35s cubic-bezier(0.785, 0.135, 0.150, 0.860); // resize tabs with animation
 
   &:hover {
     background-color: @tab-background-color-hover;
@@ -55,10 +53,23 @@
   }
 }
 
+// Style only for the file tabs, not the docks.
+[location="center"].tab-bar .tab {
+  flex: none;
+  padding: 0 (@component-padding * 2);
+  min-width: 140px;
+
+  .native-ui-autoResizeTabs & {
+    flex: 1;
+    flex-grow: 1;
+    transition: max-width 0.35s cubic-bezier(0.785, 0.135, 0.150, 0.860); // resize tabs with animation
+  }
+}
+
 .tab:hover .title,
 .tab.modified .title {
-  -webkit-mask: linear-gradient(to right, transparent, black 1em) no-repeat;
-  -webkit-mask-position: 1.3em 0;
+  -webkit-mask: linear-gradient(to right, transparent, black 1.125em) no-repeat;
+  -webkit-mask-position: 1em 0;
 }
 
 // Active tab
@@ -70,6 +81,16 @@
     @tab-background-color-active,
     lighten(@tab-background-color-active, 6%)
   );
+}
+
+// Style only for the file tabs, not the docks.
+[location="center"].tab-bar .tab.active {
+  flex: none;
+
+  // User settings
+  .native-ui-autoResizeTabs & {
+    flex: 1;
+  }
 }
 
 .tab-bar .tab.active .title {
