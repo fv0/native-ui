@@ -1,18 +1,17 @@
 @import "syntax-variables";
 
 status-bar {
-  border-top: 1px solid @base-border-color; // imitates border top
-  background-image: linear-gradient(to top, @status-bar-background-color, #EDEBED);
-  height: 31px;
+  border-top: 1px solid @base-border-color;
+  background: linear-gradient(to top, @status-bar-background-color, #EDEBED);
+  height: 30px;
 
   .is-blurred & {
-    opacity: @opacity-blurred;
+    background: @base-background-color;
   }
+}
 
-  .status-bar-right,
-  .status-bar-left {
-    padding-top: 3px;
-  }
+status-bar .flexbox-repaint-hack {
+  padding-top: 3px;
 }
 
 status-bar .status-bar-right > *,
@@ -20,11 +19,16 @@ status-bar .status-bar-left > * {
   padding: 0 @component-padding;
   border-radius: @border-radius--base;
 
-  &:hover:not(busy-signal) {
+  &:hover:not(busy-signal),
+  &:active:not(busy-signal),
+  &:focus:not(busy-signal),
+  a:hover,
+  a:active,
+  a:focus {
     text-decoration: none;
   }
 
-  // Rules for everything except the git-view
+  // Hover Rules for some cases that are not clickable
   &:hover:not(.git-view):not(busy-signal):not(.linter-status-count):not(status-bar-launch-mode):not(status-bar-selection) {
     color: @text-color-selected;
     background-color: darken(@tab-background-color, 5%);
@@ -37,12 +41,6 @@ status-bar .status-bar-left > * {
   }
 }// status-bar .status-bar-right a.inline-block
 
-status-bar-cursor .inline-block,
-status-bar-selection .inline-block {
-  margin-right: 0; // since it’s the only item we don’t want it to align nicely
-}
-
-// Don’t show underlines when hovering over links
-status-bar a:hover {
-  text-decoration: none;
+.inline-block:empty {
+  display: none;
 }
