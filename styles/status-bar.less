@@ -41,6 +41,6 @@ status-bar .status-bar-left > * {
   }
 }// status-bar .status-bar-right a.inline-block
 
-.inline-block:empty {
+.inline-block:empty:not(busy-signal):not(status-bar-launch-mode) {
   display: none;
 }
