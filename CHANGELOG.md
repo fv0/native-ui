@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.24
+
+- Fixed [#81](https://github.com/fv0/native-ui/issues/81): “Busy Signal” missing in the status bar.
+- Merged [#78](https://github.com/fv0/native-ui/pull/78) by [hferrier](https://github.com/hferrier): Hide the scrollbar in the tabs section.
+
 ## 0.23
 
 - I added some user settings for Native UI. Go to `Settings` → `Themes` and click on the `Settings` button next to the theme selection.
@@ -16,7 +21,8 @@
 ## 0.22.0
 
 - Implemented [#72](https://github.com/fv0/native-ui/issues/72): Supported by Atom 1.19 I added macOS transparency for file and directory list. Thanks to [Guillaume](https://github.com/the0neyouseek) for mentioning and helping with this.
-- The Git status in the bottom bar is now back to its old look with a dark background.
+- T
+he Git status in the bottom bar is now back to its old look with a dark background.
 - Cosmetic adjustments here and there.
 - Some design adjustments to the “Project Find Results”.
 - Added testimonials and new screenshots to `README.md`.
