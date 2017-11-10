@@ -1,7 +1,7 @@
 @border-color-intensity-btn: 10%;
 
 .MIXIN__btn-builder(@color) {
-  border-radius: @border-radius--base;
+  border-radius: @component-border-radius;
   background-image: linear-gradient(to top, @color, lighten(@color, 15%));
   font-size: 12px;
   border: 1px solid darken(@color, @border-color-intensity-btn);
@@ -36,7 +36,7 @@
 .MIXIN__btn-group-borders(@color) {
   &:first-child,
   &:last-child {
-    border-radius: @border-radius--base;
+    border-radius: @component-border-radius;
   }
 
   &:first-child {
