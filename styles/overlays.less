@@ -4,7 +4,7 @@ atom-panel.modal,
 .overlay {
   color: @text-color;
   padding: @component-padding;
-  border-radius: @border-radius--base;
+  border-radius: @component-border-radius;
 
   .editor.mini {
     margin-bottom: @component-padding;
@@ -66,21 +66,21 @@ atom-panel.modal,
 
 // Frame for the autocomplete suggestions
 .select-list.popover-list {
-  border-radius: @border-radius--base; // make the box shadow follow the rounded edges of the children
+  border-radius: @component-border-radius; // make the box shadow follow the rounded edges of the children
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.22), 0 14px 56px rgba(0, 0, 0, 0.25);
   background: transparent;
 }
 
 .select-list.corrections {
   background-color: @base-background-color;
-  border-radius: @border-radius--base;
+  border-radius: @component-border-radius;
 }
 
 // The window itself
 atom-panel.modal {
   top: 16% !important;
-  border-top-right-radius: @border-radius--base !important;
-  border-top-left-radius: @border-radius--base !important;
+  border-top-right-radius: @component-border-radius !important;
+  border-top-left-radius: @component-border-radius !important;
   box-shadow:
     0 15px 24px rgba(0, 0, 0, 0.22),
     0 19px 76px rgba(0, 0, 0, 0.3);
@@ -104,13 +104,13 @@ atom-panel.modal {
 
 .key-binding {
   font-family: @font-family;
-  border-radius: @border-radius--base;
+  border-radius: @component-border-radius;
   letter-spacing: 0.1rem;
   box-shadow: 0 1px 1px 0 @tab-bar-border-color-transparent;
 }
 
 autocomplete-suggestion-list .suggestion-list-scroller {
-  border-radius: @border-radius--base;
+  border-radius: @component-border-radius;
 }
 
 autocomplete-suggestion-list .suggestion-description {
