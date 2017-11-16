@@ -7,7 +7,7 @@
   width: 0;
   height: 0;
   border-style: solid;
-  border-width: 0 12px 12px 0;
+  border-width: 0 @font-size-small @font-size-small 0;
 }
 
 // Tab modified
@@ -26,7 +26,7 @@
 
   &:after {
     .tab-git-status-indicator;
-    border-color: transparent darken(desaturate(@text-color-modified, 20%), 25%) transparent transparent;
+    border-color: transparent darken(desaturate(@text-color-modified, 20%), 15%) transparent transparent;
   }
 }
 
