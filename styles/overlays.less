@@ -105,7 +105,9 @@ atom-panel.modal {
   font-family: @font-family; // otherwise `monospace`
   background-color: @button-background-color;
   border-radius: @component-border-radius;
-  box-shadow: 0 0 0 1px @base-border-color-transparent;
+  box-shadow:
+    0 0 0 1px @base-border-color-transparent,
+    inset 0 -1px 0 0 @base-border-color;
 }
 
 autocomplete-suggestion-list .suggestion-list-scroller {
