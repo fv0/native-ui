@@ -24,13 +24,7 @@
 
 // Make avatars square
 .settings-view .package-card .meta-user .avatar {
-  border-radius: 0;
-}
-
-.settings-view .package-card .meta {
-  border-top: 1px solid @base-border-color;
-  margin-top: @component-padding;
-  padding-top: @component-padding;
+  border-radius: 100%;
 }
 
 .settings-view .package-card .meta-user,
@@ -49,9 +43,27 @@
 .settings-view .package-card {
   cursor: pointer;
   overflow: visible;
-  border-radius: @component-border-radius;
-  border-bottom-width: 2px;
+  border: none;
+  padding: 0;
+
+  &:hover .body,
+  &:hover .meta {
+    background-color: @button-background-color;
+  }
+}
+
+.package-card .body {
   padding: @component-padding;
+  background-color: @button-background-color;
+  border-radius: @component-border-radius @component-border-radius 0 0;
+  border: 1px solid @base-border-color;
+}
+
+.package-card .meta {
+  padding:(@component-padding / 2) @component-padding;
+  border-radius: 0 0 @component-border-radius @component-border-radius;
+  border: 1px solid @base-border-color;
+  border-top: none;
 }
 
 .settings-view .package-card .package-version {
@@ -61,6 +73,16 @@
 .settings-view .package-card .package-name {
   font-weight: bold;
   font-size: @font-size-h3;
+}
+
+.settings-view .package-card .meta-user .author {
+  color: @text-color;
+  display: inline-block;
+  transform: translateY(2px); // center with avatar
+}
+
+.settings-view .package-card .stats {
+  padding: @component-padding;
 }
 
 // Amount of downloads, amount of likes, etc.
