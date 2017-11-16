@@ -44,30 +44,25 @@ atom-panel,
 .symbols-view,
 .grammar-selector,
 .encoding-selector {
-  .editor.mini,
   .editor.mini {
     color: @text-color;
-    font-family: @font-family;
-    font-size: 1.75em;
-    margin: 0 -@component-padding;
+    font-family: @font-family-headlines;
+    font-size: @font-size-h1;
+    margin-left: -@component-padding;
     padding: 0 @component-padding 0 @component-padding;
 
+    // Remove styles of the standard input field
     &.is-focused,
     &:hover {
       border: none;
       background-color: transparent;
       box-shadow: none !important;
-      height: 150px;
-      position: relative;
     }
 
-    // Adjust the cursor
-    .cursor,
-    &::shadow .cursor {
+    .region {
       height: 100% !important;
-      margin-top: 0px;
     }
-  }
+  } // .editor.mini
 }
 
 // Increase padding from label to the input
