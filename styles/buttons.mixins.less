@@ -1,37 +1,29 @@
-@border-color-intensity-btn: 10%;
+@darkening-factor: 15%;
 
-.MIXIN__btn-builder(@color) {
+.mixin-btn(@color) {
+  background-color: @color;
   border-radius: @component-border-radius;
-  background-image: linear-gradient(to top, @color, lighten(@color, 15%));
   font-size: 12px;
-  border: 1px solid darken(@color, @border-color-intensity-btn);
+  border: none;
+  color: @button-text-color-inverted;
+  box-shadow: inset 0 -1px 0 0 hsla(0,0%,0%, 0.3);
 
-  &:active {
-    background-image: linear-gradient(to top, darken(@color, 15%), @color);
-    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.3);
+  &:hover {
+    background-color: @color;
   }
 
+  &:active,
   &:focus {
     outline: none !important;
+    box-shadow: inset 0 -1px 0 0 hsla(0,0%,0%, 0.5);
   }
-}
 
-.MIXIN__btn-selected-light(@color) {
-  &.selected {
-    background-image: linear-gradient(to top, darken(@color, 16%), darken(@color, 8%));
+  &.icon:hover {
     color: @text-color-selected;
   }
 }
 
-@border-color-intensity-btn-selected-default: 50%;
-
-.MIXIN__btn-selected-default(@color) {
-  &.selected {
-    background-image: linear-gradient(to top, darken(@color, 50%), darken(@color, 25%));
-    color: @text-color-selected;
-    border-color: darken(@color, @border-color-intensity-btn-selected-default);
-  }
-}
+@darkening-factor-selected-default: 50%;
 
 .MIXIN__btn-group-borders(@color) {
   &:first-child,
@@ -40,15 +32,15 @@
   }
 
   &:first-child {
-    border-left: 1px solid darken(@color, @border-color-intensity-btn);
+    border-left: 1px solid darken(@color, @darkening-factor);
   }
 
   &:last-child {
-    border-right: 1px solid darken(@color, @border-color-intensity-btn);
+    border-right: 1px solid darken(@color, @darkening-factor);
   }
 
   &:only-child {
-    border-left: 1px solid darken(@color, @border-color-intensity-btn);
-    border-right: 1px solid darken(@color, @border-color-intensity-btn);
+    border-left: 1px solid darken(@color, @darkening-factor);
+    border-right: 1px solid darken(@color, @darkening-factor);
   }
 }

@@ -1,58 +1,77 @@
 @import "ui-variables";
 @import "ui-mixins";
 
+// Default button
 .btn {
-  .MIXIN__btn-builder(@btn-base-color);
-  .MIXIN__btn-selected-default(@btn-base-color);
-}
+  .mixin-btn(@button-background-color);
+  color: @button-text-color; // overwrite mixin
+  border: 1px solid darken(@button-background-color, 15%); // overwrite mixin
+  border-bottom-color: darken(@button-background-color, 30%); // overwrite mixin
+  box-shadow: none; // overwrite mixin
 
-.btn.btn-info,
-.btn.btn-primary {
-  .MIXIN__btn-builder(@background-color-info);
-  color: @text-color-selected;
-
-  &.icon:hover {
-    color: @text-color-selected;
+  &:active,
+  &:focus,
+  &.selected {
+    background: linear-gradient(to top, darken(@button-background-color, 15%), @button-background-color);
+    box-shadow: none; // overwrite mixin
+    color: @button-text-color; // overwrite mixin
   }
 
-  .MIXIN__btn-selected-light(@background-color-info);
+  &.icon:hover {
+    color: @button-text-color; // overwrite mixin
+  }
+}
+
+// Button in different states
+.btn.btn-info,
+.btn.btn-primary {
+  .mixin-btn(@background-color-selected);
+
+  &:active,
+  &:focus,
+  &.selected {
+    background: linear-gradient(to top, darken(@background-color-selected, 15%), @background-color-selected);
+    color: hsla(0, 0%, 100%, 0.75);
+  }
 }
 
 .btn.btn-success {
-  .MIXIN__btn-builder(@background-color-success);
-  color: @text-color-selected;
+  .mixin-btn(@background-color-success);
 
-  &.icon:hover {
-    color: @text-color-selected;
+  &:active,
+  &:focus,
+  &.selected {
+    background: linear-gradient(to top, darken(@background-color-success, 15%), @background-color-success);
+    color: hsla(0, 0%, 100%, 0.75);
   }
-
-  .MIXIN__btn-selected-light(@background-color-success);
 }
 
 .btn.btn-warning {
-  .MIXIN__btn-builder(@background-color-warning);
-  color: @text-color-selected;
+  .mixin-btn(@background-color-warning);
 
-  &.icon:hover {
-    color: @text-color-selected;
+  &:active,
+  &:focus,
+  &.selected {
+    background: linear-gradient(to top, darken(@background-color-warning, 15%), @background-color-warning);
+    color: hsla(0, 0%, 100%, 0.75);
   }
-
-  .MIXIN__btn-selected-light(@background-color-warning);
 }
 
 .btn.btn-error {
-  .MIXIN__btn-builder(@background-color-error);
-  color: @text-color-selected;
+  .mixin-btn(@background-color-error);
 
-  &.icon:hover {
-    color: @text-color-selected;
+  &:active,
+  &:focus,
+  &.selected {
+    background: linear-gradient(to top, darken(@background-color-error, 15%), @background-color-error);
+    color: hsla(0, 0%, 100%, 0.75);
   }
-
-  .MIXIN__btn-selected-light(@background-color-error);
 }
 
+// Button groups
+
 .btn-group > .btn {
-  .MIXIN__btn-group-borders(@btn-base-color);
+  .MIXIN__btn-group-borders(@button-background-color);
 }
 
 .btn-group > .btn-info {
@@ -78,9 +97,8 @@ fieldset[disabled] .btn {
   border-bottom-right-radius: @component-border-radius;
 }
 
-// Overwrites ===============================================
-
-a.icon:hover,
-button.icon:hover {
-  color: #444444;
+// This is a bit of a hack. Otherwise the “Uninstall” button has no rounded corners, since the :only-child rule doesn’t apply here.
+.btn.icon[style="display: none;"] + .btn.icon {
+  border-top-left-radius: @component-border-radius;
+  border-bottom-left-radius: @component-border-radius;
 }
