@@ -2,19 +2,23 @@
   margin: 8px;
 }
 
-@_dimensions-checkbox: 17px;
+@_dimensions-checkbox: 20px;
 
 .settings-view .checkbox {
   padding-left: @_dimensions-checkbox;
 }
 
 .settings-view input[type="checkbox"] {
-  margin: 3px 0 0 -@_dimensions-checkbox;
+  margin: 1px 0 0 -@_dimensions-checkbox;
 
   &:after,
   &:before {
     display: none; // don’t display the custom lines that simulate the arrow
   }
+}
+
+.input-checkbox {
+  -webkit-appearance: checkbox;
 }
 
 .editor.mini .placeholder-text,
