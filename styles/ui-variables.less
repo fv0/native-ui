@@ -16,15 +16,17 @@
 
 .ui-hue();
 
-@text-color                          : #444;
-@text-color-subtle                   : #999;
-@text-color-highlight                : #000;
-@text-color-selected                 : #fff;
+// Colors taken from https://developer.apple.com/macos/human-interface-guidelines/visual-design/color/
 
-@text-color-info                     : #157AFB;
-@text-color-success                  : #70CA57;
-@text-color-warning                  : #F7A550;
-@text-color-error                    : #FB3A37;
+@text-color                          : hsl(0, 0%, 26%);
+@text-color-subtle                   : hsl(0, 0%, 60%);
+@text-color-highlight                : hsl(0, 0%, 0%);
+@text-color-selected                 : hsl(0, 0%, 100%);
+
+@text-color-info                     : hsl(211, 100%, 51%);
+@text-color-success                  : hsl(104, 68%, 53%);
+@text-color-warning                  : hsl(35, 100%, 50%);
+@text-color-error                    : hsl(3, 100%, 59%);
 
 @text-color-ignored                  : @text-color-subtle;
 @text-color-added                    : @text-color-success;
@@ -36,54 +38,49 @@
 @background-color-success            : @text-color-success;
 @background-color-warning            : @text-color-warning;
 @background-color-error              : @text-color-error;
-@background-color-highlight          : #ccc;
+@background-color-highlight          : hsl(0, 0%, 85%);
 @background-color-selected           : @text-color-info;
 
-@app-background-color                : #ccc;
+@app-background-color                : hsl(0, 0%, 80%);
 
-@base-background-color               : #ECECEC;
-@base-border-color                   : #C7C7C7;
+@base-background-color               : hsl(0, 0%, 92%);
+@base-border-color                   : hsl(0, 0%, 78%);
+@base-border-color-transparent       : hsla(0, 0%, 0%, 0.2);
 
 @pane-item-background-color          : @base-background-color;
 @pane-item-border-color              : @base-border-color;
 
-@input-background-color              : white;
+@input-background-color              : hsl(0, 0%, 100%);
 @input-border-color                  : fadeout(@base-border-color, 10%);
-@input-border-color-active           : #86B1DF;
-@input-outline-color-active          : #92BEEC;
+@input-border-color-active           : hsl(211, 58%, 70%);
+@input-outline-color-active          : hsl(210, 70%, 74%);
 
 @tool-panel-background-color         : @base-background-color;
 @tool-panel-border-color             : @base-border-color;
 
-@inset-panel-background-color        : #fff;
-@inset-panel-border-color            : fadeout(@base-border-color, 10%);
-
-@panel-heading-background-color      : #c3c3c3;
+@panel-heading-background-color      : hsl(0, 0%, 76%);
 @panel-heading-border-color          : transparent;
 
-@overlay-background-color            : #ececec;
+@overlay-background-color            : hsl(0, 0%, 92%);
 @overlay-border-color                : @base-border-color;
 
-@button-background-color             : @base-background-color;
-@button-background-color-hover       : lighten(@button-background-color, 5%);
-@button-background-color-selected    : #888;
-@button-border-color                 : #D3D3D3;
-@button-border-color--bottom         : #B4B4B4;
+@button-background-color             : @input-background-color;
+@button-border-color                 : hsl(0, 0%, 82%);
+@button-border-color--bottom         : hsl(0, 0%, 70%);
 @button-text-color                   : @text-color;
+@button-text-color-inverted          : @text-color-selected;
 
-@btn-base-color                      : #f4f4f4;
-
-@tab-bar-border-color                : hsl(0, 0, 55%);
-@tab-bar-border-color-transparent    : rgba(0, 0, 0, 0.3);
-@tab-background-color                : darken(#fff, 30%);
+@tab-bar-border-color                : hsl(0, 0%, 54%);
+@tab-bar-border-color-transparent    : hsla(0, 0%, 0%, 0.3);
+@tab-background-color                : hsl(0, 0%, 70%);
 @tab-bar-background-color            : @tab-background-color;
-@tab-background-color-active         : #d3d3d3;
+@tab-background-color-active         : hsl(0, 0%, 82%);
 @tab-bar-background-color--blurred   : @tab-background-color-active;
-@tab-background-color-hover          : darken(#fff, 35%);
+@tab-background-color-hover          : hsl(0, 0%, 65%);
 @tab-border-color                    : @tab-bar-border-color;
 @tab-text-color                      : @text-color-highlight;
 
-@resize-handle-color-hover           : rgba(0, 0, 0, 0.2);
+@resize-handle-color-hover           : @base-border-color-transparent;
 @resize-handle-color-active          : @tab-bar-border-color-transparent;
 
 @tip-background-color                : hsl(@ui-hue, 10%, 30%);
@@ -95,15 +92,17 @@
 
 @tree-view-background-color          : transparent;
 @tree-view-border-color              : @tab-bar-border-color-transparent;
-@tree-view-background-color-highlight: linear-gradient(to right, rgba(0,0,0,0.18), rgba(0,0,0, 0.15), rgba(0,0,0, 0.22));
+@tree-view-background-color-highlight: linear-gradient(to right, rgba(0,0,0, 0.18), rgba(0,0,0, 0.15), rgba(0,0,0, 0.22));
 
 @ui-site-color-1                     : @background-color-success; // green
 @ui-site-color-2                     : @background-color-info; // blue
 @ui-site-color-3                     : @background-color-warning; // orange
-@ui-site-color-4                     : #db2ff4; // purple
-@ui-site-color-5                     : #f5e11d; // yellow
+@ui-site-color-4                     : hsl(292, 89%, 57%); // purple
+@ui-site-color-5                     : hsl(54, 91%, 53%); // yellow
 
-@background-close-button-hover       : rgba(0, 0, 0, 0.12);
+@background-close-button-hover       : hsla(0, 0%, 0%, 0.12);
+
+@modular-scale: 1.2;
 
 @font-size                           : 11px;
 @font-size-small                     : @font-size / @modular-scale;
@@ -118,7 +117,7 @@
 @component-icon-padding              : 5px;
 @component-icon-size                 : 16px;
 @component-line-height               : 25px;
-@component-border-radius             : 4px;
+@component-border-radius             : 5px;
 @component-border-radius-large       : @component-border-radius * 2;
 
 @tab-height                          : 24px;
