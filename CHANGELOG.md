@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.25
+
+- Fixed [#82](https://github.com/fv0/native-ui/issues/82) and [#84](https://github.com/fv0/native-ui/issues/84): resize handles overlapping with some other interface elements.
+- Unified type sizes throughout the interface using a typographic scale approach.
+- New design for buttons and input fields.
+- New design for the settings view, display of packages and many more.
+- Code clean-up, simplified variables, removed bloat.
+
 ## 0.24
 
 - Fixed [#81](https://github.com/fv0/native-ui/issues/81): “Busy Signal” missing in the status bar.
@@ -21,8 +29,7 @@
 ## 0.22.0
 
 - Implemented [#72](https://github.com/fv0/native-ui/issues/72): Supported by Atom 1.19 I added macOS transparency for file and directory list. Thanks to [Guillaume](https://github.com/the0neyouseek) for mentioning and helping with this.
-- T
-he Git status in the bottom bar is now back to its old look with a dark background.
+- The Git status in the bottom bar is now back to its old look with a dark background.
 - Cosmetic adjustments here and there.
 - Some design adjustments to the “Project Find Results”.
 - Added testimonials and new screenshots to `README.md`.
