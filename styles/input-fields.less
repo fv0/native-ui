@@ -1,31 +1,36 @@
+@height-inner-selection: 21px;
+@margin-inner-selection: 2px;
 
 .editor-container atom-text-editor,
 .settings-view atom-text-editor,
 .modal atom-text-editor {
-  font-size: @input-font-size;
-  box-shadow: none;
   border: 1px solid @input-border-color;
-  border-radius: @component-border-radius;
-  padding: 0 round(@component-padding/1.5);
+  padding: 0 (@margin-inner-selection * 2);
   background-color: @input-background-color;
   transition: box-shadow @transition--default;
   color: @text-color;
 
+  // Styles of the text when it is not selected
   .selection .region {
     background-color: rgba(0, 0, 0, .2);
+    height: @height-inner-selection !important;
+    margin-top: @margin-inner-selection;
   }
 
   .cursor {
-    width: 1/@em !important;
-    border-left-width: 1/@em !important;
-    height: 18px !important;
-    margin-top: 4px;
+    // Overwrite inline styles for cursor
+    width: 1px !important;
+    border-left-width: 1px !important;
+    height: @height-inner-selection !important;
+    margin-top: @margin-inner-selection;
     border-color: @text-color;
   }
 
+  // input field is selected
   &.is-focused {
     border-color: @input-border-color-active;
     color: @text-color-highlight;
+    border-radius: 3px; // otherwise the `box-shadow` doesn’t appear rounded
     box-shadow: 0 0 0 3px @input-outline-color-active;
 
     .placeholder-text {
@@ -34,7 +39,7 @@
 
     // Background of highlighted text
     .selection .region {
-      background-color: lighten(@background-color-info, 30%);
+      background-color: lighten(@background-color-selected, 30%);
     }
   } // .is-focused
 } // editor.mini
@@ -48,6 +53,7 @@
 .settings-view select.form-control:hover {
   height: 27px;
   border: 1px solid @button-border-color;
+  border-bottom-color: darken(@button-border-color, 10%);
   background: @input-background-color;
   box-shadow: none; // overwrite
 }
