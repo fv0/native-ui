@@ -107,9 +107,13 @@
 @background-close-button-hover       : rgba(0, 0, 0, 0.12);
 
 @font-size                           : 11px;
+@font-size-small                     : @font-size / @modular-scale;
 @input-font-size                     : 1.15em;
 @disclosure-arrow-size               : 12px;
-@font-size-h4                        : 1.2em;
+@font-size-h1                        : @font-size * (@modular-scale * @modular-scale * @modular-scale * @modular-scale);
+@font-size-h2                        : @font-size * (@modular-scale * @modular-scale * @modular-scale);
+@font-size-h3                        : @font-size * (@modular-scale * @modular-scale);
+@font-size-h4                        : @font-size * @modular-scale;
 
 @component-padding                   : 10px;
 @component-icon-padding              : 5px;
