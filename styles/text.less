@@ -4,16 +4,29 @@
 h1,
 h2,
 h3 {
-  line-height: 1em;
-  margin-bottom: 15px
+  line-height: 1.2;
+  margin-bottom: 1em;
+  font-family: @font-family-headlines;
 }
-h1 { font-size: 2em; }
-h2 { font-size: 1.5em; }
-h3 { font-size: 1.2em; }
+
+h1 {
+  font-size: @font-size-h1;
+}
+
+h2 {
+  font-size: @font-size-h2;
+}
+
+h3 {
+  font-size: @font-size-h3;
+}
+
+h4 {
+  font-size: @font-size-h4;
+}
 
 p {
-  line-height: 1.6;
-  margin-bottom: 15px;
+  margin-bottom: 1em;
 }
 
 label {
@@ -21,48 +34,59 @@ label {
 }
 
 pre {
-  box-shadow: none;
-  color: @text-color;
-  background: @inset-panel-background-color;
-  border-radius: @component-border-radius;
-  border: none;
-  margin: 0;
+  border-radius: 0;
+  padding: @component-padding;
+  font-size: inherit;
 }
 
 code {
-  .text(highlight);
   background: @background-color-highlight;
-  border-radius: @component-border-radius;
+  border-radius: 0;
+  padding: 1px 2px; // same as `.highlight`
 }
 
-.selected { .text(highlight); }
+.selected {
+  .text(highlight);
+}
 
-.text-smaller { font-size: 0.9em; }
+.text-smaller {
+  font-size: @font-size-small;
+}
 
-.text-subtle { .text(subtle); }
-.text-highlight { .text(highlight); }
+.text-subtle {
+  .text(subtle);
+}
 
-.text-error { .text(error); }
+.text-highlight {
+  .text(highlight);
+}
+
+.text-error {
+  .text(error);
+}
+
 .text-info {
   .text(info);
-  &:hover { color: @text-color-info; }
+
+  &:hover {
+    color: @text-color-info;
+  }
 }
+
 .text-warning {
   .text(warning);
   &:hover { color: @text-color-warning; }
 }
+
 .text-success {
   .text(success);
   &:hover { color: @text-color-success; }
 }
 
-.highlight {
-  color: @text-color-highlight;
-  font-weight: bold;
-  text-shadow: none;
-  background-color: @background-color-highlight;
-  border-radius: @component-border-radius;
-  padding: 1px 3px;
+.highlight,
+[class*="highlight-"] {
+  border-radius: 0 !important; // increase specificity, since “attribute selector” < “class selector”
+  padding: 1px 2px !important;
 }
 
 .highlight-color(info, @background-color-info);
