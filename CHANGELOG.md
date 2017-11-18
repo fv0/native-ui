@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.25.1
+
+- Fixed [#86](https://github.com/fv0/native-ui/issues/86)
+
 ## 0.25
 
 - Fixed [#82](https://github.com/fv0/native-ui/issues/82) and [#84](https://github.com/fv0/native-ui/issues/84): resize handles overlapping with some other interface elements.
