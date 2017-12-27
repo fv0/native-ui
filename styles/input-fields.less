@@ -8,7 +8,7 @@
   padding: 0 (@margin-inner-selection * 2);
   background-color: @input-background-color;
   transition: box-shadow @transition--default;
-  color: @text-color;
+  color: @text-color !important; // used `!important` because some syntax themes overwrite this
 
   // Styles of the text when it is not selected
   .selection .region {
