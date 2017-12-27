@@ -108,19 +108,19 @@
 @font-size-small                     : @font-size / @modular-scale;
 @input-font-size                     : 1.15em;
 @disclosure-arrow-size               : 12px;
-@font-size-h1                        : @font-size * (@modular-scale * @modular-scale * @modular-scale * @modular-scale);
-@font-size-h2                        : @font-size * (@modular-scale * @modular-scale * @modular-scale);
-@font-size-h3                        : @font-size * (@modular-scale * @modular-scale);
-@font-size-h4                        : @font-size * @modular-scale;
+@font-size-h1                        : round(@font-size * (@modular-scale * @modular-scale * @modular-scale * @modular-scale));
+@font-size-h2                        : round(@font-size * (@modular-scale * @modular-scale * @modular-scale));
+@font-size-h3                        : round(@font-size * (@modular-scale * @modular-scale));
+@font-size-h4                        : round(@font-size * @modular-scale);
 
-@component-padding                   : 10px;
-@component-icon-padding              : 5px;
+@component-padding                   : @font-size;
+@component-icon-padding              : 6px;
 @component-icon-size                 : 16px;
-@component-line-height               : 25px;
-@component-border-radius             : 5px;
+@component-line-height               : @font-size * 2;
+@component-border-radius             : 6px;
 @component-border-radius-large       : @component-border-radius * 2;
 
-@tab-height                          : 24px;
+@tab-height                          : 23px;
 
 // Make it possible to convert pixel to relative units
 @html-font-size                      : unit(@font-size); // Your base font-size in pixels
