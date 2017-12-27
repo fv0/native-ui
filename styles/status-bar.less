@@ -3,14 +3,16 @@
 status-bar {
   border-top: 1px solid @base-border-color;
   background: linear-gradient(to top, @status-bar-background-color, #EDEBED);
-  height: 30px;
+  height: 28px;
+  line-height: 20px;
 
   .is-blurred & {
     background: @base-background-color;
   }
 }
 
-status-bar .flexbox-repaint-hack {
+status-bar .status-bar-right,
+status-bar .status-bar-left {
   padding-top: 3px;
   padding-bottom: 3px;
 }
@@ -44,4 +46,9 @@ status-bar .status-bar-left > * {
 
 .inline-block:empty:not(busy-signal):not(status-bar-launch-mode) {
   display: none;
+}
+
+// Otherwise the clickable area is uneven to the right side
+status-bar-cursor .inline-block {
+  margin-right: 0;
 }
