@@ -50,6 +50,12 @@ atom-panel,
     font-size: @font-size-h1;
     margin-left: -@component-padding;
     padding: 0 @component-padding 0 @component-padding;
+    max-height: 30px !important;
+    line-height: 30px !important;
+
+    * {
+      height: 30px !important; // overwrite inline styles of `22px`
+    }
 
     // Remove styles of the standard input field
     &.is-focused,
