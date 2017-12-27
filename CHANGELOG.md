@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.25.2
+
+- Fixed cut-off descenders in control panel.
+- Evened out vertical alignment in the status bar.
+- Fixed: In some syntax themes the color of the control panel text would change.
+- Fixed: Calculations for the typography variables outputted some incomprehensible values.
+
 ## 0.25.1
 
 - Fixed [#86](https://github.com/fv0/native-ui/issues/86)
