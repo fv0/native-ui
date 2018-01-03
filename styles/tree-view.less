@@ -34,7 +34,11 @@
 .list-group .selected:before,
 .list-tree .selected:before {
 	height: @height__list-item;
-	background: @tree-view-background-color-highlight;
+	background: @tree-view-background-color--blurred;
+
+	.tree-view:focus & {
+		background: @tree-view-background-color--active;
+	}
 }
 
 // Modified file
