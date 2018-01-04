@@ -1,5 +1,7 @@
 # Changelog
 
+- Merged [#88](https://github.com/fv0/native-ui/pull/88) by [johngeorgewright](https://github.com/johngeorgewright). Added darker background for focused state in the tree view.
+
 ## 0.25.2
 
 - Fixed cut-off descenders in control panel.
