@@ -1,4 +1,4 @@
-@height-inner-selection: 21px;
+@height-inner-selection: 20px;
 @margin-inner-selection: 2px;
 
 .editor-container atom-text-editor,
@@ -39,7 +39,7 @@
 
     // Background of highlighted text
     .selection .region {
-      background-color: lighten(@background-color-selected, 30%);
+      background-color: tint(@background-color-selected, 75%);
     }
   } // .is-focused
 } // editor.mini
@@ -51,9 +51,8 @@
 // A `select` input field
 .settings-view select.form-control,
 .settings-view select.form-control:hover {
-  height: 27px;
-  border: 1px solid @button-border-color;
+  height: 26px;
   border-bottom-color: darken(@button-border-color, 10%);
-  background: @input-background-color;
-  box-shadow: none; // overwrite
+  // background: @input-background-color;
+  box-shadow: none; // otherwise this has an inset box-shadow
 }
