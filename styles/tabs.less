@@ -38,6 +38,7 @@
 
 .tab-bar .tab {
   position: relative;
+  font-size: @font-size;
   text-align: center;
   background-color: @tab-background-color;
   box-shadow: @tab-bar-inset-box-shadow;
@@ -73,7 +74,7 @@
 .tab:hover .title,
 .tab.modified .title {
   -webkit-mask: linear-gradient(to right, transparent, black 1.125em) no-repeat;
-  -webkit-mask-position: 1em 0;
+  -webkit-mask-position: 0.4em 0;
 }
 
 // Active tab
