@@ -1,10 +1,11 @@
 @import "syntax-variables";
 
 status-bar {
-  box-shadow: 0 -1/@rem 0 0 @base-border-color-transparent;
-  background: linear-gradient(to top, @status-bar-background-color, tint(@status-bar-background-color, 40%));
-  height: 28px;
-  line-height: 20px;
+  border-top: 1/@rem solid @base-border-color;
+  border-bottom: 1/@rem solid @status-bar-background-color;
+  background: linear-gradient(to top, @status-bar-background-color, tint(@status-bar-background-color, 60%));
+  height: 28/@rem;
+  line-height: 20/@rem;
 
   .is-blurred & {
     background: @base-background-color;
@@ -13,8 +14,8 @@ status-bar {
 
 status-bar .status-bar-right,
 status-bar .status-bar-left {
-  padding-top: 3px;
-  padding-bottom: 3px;
+  padding-top: @component-padding / 4;
+  padding-bottom: @component-padding / 4;
 }
 
 status-bar .status-bar-right > *,
