@@ -1,26 +1,31 @@
 @import "ui-variables";
 @import "ui-mixins";
 
+.box-shadow() {
+  // atom uses `!important by default, so we need to overwrite this
+  box-shadow:
+    inset 0 0 0 1/@rem hsla(0,0%,0%, 0.07),
+    inset 0 -1/@rem 0 0 hsla(0,0%,0%, 0.3) !important;
+}
+
 // Default button
 .btn {
   .mixin-btn(@button-background-color);
+  .box-shadow();
+
   color: @button-text-color; // overwrite mixin
-  box-shadow:
-    inset 0 1px 0 0 hsla(0,0%,0%, 0.07),
-    inset 0 -1px 0 0 hsla(0,0%,0%, 0.3);
 
+  &:active,
+  &:focus {
+    .box-shadow();
 
-  &:active {
     background: linear-gradient(to top, darken(@button-background-color, 15%), @button-background-color);
     color: @button-text-color; // overwrite mixin
   }
 
-  &:focus {
-    box-shadow: none;
-  }
-
   &.selected,
-  &.selected:hover {
+  &.selected:hover,
+  &.selected.icon:hover {
     background: linear-gradient(to top, darken(@background-color-selected, 15%), @background-color-selected);
     color: @button-text-color-inverted;
   }
@@ -28,62 +33,47 @@
   &.icon:hover {
     color: @button-text-color; // overwrite mixin
   }
-}
+} // .btn
 
 // Button in different states
 .btn.btn-info,
 .btn.btn-primary {
   .mixin-btn(@background-color-selected);
-
-  &:active,
-  &:focus,
-  &.selected {
-    background: linear-gradient(to top, darken(@background-color-selected, 15%), @background-color-selected);
-    color: hsla(0, 0%, 100%, 0.75);
-  }
+  .mixin-btn-colored--active-focus-selected(@background-color-selected);
 }
 
 .btn.btn-success {
   .mixin-btn(@background-color-success);
-
-  &:active,
-  &:focus,
-  &.selected {
-    background: linear-gradient(to top, darken(@background-color-success, 15%), @background-color-success);
-    color: hsla(0, 0%, 100%, 0.75);
-  }
+  .mixin-btn-colored--active-focus-selected(@background-color-success);
 }
 
 .btn.btn-warning {
   .mixin-btn(@background-color-warning);
-
-  &:active,
-  &:focus,
-  &.selected {
-    background: linear-gradient(to top, darken(@background-color-warning, 15%), @background-color-warning);
-    color: hsla(0, 0%, 100%, 0.75);
-  }
+  .mixin-btn-colored--active-focus-selected(@background-color-warning)
 }
 
 .btn.btn-error {
   .mixin-btn(@background-color-error);
-
-  &:active,
-  &:focus,
-  &.selected {
-    background: linear-gradient(to top, darken(@background-color-error, 15%), @background-color-error);
-    color: hsla(0, 0%, 100%, 0.75);
-  }
+  .mixin-btn-colored--active-focus-selected(@background-color-error);
 }
 
 // Button groups
 
-.btn-group > .btn {
-  .MIXIN__btn-group-borders(@button-background-color);
-}
-
+.btn-group > .btn,
 .btn-group > .btn-info {
-  .MIXIN__btn-group-borders(@background-color-info);
+  border: none;
+
+  &.selected {
+    border-left-color: transparent;
+  }
+
+  &:first-child {
+    border-left: none;
+  }
+
+  &:only-child {
+    border: none;
+  }
 }
 
 .btn.disabled,
@@ -101,12 +91,13 @@ fieldset[disabled] .btn {
 .btn-group > .btn:last-child,
 .btn-group > .btn.selected:last-child,
 .btn-group > .dropdown-toggle {
-  border-top-right-radius: @component-border-radius;
-  border-bottom-right-radius: @component-border-radius;
+  border-top-right-radius: @component-border-radius-small;
+  border-bottom-right-radius: @component-border-radius-small;
 }
 
 // This is a bit of a hack. Otherwise the “Uninstall” button has no rounded corners, since the :only-child rule doesn’t apply here.
-.btn.icon[style="display: none;"] + .btn.icon {
-  border-top-left-radius: @component-border-radius;
-  border-bottom-left-radius: @component-border-radius;
+.btn.icon[style="display: none;"] + .btn.icon,
+.btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle) {
+  border-top-left-radius: @component-border-radius-small;
+  border-bottom-left-radius: @component-border-radius-small;
 }
