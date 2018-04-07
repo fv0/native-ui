@@ -12,7 +12,9 @@
 
   // Styles of the text when it is not selected
   .selection .region {
-    background-color: rgba(0, 0, 0, .2);
+    @color: contrast(@input-background-color);
+
+    background-color: hsla(hue(@color), saturation(@color), lightness(@color), 0.175);
     height: @height-inner-selection !important;
     margin-top: @margin-inner-selection;
   }
@@ -30,8 +32,8 @@
   &.is-focused {
     border-color: @input-border-color-active;
     color: @text-color-highlight;
-    border-radius: 3px; // otherwise the `box-shadow` doesn’t appear rounded
-    box-shadow: 0 0 0 3px @input-outline-color-active;
+    border-radius: @component-border-radius-small; // otherwise the `box-shadow` doesn’t appear rounded
+    box-shadow: 0 0 0 3/@rem @input-outline-color-active;
 
     .placeholder-text {
       color: @text-color-subtle;
