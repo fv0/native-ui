@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.26
+
+- Smaller border radii for buttons to make it more accurate to macOS
+- Fine-tuned the appearence of buttons, some things were misaligned
+- Reduced padding in the settings view to see more content on smaller screens
+- Code refactoring and clean-up
+
 ## 0.25.2
 
 - Fixed cut-off descenders in control panel.
