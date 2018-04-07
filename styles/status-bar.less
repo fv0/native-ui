@@ -1,8 +1,8 @@
 @import "syntax-variables";
 
 status-bar {
-  border-top: 1px solid @base-border-color;
-  background: linear-gradient(to top, @status-bar-background-color, #EDEBED);
+  box-shadow: 0 -1/@rem 0 0 @base-border-color-transparent;
+  background: linear-gradient(to top, @status-bar-background-color, tint(@status-bar-background-color, 40%));
   height: 28px;
   line-height: 20px;
 
@@ -20,7 +20,7 @@ status-bar .status-bar-left {
 status-bar .status-bar-right > *,
 status-bar .status-bar-left > * {
   padding: 0 @component-padding;
-  border-radius: @component-border-radius;
+  border-radius: @component-border-radius-small;
 
   &:hover:not(busy-signal),
   &:active:not(busy-signal),

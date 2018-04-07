@@ -5,10 +5,12 @@
 
   .keystroke {
     color: @text-color-subtle;
-    padding-left: 2px;
+    padding-left: 2/@rem;
   }
 
-  &.in { opacity: 1; }
+  &.in {
+    opacity: 1;
+  }
 
   .tooltip-inner {
     background-color: @tip-background-color;
@@ -17,7 +19,7 @@
     white-space: nowrap;
     max-width: none;
     letter-spacing: 0.01rem;
-    border-radius: @component-border-radius;
+    border-radius: @component-border-radius-small;
   }
 
   &.top .tooltip-arrow {

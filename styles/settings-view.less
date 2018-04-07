@@ -26,7 +26,6 @@
   color: fadeout(@text-color-ignored, 25%);
 }
 
-// Make avatars square
 .settings-view .package-card .meta-user .avatar {
   border-radius: 100%;
 }
@@ -49,25 +48,18 @@
   overflow: visible;
   border: none;
   padding: 0;
-
-  &:hover .body,
-  &:hover .meta {
-    background-color: @button-background-color;
-  }
+  border-radius: @component-border-radius-small;
+  background-color: @button-background-color;
+  border-bottom: 1/@rem solid @base-border-color;
 }
 
 .package-card .body {
   padding: @component-padding;
-  background-color: @button-background-color;
-  border-radius: @component-border-radius @component-border-radius 0 0;
-  border: 1px solid @base-border-color;
 }
 
 .package-card .meta {
-  padding:(@component-padding / 2) @component-padding;
-  border-radius: 0 0 @component-border-radius @component-border-radius;
-  border: 1px solid @base-border-color;
-  border-top: none;
+  padding: @component-padding;
+  border-top: 1/@rem solid @base-border-color;
 }
 
 .settings-view .package-card .package-version {
@@ -101,14 +93,11 @@
 
 .badge {
   font-weight: bold;
-  font-size: 12px;
-  color: #fff;
-  background: rgba(0, 0, 0, 0.5);
+  color: contrast(@background-color-highlight);
+  background: @background-color-highlight;
 
   &.badge-flexible {
-    padding: 3px 10px;
-    min-width: 2.4em;
-    border-radius: 12px;
+    padding: (@component-padding / 3) @component-padding;
   }
 }
 
@@ -119,12 +108,14 @@
 }
 
 .settings-view section .section-heading,
-.settings-view .section .section-heading {
+.settings-view .section .section-heading,
+ul.background-message.centered {
   font-family: @font-family-headlines;
 }
 
-ul.background-message.centered {
-  font-family: @font-family-headlines;
+// These are the sections making
+.settings-view .package-detail .section {
+  padding: @component-padding * 2; // same padding as the breadcrumb navigation
 }
 
 .settings-view .packages .search-container {
@@ -221,7 +212,6 @@ ul.background-message.centered {
 .settings-view .control-label {
   margin-bottom: 1em;
 }
-
 
 .settings-view .settings-panel .control-group + .control-group {
   margin-top: 2em;
