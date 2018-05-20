@@ -15,7 +15,7 @@
   ],
   "repository": "https://github.com/fv0/native-ui.git",
   "engines": {
-    "atom": ">= 1.19"
+    "atom": ">= 1.27"
   },
   "configSchema": {
     "tabs": {
