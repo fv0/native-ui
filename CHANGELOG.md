@@ -1,5 +1,11 @@
 # Changelog
 
+# 0.26.2
+
+- Fixed irregular border radii for grouped buttons
+- Adapted code to new Git status display
+- Fixed [#65](https://github.com/fv0/native-ui/issues/65)
+
 ## 0.26
 
 - Smaller border radii for buttons to make it more accurate to macOS
