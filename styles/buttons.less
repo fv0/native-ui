@@ -88,6 +88,11 @@ fieldset[disabled] .btn {
 
 // Fix button groups
 
+.btn-group > .btn:first-child {
+  border-top-left-radius: @component-border-radius-small;
+  border-bottom-left-radius: @component-border-radius-small;
+}
+
 .btn-group > .btn:last-child,
 .btn-group > .btn.selected:last-child,
 .btn-group > .dropdown-toggle {
