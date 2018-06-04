@@ -17,18 +17,12 @@ busy-signal {
   a { // each linter item
 
     &:not(:last-child) {
-      margin-right: @component-padding/2;
+      margin-right: @component-padding / 2;
     }
 
     // A class like `text-error` gets added to make the status appear in some kind of color. If there are no errors it should look inactive.
     &:not([class*="text-"]) {
       color: @text-color-subtle;
-    }
-
-    .icon {
-      position: relative;
-      top: -2px; // vertically center the icon with the text
-      margin-right: @component-padding / 3;
     }
   }
 }
