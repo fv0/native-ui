@@ -2,7 +2,7 @@
 
 Native UI brings macOS’ looks to Atom. Experience a reduced, more native feeling for your favorite code editor. No redundant transitions or fancy effects distracting you from your daily work.
 
-Created by **[Ferdinand Vogler](https://www.twitter.com/ferdinandvogler)**, Product Designer.
+Created by **[Ferdinand Vogler](https://www.twitter.com/ferdinandvogler)**
 
 # Features
 
@@ -33,7 +33,6 @@ Created by **[Ferdinand Vogler](https://www.twitter.com/ferdinandvogler)**, Prod
 ![File Switcher](https://user-images.githubusercontent.com/8401092/29223144-ca5851fe-7ec5-11e7-80ff-bdf86afff71f.jpg)
 ![Search Results](https://user-images.githubusercontent.com/8401092/29223145-ca5eaafe-7ec5-11e7-85c4-066a71c5a535.jpg)
 ![Settings](https://user-images.githubusercontent.com/8401092/29223146-ca5ebeb8-7ec5-11e7-932b-b0ef74986ddb.jpg)
-
 
 # Icons
 
