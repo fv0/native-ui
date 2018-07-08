@@ -122,14 +122,15 @@
 @component-border-radius-large       : @component-border-radius * 2;
 
 @tab-height                          : 24px;
+@height__list-item                   : @tab-height;
 
 // Make it possible to convert pixel to relative units
 @html-font-size                      : unit(@font-size); // Your base font-size in pixels
 @em                                  : @html-font-size * 1em; // Shorthand for outputting ems, e.g. “12/@em”
 @rem                                 : @html-font-size * 1rem; // Shorthand for outputting ems, e.g. “12/@rem
 
-@font-family                         : '.SFNSText', 'Lucida Grande', 'Segoe UI', sans-serif;
-@font-family-headlines               : '.SFNSDisplay', 'Lucida Grande', 'Segoe UI', sans-serif;
+@font-family                         : ".SFNSText", "Lucida Grande", "Segoe UI", sans-serif;
+@font-family-headlines               : ".SFNSDisplay", "Lucida Grande", "Segoe UI", sans-serif;
 
 @transition--default                 : 0.15s ease-out;
 @opacity-blurred                     : 0.5;

@@ -22,12 +22,29 @@
 // Single search result
 .results-view .list-tree > div {
   background-color: @input-background-color;
-  border: 1px solid @base-border-color;
-  border-top: none;
+}
 
-  &:first-child {
-    border-top: 1px solid @base-border-color;
+@marginBetweenResults: (@component-padding / 2);
+
+.results-view .path-row {
+  border-top: @marginBetweenResults solid @base-background-color;
+
+  .icon {
+    // right-align with line numbers
+    margin-left: (@component-padding / 2);
+    margin-right: (@component-padding / 2);
   }
+}
+
+.results-view .list-nested-item.selected:before {
+  // since we add a border we must adjust the height of the list item
+  height: @height__list-item + @marginBetweenResults;
+}
+
+// Overwrite internal styles that draw a line between row
+.preview-pane .results-view .context-row.separator,
+.preview-pane .results-view .match-row.separator {
+  box-shadow: none;
 }
 
 .results-view .list-tree.has-collapsable-children {
@@ -51,7 +68,7 @@
   padding-right: @component-padding / 2;
 }
 
-.preview-pane .results-view .selected .line-number {
+.preview-pane .results-view .match-row.selected .line-number {
   color: @text-color-subtle;
 }
 
@@ -72,6 +89,10 @@
   color: @text-color;
 }
 
+.preview-pane .results-view .list-tree .path {
+  padding-left: 0;
+}
+
 // Don’t indent the list items
 .results-view .list-tree.has-collapsable-children li.list-item {
   margin-left: 0;
@@ -87,4 +108,12 @@
   &:hover {
     background-color: darken(@base-background-color, 3%);
   }
+}
+
+.results-view .search-result.list-item {
+  margin-left: 0 !important;
+}
+
+.preview-header .highlight-info {
+  padding: @component-padding / 4 @component-padding / 2;
 }
