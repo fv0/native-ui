@@ -1,5 +1,9 @@
 # Changelog
 
+# 0.26.3
+
+- Fixed [#91](https://github.com/fv0/native-ui/issues/91)
+
 # 0.26.2
 
 - Fixed irregular border radii for grouped buttons
