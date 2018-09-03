@@ -1,0 +1,94 @@
+// Definitions for 'permanent' scrollbars. These styles are only used when macOS is
+// not auto hiding scrollbars.
+
+@import "syntax-variables";
+@import "ui-variables";
+
+// Default, always visible, scrollbars that match the macOS design language:
+.scrollbars-visible-always {
+  ::-webkit-scrollbar {
+    width: 14px;
+    height: 14px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: @scrollbar-background-color;
+  }
+
+  ::-webkit-scrollbar-corner {
+    background: @scrollbar-background-color;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border-radius: 7px;
+    border: 3px solid @scrollbar-background-color;
+    background: @scrollbar-color;
+    background-clip: content-box;
+  }
+
+  ::-webkit-scrollbar-thumb:vertical:active,
+  ::-webkit-scrollbar-thumb:horizontal:active {
+    background: @scrollbar-active-color;
+  }
+
+  // Always hide the trouble-making corner:
+  .scrollbar-corner {
+    display: none;
+  }
+
+  // Ensures the scrollbar appears on top of other content such as the preferred
+  // line length marker line:
+  .vertical-scrollbar, .horizontal-scrollbar {
+    z-index: 1000 !important;
+  }
+
+  // When the scrollbars are not visible, remove them from the DOM so highlights
+  // will cover the entire editor (instead of stopping where the invisible
+  // scrollbars are):
+  .vertical-scrollbar[style*="visibility: hidden"],
+  .horizontal-scrollbar[style*="visibility: hidden"] {
+    display: none;
+    display: none;
+  }
+
+  // When the vertical scrollbar is visible, make it span the height of the entire window:
+  .vertical-scrollbar:not([style*="visibility: hidden"]) {
+    bottom: 0 !important;
+  }
+
+  // If only the horizontal scrollbar is visible, make it span the entire window:
+  .vertical-scrollbar[style*="visibility: hidden"] ~ .horizontal-scrollbar:not([style*="visibility: hidden"]) {
+    right: 0 !important;
+  }
+
+  // When both scrollbars are visible, position the horizontal scrollbar to the left of the vertical one:
+  .vertical-scrollbar:not([style*="visibility: hidden"]) ~ .horizontal-scrollbar:not([style*="visibility: hidden"]) {
+    right: 14px !important;
+  }
+}
+
+
+// Optional seamless scrollbars based on the current syntax theme colors, designed to blend into the editor:
+.native-ui-seamlessScrollbars .scrollbars-visible-always {
+  atom-text-editor {
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      border-radius: 4px;
+      border: 1px solid @seamless-scrollbar-border-color;
+      background: @seamless-scrollbar-color;
+    }
+
+    ::-webkit-scrollbar-thumb:vertical:active,
+    ::-webkit-scrollbar-thumb:horizontal:active {
+      background: @seamless-scrollbar-active-color;
+    }
+  }
+}
