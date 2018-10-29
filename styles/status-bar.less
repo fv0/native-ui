@@ -1,10 +1,11 @@
 @import "syntax-variables";
 
 status-bar {
-  border-top: 1px solid @base-border-color;
-  background: linear-gradient(to top, @status-bar-background-color, #EDEBED);
-  height: 28px;
-  line-height: 20px;
+  border-top: 1/@rem solid @base-border-color;
+  border-bottom: 1/@rem solid @status-bar-background-color;
+  background: linear-gradient(to top, @status-bar-background-color, tint(@status-bar-background-color, 60%));
+  height: 28/@rem;
+  line-height: 20/@rem;
 
   .is-blurred & {
     background: @base-background-color;
@@ -13,14 +14,14 @@ status-bar {
 
 status-bar .status-bar-right,
 status-bar .status-bar-left {
-  padding-top: 3px;
-  padding-bottom: 3px;
+  padding-top: @component-padding / 4;
+  padding-bottom: @component-padding / 4;
 }
 
 status-bar .status-bar-right > *,
 status-bar .status-bar-left > * {
   padding: 0 @component-padding;
-  border-radius: @component-border-radius;
+  border-radius: @component-border-radius-small;
 
   &:hover:not(busy-signal),
   &:active:not(busy-signal),
@@ -51,4 +52,10 @@ status-bar .status-bar-left > * {
 // Otherwise the clickable area is uneven to the right side
 status-bar-cursor .inline-block {
   margin-right: 0;
+}
+
+// Don’t make the display of the cursor position jump.
+.cursor-position,
+.selection-count {
+  font-family: var(--editor-font-family);
 }

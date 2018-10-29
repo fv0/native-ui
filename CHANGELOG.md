@@ -1,6 +1,21 @@
 # Changelog
 
-- Merged [#88](https://github.com/fv0/native-ui/pull/88) by [johngeorgewright](https://github.com/johngeorgewright). Added darker background for focused state in the tree view.
+# 0.26.3
+
+- Fixed [#91](https://github.com/fv0/native-ui/issues/91)
+
+# 0.26.2
+
+- Fixed irregular border radii for grouped buttons
+- Adapted code to new Git status display
+- Fixed [#65](https://github.com/fv0/native-ui/issues/65)
+
+## 0.26
+
+- Smaller border radii for buttons to make it more accurate to macOS
+- Fine-tuned the appearence of buttons, some things were misaligned
+- Reduced padding in the settings view to see more content on smaller screens
+- Code refactoring and clean-up
 
 ## 0.25.2
 
