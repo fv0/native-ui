@@ -33,6 +33,13 @@
 	background: @tree-view-background-color-highlight;
 }
 
+// Don’t display git status on project root
+.list-item.project-root-header {
+	&:after {
+		display: none;
+	}
+}
+
 // Modified file
 .list-item,
 .header.list-item {
@@ -115,6 +122,11 @@
 	content: "▶" !important;
 	font-size: @font-size-small !important;
 	transform: rotate(90deg) translate(1px, 2px);
+}
+
+// Display collapse/expand arrow in the ignored color
+.list-nested-item.status-ignored .list-item:before {
+	color: @text-color-ignored !important;
 }
 
 // Folder is closed
