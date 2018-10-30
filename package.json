@@ -34,7 +34,7 @@
     "ui": {
       "order": 2,
       "type": "object",
-      "title": "User Interface",
+      "title": "General",
       "properties": {
         "macTransparency": {
           "title": "macOS transparency",
