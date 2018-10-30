@@ -1,5 +1,12 @@
 # Changelog
 
+# 0.27
+
+- Merged [#95](https://github.com/fv0/native-ui/pull/95): Fixed macOS transparency issues
+- Merged [#93](https://github.com/fv0/native-ui/pull/93): Fixed white scrollbar bug
+- Fix cut-off status bar
+- Minor changes for “UI excellence”
+
 # 0.26.3
 
 - Fixed [#91](https://github.com/fv0/native-ui/issues/91)
