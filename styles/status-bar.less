@@ -9,6 +9,13 @@ status-bar {
   .is-blurred & {
     background: @base-background-color;
   }
+
+  // User settings
+  .native-ui-darkMode & {
+    border-top-color: @base-border-color--dark;
+    border-bottom-color: @base-border-color--dark;
+    background: @status-bar-background-color--dark;
+  }
 }
 
 status-bar .status-bar-right,

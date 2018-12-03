@@ -47,6 +47,12 @@
           "description": "Use scrollbars that blend into the editor's color scheme when macOS is permanently showing scrollbars. This setting will only take effect when macOS is configured to permanently show scrollbars (instead of auto hiding them by default).",
           "type": "boolean",
           "default": false
+        },
+        "darkMode": {
+          "title": "Dark Mode",
+          "description": "Dark interface elements.",
+          "type": "boolean",
+          "default": false
         }
       }
     }

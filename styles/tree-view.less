@@ -31,6 +31,10 @@
 .list-tree .selected:before {
 	height: @height__list-item;
 	background: @tree-view-background-color-highlight;
+
+	.native-ui-darkMode & {
+		background: @tree-view-background-color-highlight--dark;
+	}
 }
 
 // Don’t display git status on project root
@@ -107,6 +111,19 @@
 .expanded.status-modified .header.list-item:before,
 .expanded.status-added .header.list-item:before {
 	color: @text-color;
+
+	.native-ui-darkMode & {
+		color: @text-color--dark;
+	}
+}
+
+.list-group li:not(.list-nested-item),
+.list-tree li:not(.list-nested-item),
+.list-group li.list-nested-item > .list-item,
+.list-tree li.list-nested-item > .list-item {
+	.native-ui-darkMode & {
+		color: @text-color--dark;
+	}
 }
 
 .list-group li:not(.list-nested-item),

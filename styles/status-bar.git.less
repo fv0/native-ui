@@ -5,6 +5,10 @@
   &:hover {
     background-color: @background-git-view !important; // keep the color
   }
+
+  .native-ui-darkMode & {
+    background-color: shade(@status-bar-background-color--dark, 50%);
+  }
 }
 
 .github-StatusBarTileController .inline-block,

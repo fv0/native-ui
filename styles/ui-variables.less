@@ -17,8 +17,10 @@
 .ui-hue();
 
 @text-color                          : hsl(0, 0%, 26%);
+@text-color--dark                    : hsl(@ui-s-h, @ui-s-s * 0.2, 75%);
 @text-color-subtle                   : hsl(0, 0%, 60%);
 @text-color-highlight                : hsl(0, 0%, 0%);
+@text-color-highlight--dark          : hsl(0, 0%, 95%);
 @text-color-selected                 : hsl(0, 0%, 100%);
 
 // Colors taken from https://developer.apple.com/macos/human-interface-guidelines/visual-design/color/
@@ -43,8 +45,11 @@
 @app-background-color                : hsl(0, 0%, 80%);
 
 @base-background-color               : hsl(0, 0%, 92%);
+@base-background-color--dark         : hsl(@ui-s-h, @ui-s-s * 0.4, 20%);
 @base-background-color-transparent   : hsla(0, 0%, 100%, 0.75);
+@base-background-color-transparent--dark   : hsla(@ui-s-h, @ui-s-s, 10%, 0.85);
 @base-border-color                   : hsl(0, 0%, 78%);
+@base-border-color--dark                   : hsl(@ui-s-h, @ui-s-s * 0.4, 10%);
 @base-border-color-transparent       : hsla(0, 0%, 0%, 0.2);
 
 @pane-item-background-color          : @base-background-color;
@@ -72,14 +77,18 @@
 @button-text-color-inverted          : @text-color-selected;
 
 @tab-bar-border-color                : hsl(0, 0%, 54%);
+@tab-bar-border-color--dark          : hsl(@ui-s-h, @ui-s-s * 0.4, 40%);
 @tab-bar-border-color-transparent    : hsla(0, 0%, 0%, 0.3);
 @tab-background-color                : hsl(0, 0%, 70%);
+@tab-background-color--dark          : hsl(@ui-s-h, @ui-s-s * 0.4, 20%);
 @tab-bar-background-color            : @tab-background-color;
+@tab-bar-background-color--dark            : @tab-background-color--dark;
 @tab-background-color-active         : hsl(0, 0%, 82%);
 @tab-bar-background-color--blurred   : @tab-background-color-active;
 @tab-background-color-hover          : hsl(0, 0%, 65%);
 @tab-border-color                    : @tab-bar-border-color;
 @tab-text-color                      : @text-color-highlight;
+@tab-text-color--dark                      : @text-color--dark;
 
 @resize-handle-color-hover           : @base-border-color-transparent;
 @resize-handle-color-active          : @tab-bar-border-color-transparent;
@@ -89,11 +98,13 @@
 @tip-arrow-color                     : hsl(@ui-hue, 10%, 30%);
 
 @status-bar-background-color         : @tab-background-color-active;
+@status-bar-background-color--dark   : @tab-background-color--dark;
 @status-bar-border-color             : @tab-bar-border-color-transparent;
 
 @tree-view-background-color          : transparent;
 @tree-view-border-color              : @tab-bar-border-color-transparent;
 @tree-view-background-color-highlight: linear-gradient(to right, rgba(0,0,0, 0.18), rgba(0,0,0, 0.15), rgba(0,0,0, 0.22));
+@tree-view-background-color-highlight--dark: linear-gradient(to right, rgba(255,255,255, 0.18), rgba(255,255,255, 0.15), rgba(255,255,255, 0.22));
 
 @scrollbar-color                     : hsl(0, 0%, 76%);
 @scrollbar-background-color          : hsl(0, 0%, 98%);
@@ -152,4 +163,4 @@
 
 @transition--default                 : 0.15s ease-out;
 @opacity-blurred                     : 0.5;
-@background-git-view                 : hsl(@ui-hue, @ui-s-s, 25%);
+@background-git-view                 : hsl(@ui-hue, @ui-s-s * 0.4, 25%);

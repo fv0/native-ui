@@ -1,6 +1,7 @@
 @width-resize-handle: @component-padding / 2;
 @color-highlight-handle: lighten(@base-background-color, 20%);
 @dock-border-color: @base-border-color;
+@dock-border-color--dark: @base-border-color--dark;
 
 // Title of the dock
 atom-dock .tab-bar.inset-panel .tab .title {
@@ -10,10 +11,21 @@ atom-dock .tab-bar.inset-panel .tab .title {
 }
 
 atom-dock .tab-bar.inset-panel .tab {
-  box-shadow: inset 0 -1px 0 0 @dock-border-color;
+  @BORDERBOTTOM: inset 0 -1px 0 0;
+
+  box-shadow: @BORDERBOTTOM @dock-border-color;
 
   &.active {
     background: @base-background-color;
+  }
+
+  // User settings
+  .native-ui-darkMode & {
+    box-shadow: @BORDERBOTTOM @dock-border-color--dark;
+
+    &.active {
+      background: @base-background-color--dark;
+    }
   }
 }
 
@@ -34,11 +46,23 @@ atom-dock .tab-bar.inset-panel .tab {
   }
 
   &.left {
-    box-shadow: inset -1px 0 0 0 @dock-border-color;
+    @LEFTBORDER: inset -1px 0 0 0;
+
+    box-shadow: @LEFTBORDER @dock-border-color;
+
+    .native-ui-darkMode & {
+      box-shadow: @LEFTBORDER @dock-border-color--dark;
+    }
   }
 
   &.right {
-    box-shadow: inset 1px 0 0 0 @dock-border-color;
+    @RIGHTBORDER: inset 1px 0 0 0;
+
+    box-shadow: @RIGHTBORDER @dock-border-color;
+
+    .native-ui-darkMode & {
+      box-shadow: @RIGHTBORDER @dock-border-color--dark;
+    }
   }
 } // .atom-dock-resize-handle
 

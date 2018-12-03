@@ -34,6 +34,15 @@
   &::-webkit-scrollbar {
     display: none;
   }
+
+  // User settings
+  .native-ui-darkMode & {
+    background: linear-gradient(
+      to top,
+      tint(@tab-bar-background-color--dark, 10%),
+      tint(@tab-bar-background-color--dark, 20%)
+    );
+  }
 } // tab-bar
 
 .tab-bar .tab {
@@ -55,6 +64,13 @@
 
   &:last-child {
     border-right: none;
+  }
+
+  // User settings
+  .native-ui-darkMode & {
+      background-color: @tab-background-color--dark;
+      color: @tab-text-color--dark;
+      border-color: @tab-bar-border-color--dark;
   }
 }
 
@@ -84,8 +100,17 @@
   background: linear-gradient(
     to top,
     @tab-background-color-active,
-    lighten(@tab-background-color-active, 6%)
+    tint(@tab-background-color-active, 6%)
   );
+
+  .native-ui-darkMode & {
+    color: @text-color-highlight--dark;
+    background: linear-gradient(
+      to top,
+      tint(@tab-background-color--dark, 7%),
+      tint(@tab-background-color--dark, 9%)
+    );
+  }
 }
 
 // Style only for the file tabs, not the docks.
@@ -122,6 +147,15 @@
     top: -3px;
     width: 100%;
     text-align: center;
+  }
+
+  .native-ui-darkMode & {
+    color: @text-color-highlight--dark !important;
+
+    &:hover,
+    &:active {
+      background: tint(@tab-background-color--dark, 20%);
+    }
   }
 } // .close-icon
 
